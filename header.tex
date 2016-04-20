@@ -1,0 +1,238 @@
+%%
+%% fonts
+%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french, frenchb]{babel}
+\usepackage[osf, sc]{mathpazo}
+\usepackage[euler-digits, small]{eulervm}
+\usepackage[scaled]{helvet}
+\usepackage[scaled=0.9]{zi4}
+%% sans font as default
+\renewcommand\familydefault{\sfdefault}
+\usepackage[x11names, dvipsnames]{xcolor}
+
+%%
+%% marges
+%%
+\usepackage[a4paper]{geometry}
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+%%
+%% images
+%%
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+
+%%
+%% maths
+%%
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{siunitx}
+
+%%
+%% references
+%%
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[super]{natbib}
+\bibliographystyle{asm}
+\usepackage[]{multicol}
+\usepackage[para, perpage, symbol*]{footmisc}
+\renewcommand\footnotelayout{\Large}
+\usepackage[]{caption}
+
+%% todo
+\usepackage[french]{todonotes}
+% \usepackage[]{cleveref}
+%   \crefname{enumi}{position}{positions}
+%%
+%% acronymes
+%%
+\usepackage[]{acro}
+% probably a good idea for the nomenclature entries:
+\acsetup{first-style=short}
+
+% class `abbrev': abbreviations:
+\DeclareAcronym{gc}{
+  short = GC\% ,
+  long  = Contenu en GC ,
+  class = abbrev
+}
+\DeclareAcronym{gbgc}{
+  short = gBGC ,
+  long  = GC--biased gene conversion : conversion génique biaisée vers GC ,
+  class = abbrev
+}
+\DeclareAcronym{dsb}{
+  short = DSB ,
+  long  = Double strand break : cassures doubles brins ,
+  class = abbrev
+}
+\DeclareAcronym{mmr}{
+  short = MMR ,
+  long  = Mismatch repair : machinerie de réparation des mésappariements ,
+  class = abbrev
+}
+\DeclareAcronym{ber}{
+  short = BER ,
+  long  = Base Excision Repair ,
+  class = abbrev
+}
+\DeclareAcronym{ner}{
+  short = NER ,
+  long  = Nucleotide Excision Repair ,
+  class = abbrev
+}
+\DeclareAcronym{har}{
+  short = HAR ,
+  long  = Human Accelerated Regions : région accélérée spécifique à la lignée humaine ,
+  class = abbrev
+}
+\DeclareAcronym{sdsa}{
+  short = SDSA ,
+  long  = Synthesis-Dependent Strand-Annealing ,
+  class = abbrev
+}
+
+%%
+%% table des matières
+%%
+\setcounter{tocdepth}{3}
+%% pas de titre
+\deftocheading{toc}{\section*{Sommaire}}%
+% \renewcommand{\contentsname}{Sommaire}
+
+
+%%
+%% typographie
+%%
+\usepackage[protrusion=true, expansion=alltext, tracking=true, kerning=true]{microtype}
+\providecommand\newthought[1]{%
+   \addvspace{0.5\baselineskip plus 0.3ex minus 0.1ex}%
+   \noindent\textrm{\bsc{#1}} % small caps text out
+}
+\usepackage[]{lipsum}
+\usepackage[]{setspace}
+%% line space
+\setstretch{1.5}
+
+\KOMAoptions{
+  parskip = half-,
+  draft = true,
+}
+\renewcommand*{\multfootsep}{,\nobreakspace}
+
+\newenvironment{transition}{%
+    \begin{minipage}{\linewidth}%
+      \rule{\linewidth}{0.2pt}%
+      \flushleft
+    }{%
+      \rule{\linewidth}{0.2pt}%
+    \end{minipage}%
+}
+\usepackage[]{nicefrac}
+
+%%
+%% color
+%%
+\usepackage[]{titlesec}
+%% section format
+\titleformat{\section}%
+  {\normalfont\huge\rmfamily\bfseries\color{Cerulean}}% format applied to label+text
+  {\llap{\colorbox{Cerulean}{\parbox{1.5cm}{\hfill\color{white}\thesection}}}}% label
+  {0.5em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+% subsection format
+\titleformat{\subsection}%
+  {\normalfont\Large\rmfamily\color{TealBlue}}% format applied to label+text
+  {\llap{\colorbox{TealBlue}{\parbox{0.7cm}{\hfill\color{white}\thesubsection}}}}% label
+  {0.5em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+\titleformat{\subsubsection}%
+  {\normalfont\rmfamily\itshape\large}% format applied to label+text
+  {}% label
+  {}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+\usepackage[x11names, svgnames]{xcolor}
+%%
+%% lang
+%%
+\usepackage[frenchb]{babel}
+\frenchbsetup{ThinColonSpace = true}
+
+
+%%
+%% figures
+%%
+%% pour avoir le texte à droite et les figures à gauche
+%% voir http://www.latex-community.org/forum/viewtopic.php?f=47&p=50022
+% \usepackage{semioneside}
+\usepackage{afterpage}
+
+\makeatletter
+\newcommand\@addfig{\relax}
+\newcommand\addfig[1]{\global\long\def\@addfig{#1}}
+\newcommand\@putfig{\@addfig\addfig{\relax}}
+\newcommand\blankpage{%
+\null
+\vfill
+\@putfig%
+\vfill
+\thispagestyle{empty}% BEWARE, if you want the header and footer, you should put
+                     % the correct style here
+\clearpage%
+\addtocounter{page}{-1}% BEWARE, if you want the left pages to be numbered,
+                       % don't put this line, this is intended to have picture
+                       % page with the same number as the facing text page
+\afterpage{\blankpage}}
+\makeatother
+
+%% permet d'utiliser caption en dehors des floats
+\makeatletter
+\def\@captype{figure}
+\makeatother
+
+\usepackage[]{tikz}
+% \newcommand*{\lassalleClair}{\includegraphics[]{img/lassalleClair.pdf}}
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\newcommand{\lassalleClair}{\crule[NavajoWhite3]{0.3cm}{0.3cm}}
+\newcommand{\lassalleFonce}{\crule[NavajoWhite4]{0.3cm}{0.3cm}}
+
+\definecolor{LightGray}{gray}{0.70}
+
+\newcommand{\tikzcircle}[2][Red, fill=Red]{\tikz[baseline = -0.5ex]
+  \draw[#1, radius=#2] (0,0) circle; }
+\newcommand{\allele}[2][]{%
+ \tikz[baseline = -0.5ex]%
+\draw[#1, fill = #1, opacity=0.5] (0, 0) circle (0.15cm) node[#1,text opacity=1,
+font=\scriptsize\sffamily] {#2};%
+}
+
+\newcommand{\alg}[0]{\allele[Gray]{A}}
+\newcommand{\alA}[0]{\allele[Cerulean]{A}}
+\newcommand{\ala}[0]{\allele[Red]{a}}
+
+%%
+%% title page
+%%
+\usepackage[]{pdfpages}

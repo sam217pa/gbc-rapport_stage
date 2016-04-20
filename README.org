@@ -1,0 +1,25 @@
+#+title: Rapport de Stage
+
+* Rapport de stage
+
+Ce dossier contient tous les éléments nécessaires à compiler le rapport
+de stage.
+
+* TODOS :
+
+** typesetting : [0/2]
+- [ ] créer la page de garde.
+- [ ] supprimer les figures inutiles de l'endmatter.
+
+* Script de compilation
+
+#+BEGIN_SRC sh :results none :shebang "#!/usr/bin/env bash" :tangle make_rapport
+cd ~/stage/rapport_stage
+
+latexmk -pdf rapport.tex \
+        -f \
+        -output-directory=.tmp \
+        -pdflatex="pdflatex -interaction nonstopmode" \
+        -pvc
+
+#+END_SRC
