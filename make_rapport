@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-cd ~/stage/rapport_stage
-
-latexmk -pdf rapport.tex \
-        -f \
-        -output-directory=.tmp \
-        -pdflatex="pdflatex -interaction nonstopmode" \
-        -pvc
