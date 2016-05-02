@@ -3,7 +3,7 @@
 %%
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french, frenchb]{babel}
+% \usepackage[french, frenchb]{babel}
 \usepackage[osf, sc]{mathpazo}
 \usepackage{sansmath}
 % \usepackage[euler-digits, small]{eulervm}
@@ -44,7 +44,7 @@
 \usepackage{wasysym}
 \usepackage{amssymb}
 \usepackage{siunitx}
-\usepackage[]{mhchem}
+\usepackage[version=4]{mhchem}
 
 %%
 %% references
@@ -176,12 +176,9 @@
   {}% before the title body
   []% after the title body
 
-\usepackage[x11names, svgnames]{xcolor}
 %%
 %% lang
 %%
-\usepackage[frenchb]{babel}
-\frenchbsetup{ThinColonSpace = true}
 
 
 %%
@@ -239,3 +236,9 @@ font=\scriptsize\sffamily] {#2};%
 %% title page
 %%
 \usepackage[]{pdfpages}
+
+%
+% babel
+%
+\usepackage[frenchb]{babel}
+\frenchbsetup{ThinColonSpace = true}

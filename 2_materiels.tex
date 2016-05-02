@@ -4,6 +4,13 @@
 \subsection{Constructions des plasmides}
 \label{subsec:constructions}
 
+\addfig{%
+  \input{schema/construct.tex}
+  \caption{\textbf{Cuicui.} \rmfamily%
+    \setstretch{1.1} %
+    J'ai mangé du pain.
+  }
+}
 Les constructions suivantes ont été réalisées par bioinformatique.
 
 Les PCRs spécifiques du gène d'intérêt ont été réalisées. Les amplicons ainsi
@@ -48,30 +55,43 @@ automatique Scan\textsuperscript{\textregistered}1200 (InterScience).
 
 96 clones isolés ont été purifiés par isolement sur milieu LBK et incubation
 \SI{24}{\hour} à \si{37°C}. Une colonie isolée par clone a été suspendue dans
-\SI{50}{\uL} d'\ce{H_2O} ultra-pure. Les locus d'intérêt ont été amplifiés en
-PCR par la Taq polymérase haute fidélité Phusion (ThermoFischer). Les PCRs ont
-été réalisées avec \SI{2}{\uL} de suspension pour matrice. L'amplification a été
-confirmée par migration sur gel d'agarose à 1\%. Les amplicons ont été séquencés
-par la technique de Sanger.
+\SI{50}{\uL} d'\ce{H_2O} ultra-pure. \SI{2}{\uL} de ces suspensions ont servi de
+matrice pour amplifier les locus d'intérêt en PCR par la Taq polymérase
+haute fidélité Phusion (ThermoFischer). L'amplification a été confirmée par
+migration sur gel d'agarose à 1\%. Les amplicons ont été séquencés par la
+technique de Sanger.
 % TODO citation
 
 \subsection{Alignements}
 \label{subsec:align}
 
+\addfig{%
+
+  \label{img:construct}
+
+  \input{schema/align.tex}
+  \caption{\textbf{Processus d'alignement et de SNP calling.} \rmfamily%
+    \setstretch{1.1} %
+    Les lectures de séquençage \tikz[baseline = -0.5ex, line width =
+    1.3pt]{\draw[Green] [->] (0, 0) -- (0.5, 0);} sont alignées à l'alignement
+    de la séquence receveuse \tikz[baseline = -0.5ex, line
+    width=1.3pt]{\draw[Red] [->] (0, 0) -- (0.5, 0);} et de la séquence donneuse
+    \tikz[baseline = -0.5ex, line width = 1.3pt]{\draw[Cerulean] [->] (0, 0) --
+      (0.5, 0);} de l'évènement de recombinaison (en \textsf{a}). Une seconde
+    étape permet de déterminer la polarité de chacun des SNP (en \textsf{b}). }
+  \label{img:align}
+}
+
 Les spectrogrammes de séquençage reçus au format propriétaire \texttt{abi}
 (Applied Biosystem) ont été analysés par le programme \texttt{phred}
-% TODO citation
-. Les séquences \texttt{FASTA} obtenues ont été alignées à la référence par
-\texttt{muscle}
-% TODO citation
-. La référence en question correspond à l'alignement de la séquence sauvage et
-de la séquence du gène synthétique, respectivement \emph{receveur} et
-\emph{donneur} de l'évènement de recombinaison. Un script Python
-% TODO citation
-a été développé pour analyser les alignements obtenus. Il infère les positions
-des SNPs d'intérêt dans l'alignement de référence, et détermine le génotype du
-clone séquencé. Les alignements par paire en colonne obtenus ont été analysés
-par \texttt{R}
-% TODO citation
-. Les scripts développés sont accessibles à l'adresse
-\url{http://sam217pa.github.io/gbc-seq_mars/project.html}.
+\cite{ewing_base-calling_1998} et convertis en format universel \texttt{FASTA}.
+Les séquences obtenues ont été alignées à la référence par
+\texttt{muscle 3.8.31} \cite{edgar_muscle:_2004}. La référence en question
+correspond à l'alignement de la séquence sauvage et de la séquence du gène
+synthétique, respectivement \emph{receveur} et \emph{donneur} de l'évènement de
+recombinaison. Un script Python \cite{_python_2016} a été développé pour
+analyser les alignements obtenus. Il infère les positions des SNPs d'intérêt
+dans l'alignement de référence, et détermine le génotype du clone séquencé. Les
+alignements par paire en colonne obtenus ont été analysés par \textrm{R}
+\texttt{3.2.3} \cite{r_core_team_r:_2015}. Les scripts développés sont
+accessibles à l'adresse \url{https://github.com/sam217pa/gbc-seq_mars}.
