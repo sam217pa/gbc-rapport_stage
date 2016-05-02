@@ -19,4 +19,3 @@ commit:
 
 clean:
 	latexmk -C rapport.tex
-	rm -r .tmp
