@@ -1,3 +1,5 @@
+% vi: filetype=tex
+
 \section{Matériels \& Méthodes}
 \label{sec:materiel}
 
@@ -9,7 +11,7 @@
   \caption{\textbf{Cuicui.} \rmfamily%
     \setstretch{1.1} %
     J'ai mangé du pain.
-  }
+  }%
 }
 Les constructions suivantes ont été réalisées par bioinformatique.
 
@@ -85,13 +87,16 @@ technique de Sanger.
 Les spectrogrammes de séquençage reçus au format propriétaire \texttt{abi}
 (Applied Biosystem) ont été analysés par le programme \texttt{phred}
 \cite{ewing_base-calling_1998} et convertis en format universel \texttt{FASTA}.
-Les séquences obtenues ont été alignées à la référence par
-\texttt{muscle 3.8.31} \cite{edgar_muscle:_2004}. La référence en question
-correspond à l'alignement de la séquence sauvage et de la séquence du gène
-synthétique, respectivement \emph{receveur} et \emph{donneur} de l'évènement de
-recombinaison. Un script Python \cite{_python_2016} a été développé pour
-analyser les alignements obtenus. Il infère les positions des SNPs d'intérêt
-dans l'alignement de référence, et détermine le génotype du clone séquencé. Les
-alignements par paire en colonne obtenus ont été analysés par \textrm{R}
-\texttt{3.2.3} \cite{r_core_team_r:_2015}. Les scripts développés sont
-accessibles à l'adresse \url{https://github.com/sam217pa/gbc-seq_mars}.
+Les séquences obtenues ont été alignées à la référence par \texttt{ muscle
+	v3.8.31} \cite{edgar_muscle:_2004}. La référence en question correspond
+à l'alignement de la séquence sauvage et de la séquence du gène synthétique,
+respectivement \emph{receveur} et \emph{donneur} de l'évènement de
+recombinaison. Un script Python \cite{cock_biopython:_2009} a été développé
+pour analyser les alignements obtenus. Il infère les positions des SNPs
+d'intérêt dans l'alignement de référence, et détermine le génotype du clone
+séquencé. Les alignements par paire en colonne obtenus ont été analysés par
+\textrm{R} \texttt{3.2.3} \cite{r_core_team_r:_2015}. Les programmes développés
+sont accessibles à l'adresse \url{https://github.com/sam217pa/gbc-seq_mars}.
+Les données formattées et les fonctions d'analyse ont été assemblées dans le
+package \texttt{gcbiasr} disponible à l'adresse
+\url{https://github.com/sam217pa/gbc-gcbiasr}.
