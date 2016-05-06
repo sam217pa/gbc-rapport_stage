@@ -1,63 +1,65 @@
 \begin{center}
-    \rmfamily
-    \setstretch{1.0}
+  \rmfamily
+  \setstretch{1.0}
 
-    \begin{tikzpicture}[scale=0.7, line width = 2pt, join=round]
+  \begin{tikzpicture}[scale=0.7, line width = 2pt, join=round]
 
-	\begin{scope}[shift={(-0.3, 10)}]
+    \begin{scope}[shift={(-0.3, 10)}]
 	    % \draw[Green] (0, 0) arc (0:30:3);
 	    \draw[Gray]  (1, 0.5) node {\scriptsize +};
 	    \draw[Green] (0, 0) arc (150:390:1);
 	    \draw[Green] (1, -0.5) node {\scriptsize pGEM-T};
 	    \draw[Green] (0.1, 0.3) node {\tiny \sffamily T};
 	    \draw[Green] (1.7, 0.3) node {\tiny \sffamily T};
-	\end{scope}
+    \end{scope}
 
 
-	\begin{scope}[shift={(0, 11)}, line width = 0.5 pt]
+    \begin{scope}[shift={(0, 11)}, line width = 0.5 pt]
 	    \foreach \y in {0,0.2,...,2} {
-		\draw[Cerulean] (0, \y) -- (1, \y);
-		\draw[Gold1   ] (0.9, \y) -- (1, \y);
-		\draw[Cerulean] (-0.1, \y) node {\tiny \sffamily A};
-		\draw[Cerulean] (1.1, \y) node {\tiny \sffamily A};
+        \draw[Cerulean] (0, \y) -- (1, \y);
+        \draw[Gold1   ] (0.9, \y) -- (1, \y);
+        \draw[Cerulean] (-0.1, \y) node {\tiny \sffamily A};
+        \draw[Cerulean] (1.1, \y) node {\tiny \sffamily A};
 	    }
-	\end{scope}
+	    \draw[Cerulean, align=center] (0.5, 2.5) node[font=\tiny] {Gène\\Synthétique};
+      % essaie d'aligner
+    \end{scope}
 
-	\draw[Gray] [->] (3, 11) -- (4, 11) node[above, midway]
-	%\node[inner sep = 0pt] (ligase) at (5, 11)
-	{\includegraphics[width=0.1\textwidth]{schema/construct-img/ligation.png}}
-	node[below, midway] {Ligature};
-	%\draw
+    \draw[Gray] [->] (3, 11) -- (4, 11) node[above, midway]
+    % \node[inner sep = 0pt] (ligase) at (5, 11)
+    {\includegraphics[width=0.1\textwidth, angle = 90]{construct-img/ligation.png}}
+    node[below, midway, font=\scriptsize] {Ligature};
+    % \draw
 
-	\begin{scope}[shift={(5.5, 11.5)}]
+    \begin{scope}[shift={(5.5, 11.5)}]
 	    % plasmide pGEM-T avec construction, avant infusion
 	    \draw[Green] (0, 0) arc (150:390:1);
 	    \draw[Brown1] (0, 0) arc (150:20:1) ;
 	    \draw[Gold1] (0, 0) arc (150:30:1);
 	    \draw[Cerulean] (0, 0) arc (150:40:1) ;
-	\end{scope}
-
-	% inclure graphique d'un tube de DNA ligase
+    \end{scope}
 
 
-	\begin{scope}[shift={(-5, 4)}]
+    \draw[Gray] [->] (8, 10) -- (10, 9.5) node[midway, above, font=\scriptsize] {Digestion};
+
+    \begin{scope}[shift={(7, 8.5)}]
 	    % plasmide ouvert, avec ancre et kana
 	    \draw[Green] (0, 0) -- (4, 0) node[auto, above, midway] {\tiny{pGEM-T}};
 	    \draw[Cerulean] (4, 0) -- (6, 0) node [auto, above, midway] {\tiny{Gène Synthétique}};
 	    \draw[Gold1] (6, 0) -- (6.2, 0);
 
-	    \draw[Gold1] (6, 0.7) -- (6.2, 0.7);
-	    \draw[Orchid3] (6.2, 0.7) -- (7.8, 0.7) node[auto, above, midway] {\tiny{KanR}};
-	    \draw[SteelBlue1] (7.8, 0.7) -- (8.0, 0.7);
+	    \draw[Gold1] (6, -0.3) -- (6.2, -0.3);
+	    \draw[Orchid3] (6.2, -0.3) -- (7.8, -0.3) node[auto, above, midway] {\tiny{KanR}};
+	    \draw[SteelBlue1] (7.8, -0.3) -- (8.0, -0.3);
 
-	    \draw[SteelBlue1] (7.8, 1.0) -- (8.0, 1.0);
-	    \draw[Orange1] (8.0, 1.0) -- (9.8, 1.0) node[auto, above, midway] {\tiny{Ancre}};
-	    \draw[Brown1] (9.8, 1.0) -- (10.0, 1.0);
+	    \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+	    \draw[Orange1] (8.0, 0) -- (9.8, 0) node[auto, above, midway] {\tiny{Ancre}};
+	    \draw[Brown1] (9.8, 0) -- (10.0, 0);
 
 	    \draw[Brown1] (0, 0) -- (0.2, 0);
-	\end{scope}
+    \end{scope}
 
-	\begin{scope}[shift={(-7, 2.5)}]
+    \begin{scope}[shift={(-7, 2.5)}]
 	    \draw[Green, rounded corners=2ex] (3, -1) rectangle (11, 0);
 	    \draw[Cerulean] (4, 0) -- (6, 0);
 	    \draw[Gold1] (6, 0) -- (6.2, 0);
@@ -67,132 +69,132 @@
 	    \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
 	    \draw[Orange1] (8.0, 0) -- (9.8, 0);
 	    \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	\end{scope}
+    \end{scope}
 
-	\begin{scope}[shift={(2, 0)}]
+    \begin{scope}[shift={(2, 0)}]
 	    \begin{scope}[shift={(-5, 0)}, scale = 0.2]
-		\draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
 	    \end{scope}
 
 	    \begin{scope}[shift={(-3, 0)}, scale = 0.2]
-		\draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
 	    \end{scope}
 
 	    \begin{scope}[shift={(-1, 0)}, scale = 0.2]
-		\draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
 	    \end{scope}
 
 	    \begin{scope}[shift={(-5, -0.5)}, scale = 0.2]
-		\draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
 	    \end{scope}
 
 	    \begin{scope}[shift={(-3, -0.5)}, scale = 0.2]
-		\draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
 	    \end{scope}
 
 	    \begin{scope}[shift={(-1, -0.5)}, scale = 0.2]
-		\draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
 	    \end{scope}
-	\end{scope}
+    \end{scope}
 
-	\begin{scope}[shift={(-2.5, -1)}]
+    \begin{scope}[shift={(-2.5, -1)}]
 	    \begin{scope}[shift={(0, -1)}, scale = 0.4]
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
-		\draw[Green] (2, 0) -- (4, 0);
-		\draw[Green] (10, 0) -- (12, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green] (2, 0) -- (4, 0);
+        \draw[Green] (10, 0) -- (12, 0);
 	    \end{scope}
 	    \begin{scope}[shift={(0, -1.2)}, scale = 0.4]
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
-		\draw[Green] (2, 0) -- (4, 0);
-		\draw[Green] (10, 0) -- (12, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green] (2, 0) -- (4, 0);
+        \draw[Green] (10, 0) -- (12, 0);
 	    \end{scope}
 	    \begin{scope}[shift={(0, -1.4)}, scale = 0.4]
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
-		\draw[Green] (2, 0) -- (4, 0);
-		\draw[Green] (10, 0) -- (12, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green] (2, 0) -- (4, 0);
+        \draw[Green] (10, 0) -- (12, 0);
 	    \end{scope}
 	    \begin{scope}[shift={(0, -1.6)}, scale = 0.4]
-		\draw[Cerulean] (4, 0) -- (6, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Gold1] (6, 0) -- (6.2, 0);
-		\draw[Orchid3] (6.2, 0) -- (7.8, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-		\draw[Orange1] (8.0, 0) -- (9.8, 0);
-		\draw[Brown1] (9.8, 0) -- (10.0, 0);
-		\draw[Green] (2, 0) -- (4, 0);
-		\draw[Green] (10, 0) -- (12, 0);
+        \draw[Cerulean] (4, 0) -- (6, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Gold1] (6, 0) -- (6.2, 0);
+        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[Green] (2, 0) -- (4, 0);
+        \draw[Green] (10, 0) -- (12, 0);
 	    \end{scope}
-	\end{scope}
+    \end{scope}
 
-    \end{tikzpicture}
+  \end{tikzpicture}
 \end{center}
