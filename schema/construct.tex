@@ -1,8 +1,51 @@
 \begin{center}
   \rmfamily
   \setstretch{1.0}
+  \tikzset{>=stealth}
+  \tikzset{plasmid lines/.style={xscale = 0.2, yscale = 0.2, very thick}}
+  \tikzset{legende/.style={font=\scriptsize, color=Gray, align=right}}
+
+  \tikzset{
+    plasmid/.pic={
+	    \draw[Green, plasmid lines, thick] (3, -1) rectangle (11, 0);
+	    \draw[Cerulean, plasmid lines ] (4, 0) -- (6, 0);
+	    \draw[Gold1 , plasmid lines] (6,  0) -- (6.2, 0);
+	    \draw[Gold1 , plasmid lines] (6,  0) -- (6.2, 0);
+	    \draw[Orchid3 , plasmid lines] (6.2,  0) -- (7.8, 0);
+	    \draw[SteelBlue1 , plasmid lines] (7.8, 0) -- (8.0, 0);
+	    \draw[SteelBlue1 , plasmid lines] (7.8, 0) -- (8.0, 0);
+	    \draw[Orange1 , plasmid lines] (8.0, 0) -- (9.8, 0);
+	    \draw[Brown1 , plasmid lines] (9.8, 0) -- (10.0, 0);
+    }
+  }
+  \tikzset{
+    construct/.pic={
+        \draw[plasmid lines, Cerulean] (4, 0) -- (6, 0);
+        \draw[plasmid lines, Gold1] (6, 0) -- (6.2, 0);
+        \draw[plasmid lines, Gold1] (6, 0) -- (6.2, 0);
+        \draw[plasmid lines, Orchid3] (6.2, 0) -- (7.8, 0);
+        \draw[plasmid lines, SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[plasmid lines, SteelBlue1] (7.8, 0) -- (8.0, 0);
+        \draw[plasmid lines, Orange1] (8.0, 0) -- (9.8, 0);
+        \draw[plasmid lines, Brown1] (9.8, 0) -- (10.0, 0);
+        \draw[plasmid lines, Green, thick] (2, 0) -- (4, 0);
+        \draw[plasmid lines, Green, thick] (10, 0) -- (12, 0);
+    }
+  }
+
+  \tikzset{
+    gene interet/.pic={
+      \draw[xscale = 0.5, Cerulean] (0, 0) -- (1, 0);
+      \draw[xscale = 0.5, Gold1] (0.8, 0) -- (1, 0);
+    }
+  }
 
   \begin{tikzpicture}[scale=0.7, line width = 2pt, join=round]
+    \begin{scope}[shift={(-3.5, 12)}]
+      \draw[Cerulean] (0, 0) -- (1, 0);
+      \draw[Gold1] (0.8, 0) -- (1, 0);
+      \draw[Gray] [->] (1.5, 0) -- (2.7, 0) node[below, midway, font=\scriptsize] {PCR};
+    \end{scope}
 
     \begin{scope}[shift={(-0.3, 10)}]
 	    % \draw[Green] (0, 0) arc (0:30:3);
@@ -27,7 +70,7 @@
 
     \draw[Gray] [->] (3, 11) -- (4, 11) node[above, midway]
     % \node[inner sep = 0pt] (ligase) at (5, 11)
-    {\includegraphics[width=0.1\textwidth, angle = 90]{construct-img/ligation.png}}
+    {\includegraphics[width=0.1\textwidth, angle = 90]{schema/construct-img/ligation.png}}
     node[below, midway, font=\scriptsize] {Ligature};
     % \draw
 
@@ -59,142 +102,106 @@
 	    \draw[Brown1] (0, 0) -- (0.2, 0);
     \end{scope}
 
-    \begin{scope}[shift={(-7, 2.5)}]
-	    \draw[Green, rounded corners=2ex] (3, -1) rectangle (11, 0);
-	    \draw[Cerulean] (4, 0) -- (6, 0);
-	    \draw[Gold1] (6, 0) -- (6.2, 0);
-	    \draw[Gold1] (6, 0) -- (6.2, 0);
-	    \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+    \draw[Gray] [->] (14, 7.5) -- (14, 6.5) node[legende, midway, left] {Ligature \\ InFusion};
+
+    \begin{scope}[shift={(7, 6)}]
+      % Plasmide fermé avec infusion
+	    \draw[Green, rounded corners, thick] (3, -0.5) rectangle (11, 0);
+	    \draw[Cerulean ] (4, 0) -- (6, 0);
+	    \draw[Gold1 ] (6,  0) -- (6.2, 0);
+	    \draw[Gold1 ] (6,  0) -- (6.2, 0);
+	    \draw[Orchid3 ] (6.2,  0) -- (7.8, 0);
+	    \draw[SteelBlue1 ] (7.8, 0) -- (8.0, 0);
+	    \draw[SteelBlue1 ] (7.8, 0) -- (8.0, 0);
+	    \draw[Orange1 ] (8.0, 0) -- (9.8, 0);
+	    \draw[Brown1 ] (9.8, 0) -- (10.0, 0);
+    \end{scope}
+
+    \draw[Gray] [->] (14, 5) -- (14, 4) node[legende, midway, left] {Amplification clonale\\dans \emph{E.coli}};
+
+    \begin{scope}[shift={(14, 2.5)}]
+      % Plasmide apmplifié avec infusion
+
+      \matrix (A)[column sep=2mm, row sep=2mm] {
+        \pic{plasmid}; & \pic{plasmid}; & \pic{plasmid}; \\
+        \pic{plasmid}; & \pic{plasmid}; & \pic{plasmid}; \\
+        \pic{plasmid}; & \pic{plasmid}; & \pic{plasmid}; \\
+        \pic{plasmid}; & \pic{plasmid}; & \pic{plasmid}; \\
+      };
+    % pic {plasmid};
+
+    \end{scope}
+
+    \draw[Gray] [->] (14, 1) -- (14, 0) node[legende, midway, left] {Linéarisation par\\digestion enzymatique};
+
+    \begin{scope}[shift={(14, -1)}, scale = 0.4]
+      \matrix (A)[column sep=2mm, row sep=2mm] {
+        \pic{construct}; & \pic{construct}; & \pic{construct}; \\
+        \pic{construct}; & \pic{construct}; & \pic{construct}; \\
+        \pic{construct}; & \pic{construct}; & \pic{construct}; \\
+        \pic{construct}; & \pic{construct}; & \pic{construct}; \\
+      };
+    \end{scope}
+
+    %% TEXTE DE DESCRIPTION
+    \node[text width=8cm, legende, align = left] at (2, 3) {
+      Le gène d'intérêt \tikz[baseline = -0.5ex, line width=1.3pt] {\path (0, 0)
+        pic {gene interet};} est amplifié par PCR spécifique. Des bases adénines
+      sont ajoutées naturellement sur les fragments au cours des derniers cycles
+      de PCR. Ces fragments sont ensuite ligaturés dans le plasmide pGEM-T.
+      Celui-ci est disponible ouvert avec des bases thymines sortantes. La
+      ligature est catalysée par la T4DNA Ligase. Le plasmide obtenu est
+      linéarisé par digestion enzymatique au site d'insertion des fragments.
+
+      La cassette de résistance à la kanamycine \tikz[baseline = -0.5ex, very thick, scale = 0.3] {
+	    \draw[Gold1] (0, 0) -- (0.2, 0);
+	    \draw[Orchid3] (0.2, 0) -- (1.8, 0);
+	    \draw[SteelBlue1] (1.8, 0) -- (2, 0);
+      } ainsi que la région facilitant l'homologie \tikz[baseline = -0.5ex, very thick, scale = 0.3, xshift=-7.8] {
 	    \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-	    \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-	    \draw[Orange1] (8.0, 0) -- (9.8, 0);
+	    \draw[Orange1] (8.0, 0) -- (9.8, 0) ;
 	    \draw[Brown1] (9.8, 0) -- (10.0, 0);
-    \end{scope}
+      }
+      sont préalablement amplifiées par PCR en utilisant des amorces porteuses de
+      régions 3' flottantes, complémentaires des extrémités des fragments
+      voisins. La ligature entre les trois fragments obtenus est réalisée à
+      l'aide du kit Takara InFusion. Les constructions plasmidiques obtenues
+      sont amplifiées clonalement par culture en milieu sélectif liquide, et
+      linéarisées par digestion enzymatique.
+    };
 
-    \begin{scope}[shift={(2, 0)}]
-	    \begin{scope}[shift={(-5, 0)}, scale = 0.2]
-        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	    \end{scope}
 
-	    \begin{scope}[shift={(-3, 0)}, scale = 0.2]
-        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	    \end{scope}
+    %% Représente le génome d'acinetobacter en rouge, avec la construction
+    %% associée.
+    \begin{scope}[shift={(-5, -2)}]
+      % représente la construction, avec l'insertion de la cassette de résistance
+      \draw[Cerulean] (4, 0) -- (6, 0);
+      \draw[Gold1, ultra thick] (6, 0) -- (6.2, 0);
+      \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+      \draw[SteelBlue1, ultra thick] (7.8, 0) -- (8.0, 0);
+      \draw[Orange1] (8.0, 0) -- (9.8, 0);
+      \draw[Brown1, ultra thick] (9.8, 0) -- (10.0, 0);
+      \draw[Green, thick] (2, 0) -- (4, 0);
+      \draw[Green, thick] (10, 0) -- (12, 0) node[font = \tiny, above, align = right] {Consruction \\ plasmidique};
 
-	    \begin{scope}[shift={(-1, 0)}, scale = 0.2]
-        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	    \end{scope}
+      % Génome acinetobacter
+      \draw[Cerulean] (5, -1) -- (7, -1);
+      % \draw[Gold1] (6, 0) -- (6.2, 0);
+      \draw[Orange1] (7.0, -1) -- (8.8, -1);
+      \draw[SteelBlue1, thick] (2, -1) -- (5, -1);
+      \draw[SteelBlue1, thick] (8.8, -1) -- (12, -1) node[font=\tiny, below, align = right] {Génome \\ \emph{Acinetobacter}};
+      %amorces
+      \draw[Red3, ultra thick] (4, -1) -- (4.2, -1);
 
-	    \begin{scope}[shift={(-5, -0.5)}, scale = 0.2]
-        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	    \end{scope}
+      % Lignes reliant les fragments
+      \draw[Cerulean, ultra thin] (4, 0) -- (5, -1);
+      \draw[Cerulean, ultra thin] (6, 0) -- (7, -1);
+      \draw[Orange1, ultra thin] (8, 0) -- (7, -1);
+      \draw[Orange1, ultra thin] (9.8, 0) -- (8.8, -1);
 
-	    \begin{scope}[shift={(-3, -0.5)}, scale = 0.2]
-        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	    \end{scope}
-
-	    \begin{scope}[shift={(-1, -0.5)}, scale = 0.2]
-        \draw[Green, rounded corners=0.2ex] (3, -1) rectangle (11, 0);
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-	    \end{scope}
-    \end{scope}
-
-    \begin{scope}[shift={(-2.5, -1)}]
-	    \begin{scope}[shift={(0, -1)}, scale = 0.4]
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-        \draw[Green] (2, 0) -- (4, 0);
-        \draw[Green] (10, 0) -- (12, 0);
-	    \end{scope}
-	    \begin{scope}[shift={(0, -1.2)}, scale = 0.4]
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-        \draw[Green] (2, 0) -- (4, 0);
-        \draw[Green] (10, 0) -- (12, 0);
-	    \end{scope}
-	    \begin{scope}[shift={(0, -1.4)}, scale = 0.4]
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-        \draw[Green] (2, 0) -- (4, 0);
-        \draw[Green] (10, 0) -- (12, 0);
-	    \end{scope}
-	    \begin{scope}[shift={(0, -1.6)}, scale = 0.4]
-        \draw[Cerulean] (4, 0) -- (6, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Gold1] (6, 0) -- (6.2, 0);
-        \draw[Orchid3] (6.2, 0) -- (7.8, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[SteelBlue1] (7.8, 0) -- (8.0, 0);
-        \draw[Orange1] (8.0, 0) -- (9.8, 0);
-        \draw[Brown1] (9.8, 0) -- (10.0, 0);
-        \draw[Green] (2, 0) -- (4, 0);
-        \draw[Green] (10, 0) -- (12, 0);
-	    \end{scope}
     \end{scope}
 
   \end{tikzpicture}
+
+
 \end{center}
