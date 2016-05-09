@@ -205,6 +205,9 @@
 
       % petit éclair pour marquer la cassure
       \node[Gold4, font=\large] at (7, -1) {\Lightning};
+      \node[Gray, font=\tiny] at (7, -1.4) {Cassure Double Brin};
+
+      \draw[Gray] [->] (7, -1.6) -- (7, -2.4) node[legende, left, midway] {Résection};
 
       % brin ->
       \draw[Cerulean, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -2.5) -- (7, -2.5);
@@ -217,32 +220,36 @@
       \draw[arrows = {Stealth[right, swap]-}, SteelBlue1, thick] (2, -2.7) -- (5, -2.7);
       \draw[SteelBlue1, thick] (8.8, -2.7) -- (12, -2.7);
 
+      \draw[Gray] [->] (7, -2.8) -- (7, -3.4) node[legende, midway, left] {Réparation};
+
       \draw[Cerulean, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -3.5) -- (7, -3.5);
       \draw[Orange1] (8.3, -3.5) -- (8.8, -3.5);
       \draw[SteelBlue1, thick] (2, -3.5) -- (5, -3.5);
       \draw[arrows = {-Stealth[left]}, SteelBlue1, thick] (8.8, -3.5) -- (12, -3.5);
       % brin <-
       \draw[Cerulean, ultra thick] (5, -3.7) -- (5.5, -3.7);
-      \draw[arrows = {-Stealth[right, swap, scale = 1]}, Orange1, very thick] (8.8, -3.7) -- ++(-0.5, 0) -- ++(-0.2, -0.6) -- ++(-0.7, 0);
+      \draw[ Orange1, very thick] (8.8, -3.7) -- ++(-0.5, 0) -- ++(-0.2, -0.6) -- ++(-0.7, 0);
       \draw[arrows = {Stealth[right, swap]-}, SteelBlue1, thick] (2, -3.7) -- (5, -3.7);
       \draw[SteelBlue1, thick] (8.8, -3.7) -- (12, -3.7);
 
       %% fragment insert avec boucle pour cassette de résistance
-      \draw[Cerulean, very thick] (5, -4.6) -- ++(1.8, 0);
-      \draw[Orchid3, very thick] (7.0, -4.6) .. controls (6.0, -5.5) and (8.0, -5.5) .. (7.0, -4.6);
-      \draw[Gold1, very thick] (6.8, -4.6) -- ++(0.2, 0);
-      \draw[SteelBlue1, very thick] (7.0, -4.6) -- ++(0.2, 0);
-      \draw[Green, thick] (5, -4.6) -- ++(-2, 0);
-      \draw[Orange1, very thick] (7.2, -4.6) -- ++(2, 0);
-      \draw[arrows = {-Stealth[left]}, Green, thick] (9.2, -4.6) -- ++(2, 0);
-      % \draw[Cerulean] (4, -4.6) -- (6, -4.6);
-      % % \draw[Gold1, ultra thick] (6, -4.6) -- (6.2, -4.6);
-      % % \draw[Orchid3] (6.2, -4.6) .. controls (7.0, -6) .. controls ().. (7.8, -4.6);
-      % % \draw[SteelBlue1, ultra thick] (7.8, -4.6) -- (8.0, -4.6);
-      % \draw[Orange1] (8.0, -4.6) -- (9.8, -4.6);
-      % \draw[Brown1, ultra thick] (9.8, -4.6) -- (10.0, -4.6);
-      % \draw[Green, thick] (2, -4.6) -- (4, -4.6);
-      % \draw[arrows = {-Stealth[left]}, Green, thick] (10, -4.6) -- (12, -4.6);
+      % je place l'origine de la construction au début da la région ancre sur le
+      % génome d'acinetobacter. C'est plus facile pour s'aligner
+      \draw[Orange1, very thick]    (8.8, -4.6) -- ++(-2, 0);
+      \draw[SteelBlue1, very thick] (6.8, -4.6) -- ++(-0.2, 0);
+      \draw[Orchid3, very thick]    (6.6, -4.6) -- ++(-2, 0);
+      \draw[Gold1, very thick]      (4.6, -4.6) -- ++(-0.2, 0);
+      \draw[Cerulean, very thick]   (4.4, -4.6) -- ++(-2, 0);
+      \draw[Green, thick] (2.4, -4.6) -- ++(-0.4, 0);
+      \draw[Green, thick, arrows = {-Stealth[left]}] (8.8, -4.6) -- ++(2, 0);
+
+      %% resynthèse
+      \draw[densely dotted, Orange1, very thick]    (7.35, -4.3) --  (6.8, -4.3);
+      \draw[densely dotted, SteelBlue1, very thick] (6.8, -4.3) -- ++(-0.2, 0);
+      \draw[densely dotted, Orchid3, very thick]    (6.6, -4.3) -- ++(-2, 0);
+      \draw[densely dotted, Gold1, very thick]      (4.6, -4.3) -- ++(-0.2, 0);
+      \draw[densely dotted, Cerulean, very thick, arrows = {-Stealth[left, scale = 0.5]}]   (4.4, -4.3) -- ++(-2, 0);
+
     \end{scope}
 
     %% Représente la portion du génome d'acinetobacter qui est résectée après la
