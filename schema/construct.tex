@@ -5,6 +5,20 @@
   \tikzset{plasmid lines/.style={xscale = 0.2, yscale = 0.2, very thick}}
   \tikzset{legende/.style={font=\scriptsize, color=Gray, align=right}}
 
+  \definecolor{plasmid_col   }{rgb}{255, 127, 0   }
+  \definecolor{gs_don_col    }{rgb}{31,  120, 180 }
+  \definecolor{gs_rec_col    }{rgb}{251, 154, 153 }
+  \definecolor{am1_col       }{rgb}{253, 191, 111 }
+  \definecolor{kanr_col      }{rgb}{106, 61,  154 }
+  \definecolor{am2_col       }{rgb}{202, 178, 214 }
+  \definecolor{ancre_don_col }{rgb}{51,  160, 44  }
+  \definecolor{ancre_rec_col }{rgb}{178, 223, 138 }
+  \definecolor{am3_col       }{rgb}{255, 255, 153 }
+  \definecolor{genome_col    }{rgb}{177, 89,  40  }
+  % \definecolor{receveurcol}
+  % \definecolor{kanrcol}
+  % \definecolor{ancrecol}
+
   \tikzset{
     plasmid/.pic={
 	    \draw[Green, plasmid lines, semithick, rounded corners = 0.5ex] (3, -1) rectangle (11, 0);
@@ -198,10 +212,10 @@
       \draw[SteelBlue1, thick] (8.8, -1.2) -- (12, -1.2);
 
       % Lignes reliant les fragments
-      \draw[Cerulean, ultra thin] (4, 0) -- (5, -1);
-      \draw[Cerulean, ultra thin] (6, 0) -- (7, -1);
-      \draw[Orange1, ultra thin] (8, 0) -- (7, -1);
-      \draw[Orange1, ultra thin] (9.8, 0) -- (8.8, -1);
+      \draw[Cerulean, thin, dotted] (4, 0) -- (5, -1);
+      \draw[Cerulean, thin, dotted] (6, 0) -- (7, -1);
+      \draw[Orange1,  thin, dotted] (8, 0) -- (7, -1);
+      \draw[Orange1,  thin, dotted] (9.8, 0) -- (8.8, -1);
 
       % petit éclair pour marquer la cassure
       \node[Gold4, font=\large] at (7, -1) {\Lightning};
@@ -209,6 +223,9 @@
 
       \draw[Gray] [->] (7, -1.6) -- (7, -2.4) node[legende, left, midway] {Résection};
 
+      %%
+      %% Résection
+      %%
       % brin ->
       \draw[Cerulean, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -2.5) -- (7, -2.5);
       \draw[Orange1] (8.3, -2.5) -- (8.8, -2.5);
@@ -220,6 +237,9 @@
       \draw[arrows = {Stealth[right, swap]-}, SteelBlue1, thick] (2, -2.7) -- (5, -2.7);
       \draw[SteelBlue1, thick] (8.8, -2.7) -- (12, -2.7);
 
+      %%
+      %% RÉPARATION
+      %%
       \draw[Gray] [->] (7, -2.8) -- (7, -3.4) node[legende, midway, left] {Réparation};
 
       \draw[Cerulean, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -3.5) -- (7, -3.5);
@@ -235,28 +255,146 @@
       %% fragment insert avec boucle pour cassette de résistance
       % je place l'origine de la construction au début da la région ancre sur le
       % génome d'acinetobacter. C'est plus facile pour s'aligner
-      \draw[Orange1, very thick]    (8.8, -4.6) -- ++(-2, 0);
-      \draw[SteelBlue1, very thick] (6.8, -4.6) -- ++(-0.2, 0);
-      \draw[Orchid3, very thick]    (6.6, -4.6) -- ++(-2, 0);
-      \draw[Gold1, very thick]      (4.6, -4.6) -- ++(-0.2, 0);
-      \draw[Cerulean, very thick]   (4.4, -4.6) -- ++(-2, 0);
-      \draw[Green, thick] (2.4, -4.6) -- ++(-0.4, 0);
+      \draw[Orange1, very thick]                     (8.8, -4.6) -- ++(-2, 0);
+      \draw[SteelBlue1, very thick]                  (6.8, -4.6) -- ++(-0.2, 0);
+      \draw[Orchid3, very thick]                     (6.6, -4.6) -- ++(-2, 0);
+      \draw[Gold1, very thick]                       (4.6, -4.6) -- ++(-0.2, 0);
+      \draw[Cerulean, very thick]                    (4.4, -4.6) -- ++(-2, 0);
+      \draw[Green, thick]                            (2.4, -4.6) -- ++(-0.4, 0);
       \draw[Green, thick, arrows = {-Stealth[left]}] (8.8, -4.6) -- ++(2, 0);
 
-      %% resynthèse
+
+      %%
+      %% RESYNTHÈSE
+      %%
+
       \draw[densely dotted, Orange1, very thick]    (7.35, -4.3) --  (6.8, -4.3);
       \draw[densely dotted, SteelBlue1, very thick] (6.8, -4.3) -- ++(-0.2, 0);
       \draw[densely dotted, Orchid3, very thick]    (6.6, -4.3) -- ++(-2, 0);
       \draw[densely dotted, Gold1, very thick]      (4.6, -4.3) -- ++(-0.2, 0);
-      \draw[densely dotted, Cerulean, very thick, arrows = {-Stealth[left, scale = 0.5]}]   (4.4, -4.3) -- ++(-2, 0);
+      \draw[densely dotted, Cerulean, very thick, arrows = {-Stealth[left, scale = 0.5]}]   (4.4, -4.3) -- ++(-1.5, 0);
+      %% lignes permettant de montrer l'appariemment des régions
+      \draw[Cerulean, thin, dotted ] (2.9, -4.3) -- (5, -3.5);
+      \draw[Cerulean, thin, dotted ] (4.4, -4.3) -- (7, -3.5);
 
+      %%
+      %% RÉAPPARIEMMENT
+      %%
+
+      \draw[Gray] [->] (7, -4.8) -- ++(0, -1) node[midway, left, legende] {Réappariemment};
+
+      % brin ->
+      \draw[Cerulean, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -6) -- (7, -6);
+      \draw[Orange1, very thick] (11.4, -6) -- ++(-0.5, 0);
+      \draw[SteelBlue1, thick, arrows = {-Stealth[left]}] (11.4, -6) -- ++(1, 0);
+      % \draw[Orange1] (8.3, -6) -- (8.8, -6);
+      \draw[SteelBlue1, thick] (2, -6) -- (5, -6);
+      %% brin <-
+      % petit bout bleu
+      \draw[Cerulean, ultra thick]                        (5, -6.2)   --   (5.5, -6.2);
+      \draw[Cerulean, densely dotted, very thick, arrows = {Stealth[left, scale = 0.5]-}] (6.0, -6.2) -- ++(1.0, 0);
+      \draw[densely dotted, Gold1, very thick]            (7.0, -6.2) -- ++(0.2, 0);
+      \draw[densely dotted, Orchid3, very thick]          (7.2, -6.2) -- ++(2.0, 0);
+      \draw[densely dotted, SteelBlue1, very thick]       (9.2, -6.2) -- ++(0.2, 0);
+      \draw[densely dotted, Orange1, very thick]          (9.4, -6.2) --   (9.9, -6.2);
+      \draw[solid, Orange1, very thick]                   (9.9, -6.2) -- ++(1.5, 0);
+      % génome
+      \draw[SteelBlue1, thick]                            (11.4, -6.2) -- ++(1, 0);
+      \draw[SteelBlue1, thick, arrows = {Stealth[left]-}] (2, -6.2) --      (5, -6.2);
+
+      %%
+      %% SYNTHÈSE DU BRIN 5'
+      %%
+      \draw[Gray] [->] (7, -6.5) -- ++(0, -1) node[midway, left, legende] {Synthèse du brin \(5'\) };
+
+      %% brin ->
+      \draw[Cerulean, arrows = {-Stealth[left, scale = 1]}, very thick]
+      (5, -8.0) -- (7, -8.0);
+      \draw[Orange1, very thick]
+      (11.4, -8.0) -- ++(-0.5, 0);
+      \draw[SteelBlue1, thick, arrows = {-Stealth[left]}]
+      (11.4, -8.0) -- ++(1, 0);
+      \draw[SteelBlue1, thick]
+      (2, -8.0) -- (5, -8.0);
+      \draw[densely dotted, Gold1, very thick]
+      (7.0, -8.0) -- ++(0.2, 0);
+      \draw[densely dotted, Orchid3, very thick]
+      (7.2, -8.0) -- ++(2.0, 0);
+      \draw[densely dotted, SteelBlue1, very thick]
+      (9.2, -8.0) -- ++(0.2, 0);
+      \draw[densely dotted, Orange1, very thick]
+      (9.4, -8.0) -- ++(1.5, 0);
+
+      %% brin <-
+      \draw[Cerulean, ultra thick]
+      (5, -8.2)   --   (5.5, -8.2);
+      \draw[Cerulean, solid, very thick]
+      (6.0, -8.2) -- ++(1.0, 0);
+      \draw[Cerulean, densely dotted, very thick, arrows = {-Stealth[left, scale = 0.5]}]
+      (6.0, -8.2) -- ++(-0.5, 0);
+      \draw[solid, Gold1, very thick]
+      (7.0, -8.2) -- ++(0.2, 0);
+      \draw[solid, Orchid3, very thick]
+      (7.2, -8.2) -- ++(2.0, 0);
+      \draw[solid, SteelBlue1, very thick]
+      (9.2, -8.2) -- ++(0.2, 0);
+      \draw[solid, Orange1, very thick]
+      (9.4, -8.2) --   (9.9, -8.2);
+      \draw[solid, Orange1, very thick]
+      (9.9, -8.2) -- ++(1.5, 0);
+      % génome
+      \draw[SteelBlue1, thick]
+      (11.4, -8.2) -- ++(1, 0);
+      \draw[SteelBlue1, thick, arrows = {Stealth[left]-}]
+      (2, -8.2) -- (5, -8.2);
+
+
+      %%
+      %% RÉSULTAT FINAL
+      %%
+
+      \draw[Gray] [->] (7, -8.5) -- ++(0, -1) node[midway, left, legende] {Ligature};
+
+      \draw[Cerulean, very thick]
+      (5, -10.0) -- (7, -10.0);
+      \draw[Orange1, very thick]
+      (11.4, -10.0) -- ++(-0.5, 0);
+      \draw[SteelBlue1, thick, arrows = {-Stealth[left]}]
+      (11.4, -10.0) -- ++(1, 0);
+      \draw[SteelBlue1, thick]
+      (2, -10.0) -- (5, -10.0);
+      \draw[solid, Gold1, very thick]
+      (7.0, -10.0) -- ++(0.2, 0);
+      \draw[solid, Orchid3, very thick]
+      (7.2, -10.0) -- ++(2.0, 0);
+      \draw[solid, SteelBlue1, very thick]
+      (9.2, -10.0) -- ++(0.2, 0);
+      \draw[solid, Orange1, very thick]
+      (9.4, -10.0) -- ++(1.5, 0);
+
+      %% brin <-
+      \draw[Cerulean, very thick]
+      (5, -10.2)   -- (5.5, -10.2);
+      \draw[Cerulean, solid, very thick]
+      (6.0, -10.2) -- ++(1.0, 0);
+      \draw[Cerulean, solid, very thick]
+      (6.0, -10.2) -- ++(-0.5, 0);
+      \draw[solid, Gold1, very thick]
+      (7.0, -10.2) -- ++(0.2, 0);
+      \draw[solid, Orchid3, very thick]
+      (7.2, -10.2) -- ++(2.0, 0);
+      \draw[solid, SteelBlue1, very thick]
+      (9.2, -10.2) -- ++(0.2, 0);
+      \draw[solid, Orange1, very thick]
+      (9.4, -10.2) --   (9.9, -10.2);
+      \draw[solid, Orange1, very thick]
+      (9.9, -10.2) -- ++(1.5, 0);
+      % génome
+      \draw[SteelBlue1, thick]
+      (11.4, -10.2) -- ++(1, 0);
+      \draw[SteelBlue1, thick, arrows = {Stealth[left]-}]
+      (2, -10.2) -- (5, -10.2);
     \end{scope}
-
-    %% Représente la portion du génome d'acinetobacter qui est résectée après la
-    %% cassure.
-    % \begin{scope}[shift={(-5, -5)}]
-    %   \draw (0, 1) -- (2, 1);
-    % \end{scope}
 
   \end{tikzpicture}
 
