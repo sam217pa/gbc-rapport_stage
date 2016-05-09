@@ -216,25 +216,26 @@
 \def\@captype{figure}
 \makeatother
 
+%%
+%% TIKZ
+%%
+
 \usepackage[]{tikz}
-% \newcommand*{\lassalleClair}{\includegraphics[]{img/lassalleClair.pdf}}
-\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
-\newcommand{\lassalleClair}{\crule[NavajoWhite3]{0.3cm}{0.3cm}}
-\newcommand{\lassalleFonce}{\crule[NavajoWhite4]{0.3cm}{0.3cm}}
 
-\definecolor{LightGray}{gray}{0.70}
+\definecolor{plasmid_col}{HTML}{15588D}
+\definecolor{gs_don_col}{HTML}{1F78B4} % paired1 bleu foncé
+\definecolor{gs_rec_col}{HTML}{E31A1C} % paired1 rouge foncé
+\definecolor{am1_col}{HTML}{06A858}
+\definecolor{kanr_col}{HTML}{E12C74}
+\definecolor{am2_col}{HTML}{09997E}
+\definecolor{ancre_don_col}{HTML}{9F3E85}
+\definecolor{ancre_rec_col}{HTML}{FD73F7}
+\definecolor{am3_col}{HTML}{53ADF6}
+\definecolor{genome_col}{HTML}{C9A15A}
 
-\newcommand{\tikzcircle}[2][Red, fill=Red]{\tikz[baseline = -0.5ex]
-  \draw[#1, radius=#2] (0,0) circle; }
-\newcommand{\allele}[2][]{%
- \tikz[baseline = -0.5ex]%
-\draw[#1, fill = #1, opacity=0.5] (0, 0) circle (0.15cm) node[#1,text opacity=1,
-font=\scriptsize\sffamily] {#2};%
-}
-
-\newcommand{\alg}[0]{\allele[Gray]{A}}
-\newcommand{\alA}[0]{\allele[Cerulean]{A}}
-\newcommand{\ala}[0]{\allele[Red]{a}}
+\usetikzlibrary{matrix}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{colorbrewer}
 
 %%
 %% title page
@@ -250,9 +251,4 @@ font=\scriptsize\sffamily] {#2};%
 \setmainlanguage{french}
 
 % caption
-\usepackage[]{caption} % must be loaded after babel
-
-
-\usetikzlibrary{matrix}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{colorbrewer}
+\usepackage[figurename=Figure]{caption} % must be loaded after babel
