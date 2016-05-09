@@ -15,4 +15,3 @@ latexmk -pdf rapport.tex \
         -pdflatex="pdflatex -interaction nonstopmode" \
         -pvc
 ```
-

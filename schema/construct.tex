@@ -7,7 +7,7 @@
 
   \tikzset{
     plasmid/.pic={
-	    \draw[Green, plasmid lines, thick] (3, -1) rectangle (11, 0);
+	    \draw[Green, plasmid lines, semithick, rounded corners = 0.5ex] (3, -1) rectangle (11, 0);
 	    \draw[Cerulean, plasmid lines ] (4, 0) -- (6, 0);
 	    \draw[Gold1 , plasmid lines] (6,  0) -- (6.2, 0);
 	    \draw[Gold1 , plasmid lines] (6,  0) -- (6.2, 0);
@@ -175,23 +175,29 @@
     %% associée.
     \begin{scope}[shift={(-5, -2)}]
       % représente la construction, avec l'insertion de la cassette de résistance
-      \draw[Cerulean] (4, 0) -- (6, 0);
+      \draw[Cerulean] (4, 0) -- (6, 0) node[above, midway, font=\tiny] {Gène cible};
       \draw[Gold1, ultra thick] (6, 0) -- (6.2, 0);
-      \draw[Orchid3] (6.2, 0) -- (7.8, 0);
+      \draw[Orchid3] (6.2, 0) -- (7.8, 0) node[above, midway, font=\tiny] {KanR};
       \draw[SteelBlue1, ultra thick] (7.8, 0) -- (8.0, 0);
-      \draw[Orange1] (8.0, 0) -- (9.8, 0);
+      \draw[Orange1] (8.0, 0) -- (9.8, 0) node[above, midway, font=\tiny] {Ancre};
       \draw[Brown1, ultra thick] (9.8, 0) -- (10.0, 0);
       \draw[Green, thick] (2, 0) -- (4, 0);
-      \draw[Green, thick] (10, 0) -- (12, 0) node[font = \tiny, above, align = right] {Consruction \\ plasmidique};
+      \draw[Green, thick] (10, 0) -- (12, 0) node[font = \tiny, above, align = right] {Construction \\ plasmidique};
 
       % Génome acinetobacter
+      % brin 5' 3'
       \draw[Cerulean] (5, -1) -- (7, -1);
       % \draw[Gold1] (6, 0) -- (6.2, 0);
       \draw[Orange1] (7.0, -1) -- (8.8, -1);
       \draw[SteelBlue1, thick] (2, -1) -- (5, -1);
-      \draw[SteelBlue1, thick] (8.8, -1) -- (12, -1) node[font=\tiny, below, align = right] {Génome \\ \emph{Acinetobacter}};
+      \draw[SteelBlue1, thick] [->] (8.8, -1) -- (12, -1) node[font=\tiny, above, align = right] {Génome \\ \emph{Acinetobacter}};
       %amorces
-      \draw[Red3, ultra thick] (4, -1) -- (4.2, -1);
+      \draw[Red3, ultra thick] (4, -1) -- (4.2, -1) node[above left, font=\tiny] {Amorce};
+      \draw[Cerulean] (5, -1.2) -- (7, -1.2);
+      % \draw[Gold1] (6, 0) -- (6.2, 0);
+      \draw[Orange1] (7.0, -1.2) -- (8.8, -1.2);
+      \draw[SteelBlue1, thick] [<-] (2, -1.2) -- (5, -1.2);
+      \draw[SteelBlue1, thick] (8.8, -1.2) -- (12, -1.2);
 
       % Lignes reliant les fragments
       \draw[Cerulean, ultra thin] (4, 0) -- (5, -1);
