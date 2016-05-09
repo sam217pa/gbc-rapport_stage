@@ -1,14 +1,18 @@
 %%
 %% fonts
 %%
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setsansfont[Ligatures = TeX]{Helvetica}
+\setmainfont[Ligatures = TeX]{ETBembo}
+\usepackage{xunicode}
 % \usepackage[french, frenchb]{babel}
-\usepackage[osf, sc]{mathpazo}
-\usepackage{sansmath}
+% \usepackage[osf, sc]{mathpazo}
+% \usepackage{sansmath}
 % \usepackage[euler-digits, small]{eulervm}
-\sansmath
-\usepackage[scaled]{helvet}
+% \sansmath
+% \usepackage[scaled]{helvet}
 %\usepackage[scaled=0.9]{zi4}
 %% sans font as default
 \renewcommand\familydefault{\sfdefault}
@@ -122,7 +126,7 @@
 %%
 %% typographie
 %%
-\usepackage[protrusion=true, expansion=alltext, tracking=true, kerning=true]{microtype}
+% \usepackage[protrusion=true, expansion=alltext, tracking=true, kerning=true]{microtype}
 \providecommand\newthought[1]{%
    \addvspace{0.5\baselineskip plus 0.3ex minus 0.1ex}%
    \noindent\textrm{\bsc{#1}} % small caps text out
@@ -239,8 +243,10 @@ font=\scriptsize\sffamily] {#2};%
 %
 % babel
 %
-\usepackage[frenchb]{babel}
-\frenchbsetup{ThinColonSpace = true}
+% \usepackage[frenchb]{babel}
+% \frenchbsetup{ThinColonSpace = true}
+\usepackage{polyglossia}
+\setmainlanguage{french}
 
 % caption
 \usepackage[]{caption} % must be loaded after babel
