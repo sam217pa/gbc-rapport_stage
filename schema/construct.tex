@@ -4,6 +4,7 @@
   \tikzset{>=stealth}
   \tikzset{plasmid lines/.style={xscale = 0.2, yscale = 0.2, very thick}}
   \tikzset{legende/.style={font=\scriptsize, color=Gray, align=right}}
+  \tikzset{legende text/.style={font=\scriptsize, color=Black, align=right}}
 
   \tikzset{
     plasmid/.pic={
@@ -150,7 +151,7 @@
     \end{scope}
 
     %% TEXTE DE DESCRIPTION
-    \node[text width=9cm, legende, align = left] at (3, 5) {
+    \node[text width=9cm, legende text, align = left] at (3, 5) {
       Le gène d'intérêt \tikz[baseline = -0.5ex, line width=1.3pt] {\path (0, 0)
         pic {gene interet};} est amplifié par PCR spécifique. Des bases adénines
       sont ajoutées naturellement sur les fragments au cours des derniers cycles
@@ -407,7 +408,7 @@
 	    \draw[Gray, thick, densely dotted]
       (4, -10.6) rectangle (7.6, -9.6);
 
-      \draw[Gray, very thick, densely dotted, opacity = 0.6, bend right = 75]
+      \draw[Gray, very thick, densely dotted, opacity = 0.6, out = 180, in = 180]%, bend right = 75]
       [->] (4, -10.6) to (3.8, -17);
     \end{scope}
 
@@ -474,43 +475,45 @@
       \draw[Red3, line width = 1pt, arrows = {->}]
       (4.0, -10.0) -- ++(0.4, 0);
 
-      \draw[Gray, dotted, thick, bend left=25]
-      [->] (11.5, -8) to (7.6, -10);
+      \draw[Gray, dotted, thick, out=-90, in=0]
+      [->] (12.5, -8) to (7.6, -10);
     \end{scope}
 
-    % \node[text width=7cm, legende, align = left] at (14, -4) {%
-    %   Pellentesque dapibus suscipit ligula. Donec posuere augue in quam. Etiam
-    %   vel tortor sodales tellus ultricies commodo. Suspendisse potenti. Aenean
-    %   in sem ac leo mollis blandit. Donec neque quam, dignissim in, mollis nec,
-    %   sagittis eu, wisi. Phasellus lacus. Etiam laoreet quam sed arcu. Phasellus
-    %   at dui in ligula mollis ultricies. Integer placerat tristique nisl.
-    %   Praesent augue. Fusce commodo. Vestibulum convallis, lorem a tempus
-    %   semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.
-    %   Nullam libero mauris, consequat quis, varius et, dictum id, arcu. Mauris
-    %   mollis tincidunt felis. Aliquam feugiat tellus ut neque. Nulla facilisis,
-    %   risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc
-    %   justo sit amet elit.
+    \node[text width=6.5cm, legende text, align = left] at (14, -4) {%
+      % 14 lignes possibles
+      Les constructions linéarisées sont assimilées par \emph{Acinetobacter} en
+      phase exponentielle de croissance. Les cassures doubles-brins occasionnées
+      aléatoirement au cours de la réplication au locus d'intérêt entraînent la
+      résection de la région en \(3'\) du site de cassure. Cette résection est
+      réparée par synthèse utilisant une matrice d'ADN homologue. En cultivant
+      les transformants sur un milieu sélectif, nous avons sélectionné les
+      clones qui ont utilisé la construction plasmidique pour matrice, ayant
+      intégré la cassette de résistance à la kanamycine.
 
-    %   Nullam tristique diam non turpis. Donec pretium posuere tellus. Nullam
-    %   tempus. Mauris mollis tincidunt felis. Lorem ipsum dolor sit amet,
-    %   consectetuer adipiscing elit. Cras placerat accumsan nulla. };
-    \node[text width=7cm, legende, align = left] at (14, -4) {%
-      Pellentesque dapibus suscipit ligula. Donec posuere augue in quam. Etiam
-      vel tortor sodales tellus ultricies commodo. Suspendisse potenti. Aenean
-      in sem ac leo mollis blandit. Donec neque quam, dignissim in, mollis nec,
-      sagittis eu, wisi. Phasellus lacus. Etiam laoreet quam sed arcu. Phasellus
-      at dui in ligula mollis ultricies. Integer placerat tristique nisl.
-      Praesent augue. Fusce commodo. Vestibulum convallis, lorem a tempus
-      semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.
-      Nullam libero mauris, consequat quis, varius et, dictum id, arcu. Mauris
-      mollis tincidunt felis. Aliquam feugiat tellus ut neque. Nulla facilisis,
-      risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc
-      justo sit amet elit.
+      Au cours du réappariemment des brins, un hétéroduplex se forme : les brins
+      homologues ne sont pas rigoureusement complémentaires. Le donneur
+      \tikz[baseline = -0.5ex, very thick, scale = 0.3]{\draw[gs_don_col] (0, 0)
+        -- ++(1, 0);} introduit des mésappariemments avec la séquence du
+      receveur \tikz[baseline = -0.5ex, very thick, scale =
+      0.3]{\draw[gs_rec_col] (0, 0) -- ++(1, 0);} ; ils doivent être corrigés.
+    };
 
-      Nullam tristique diam non turpis. Donec pretium posuere tellus. Nullam
-      tempus. Mauris mollis tincidunt felis. Lorem ipsum dolor sit amet,
-      consectetuer adipiscing elit. Cras placerat accumsan nulla. };
+    \node[text width = 7.4cm, legende text, align = left] at (3.2, -12.8) {%
+      % 6 lignes possibles
+      La correction des bases mésappariées entraîne de la \emph{conversion
+        génique}. La région convertie a le même haplotype que celui du donneur,
+      la région conservée conserve celui du receveur. Elles sont séparées par le
+      point de recombinaison.
 
+      Le brin donneur introduit des mésappariemments toutes les \(30\) paires de
+      bases. Leur correction entraîne la conversion du site soit vers A ou T,
+      soit vers G ou C, selon la construction donneuse.
+
+      L'amplification spécifique de la région convertie puis le séquençage des
+      amplicons permet de déterminer la polarité des évènements de conversion et
+      la position des points de recombinaison.
+      %
+    };
   \end{tikzpicture}
 
 
