@@ -5,11 +5,20 @@
 \label{subsec:constructions}
 
 \addfig{%
-  \input{schema/construct.tex}
-  \caption{\textbf{Constructions moléculaires et mécanismes de conversion
-      génique au cours de la transformation naturelle}
-  }%
+  \input{schema/manip.tex}
+  \caption{\textbf{Protocole de transformation et d'obtention des séquences.} \rmfamily%
+    \setstretch{1.1} %
+    % Les lectures de séquençage \tikz[baseline = -0.5ex, line width =
+    % 1.3pt]{\draw[Green] [->] (0, 0) -- (0.5, 0);} sont alignées à l'alignement
+    % de la séquence receveuse \tikz[baseline = -0.5ex, line
+    % width=1.3pt]{\draw[Red] [->] (0, 0) -- (0.5, 0);} et de la séquence donneuse
+    % \tikz[baseline = -0.5ex, line width = 1.3pt]{\draw[Cerulean] [->] (0, 0) --
+    %   (0.5, 0);} de l'évènement de recombinaison (en \textsf{a}). Une seconde
+    % étape permet de déterminer la polarité de chacun des SNP (en \textsf{b}).
+ }
+  \label{img:manip}
 }
+
 Les constructions suivantes ont été réalisées par bioinformatique.
 
 Les PCRs spécifiques du gène d'intérêt ont été réalisées. Les amplicons ainsi
@@ -96,19 +105,3 @@ sont accessibles à l'adresse \url{https://github.com/sam217pa/gbc-seq_mars}.
 Les données formattées et les fonctions d'analyse ont été assemblées dans le
 package \textrm{R} \texttt{gcbiasr} disponible à l'adresse
 \url{https://github.com/sam217pa/gbc-gcbiasr}.
-
-
-\addfig{%
-  \input{schema/manip.tex}
-  \caption{\textbf{Protocole de transformation et d'obtention des séquences.} \rmfamily%
-    \setstretch{1.1} %
-    % Les lectures de séquençage \tikz[baseline = -0.5ex, line width =
-    % 1.3pt]{\draw[Green] [->] (0, 0) -- (0.5, 0);} sont alignées à l'alignement
-    % de la séquence receveuse \tikz[baseline = -0.5ex, line
-    % width=1.3pt]{\draw[Red] [->] (0, 0) -- (0.5, 0);} et de la séquence donneuse
-    % \tikz[baseline = -0.5ex, line width = 1.3pt]{\draw[Cerulean] [->] (0, 0) --
-    %   (0.5, 0);} de l'évènement de recombinaison (en \textsf{a}). Une seconde
-    % étape permet de déterminer la polarité de chacun des SNP (en \textsf{b}).
- }
-  \label{img:manip}
-}

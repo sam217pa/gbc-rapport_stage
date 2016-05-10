@@ -2,17 +2,23 @@
 \addcontentsline{toc}{section}{Introduction}
 \label{sec:introduction}
 
+\addfig{%
+  \input{schema/construct.tex}
+  \caption{\textbf{Constructions moléculaires et mécanismes de conversion
+      génique au cours de la transformation naturelle}
+  }%
+  \label{img:construct}
+}
+
 Le contenu en base est un paramètre clé de variation des séquences au sein des
 génomes et entre génomes. Chez les procaryotes, le taux de guanine et cytosine
 (\ac{gc}) varie de 16.5\% à 75\% dans les génomes séquencés à ce jour. Une telle
-amplitude soulève plusieurs questions, notamment concernant le ou les mécanismes
-responsables de ces variations : est-ce qu'ils sont associés à la réplication de
-l'ADN, à sa réparation ou à une pression de sélection sur l'usage du code
-génétique ?
-
-Au cours des quinzes dernières années, il a été démontré que la recombinaison
-homologue tend à augmenter localement le taux de GC dans les régions fortement
-recombinantes des génomes
+amplitude soulève plusieurs questions. Celles qui nous intéressent concernent
+les mécanismes responsables de ces variations : est-ce qu'ils sont associés à la
+réplication de l'ADN, à sa réparation ou à une pression de sélection sur l'usage
+du code génétique ? Au cours des quinzes dernières années, il a été démontré que
+la recombinaison homologue tend à augmenter localement le taux de GC dans les
+régions fortement recombinantes des génomes
 eucaryotes\cite{duret_biased_2009,lesecque_gc-biased_2013,williams_non-crossover_2015}.
 Au cours de la réparation des cassures doubles brins par recombinaison
 homologue, les mésappariemments locaux sont réparés par un mécanisme
@@ -39,4 +45,31 @@ non-recombinantes, une observation compatible avec l'hypothèse du biais de
 conversion biaisé vers GC (\ac{gbgc}). Elles montrent également que la fixation
 préférentielle des allèles GC va à l'encontre de la fixation des allèles
 optimaux des codons, une signature caractéristique de l'action d'un processus
-non adaptatif tel que \ac{gbgc}.
+non adaptatif tel que le \ac{gbgc}.
+
+Ces observations sont compatibles avec l'hypothèse d'une conversion génique
+biaisée vers GC chez les procaryotes. L'objectif de ce travail était d'obtenir
+une estimation expérimentale des fréquences de conversion vers GC chez la
+bactérie modèle de transformation naturelle \emph{Acinetobacter baylyi
+  ADP1}\footnote{\emph{A.baylyi} était appelée \emph{A.calcoaceticus} avant
+  1995, mais la taxonomie du genre a fait l'objet d'une
+  révision\cite{euzeby_list_1997}}. Les cellules d'\emph{A.baylyi} en phase
+exponentielle de croissance sont naturellement comptétentes à la transformation.
+Elles intègrent activement de l'ADN exogène sous forme simple brin par un
+mécanisme sous contrôle génétique. Cet ADN peut être intégré dans le génome par
+recombinaison homologue. Nous avons utilisé ces propriétés pour forcer la
+recombinaison homologue à un locus neutre, en introduisant artificiellement des
+mésappariemments entre la séquence donneuse --- notre construction --- et la
+séquence receveuse --- le génome (voir figure \ref{img:construct}). La
+réparation de ces mésappariemments donne lieu à la conversion génique d'un brin
+par l'autre : l'information génétique portée par un brin est transmise
+unidirectionnellement du brin donneur au brin receveur.
+
+On distingue donc la région convertie, dont le génotype correspond à celui de
+l'haplotype donneur, de la région conservée, dont le génotype correspond à celui
+de l'haplotype receveur. Elles sont séparées par le point de recombinaison. Les
+constructions présentent des mésappariemments avec la séquence receveuse à
+intervalles réguliers de \SI{30}{pb}. Ces marqueurs permettent 1) de localiser
+la position du point de recombinaison à \SI{15}{pb} près et 2) de déterminer la
+polarité de la conversion. À un site donné, une base peut être convertie ou
+restaurée lorsqu'elle conserve la base de la séquence receveuse.
