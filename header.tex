@@ -3,7 +3,7 @@
 %%
 % \usepackage[utf8]{inputenc}
 % \usepackage[T1]{fontenc}
-\usepackage{fontspec}
+\usepackage[]{fontspec}
 \setsansfont[Ligatures = TeX]{Helvetica}
 \setmainfont[Ligatures = TeX]{ETBembo}
 \setmonofont{Inconsolata}
@@ -44,12 +44,13 @@
 %% maths
 %%
 \usepackage{amsmath}
+\usepackage[]{mathspec}
 \usepackage{textcomp}
 \usepackage{marvosym}
 \usepackage{wasysym}
 \usepackage{amssymb}
 \usepackage{siunitx}
-\usepackage[version=4]{mhchem}
+\usepackage[version=4]{mhchem} % pour les formules chimiques comme H2O
 
 %%
 %% references
@@ -236,6 +237,7 @@
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{colorbrewer}
+\usetikzlibrary{graphs}
 
 %%
 %% title page

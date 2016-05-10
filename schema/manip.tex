@@ -1,0 +1,179 @@
+\begin{center}
+  \rmfamily
+  \setstretch{1.0}
+
+  \tikzset{
+    culture/.pic={
+      \node at (0, 0) {\includegraphics[width = 0.015\textwidth]{img/lb_liquide.png}};
+    }
+  }
+
+  \tikzset{
+    transfo/.pic={
+      \node at (0, 0) {\includegraphics[width = 0.03\textwidth]{img/eppendorf_full.png}};
+    }
+  }
+
+  \tikzset{
+    etalement/.pic={
+      \node at (0, 0) {\includegraphics[width = 0.05\textwidth]{img/etalement.png}};
+    }
+  }
+
+  \tikzset{
+    petri/.pic={
+      \node at (0, 0) {\includegraphics[width = 0.05\textwidth]{img/petri_open.png}};
+    }
+  }
+
+  \tikzset{
+    boite/.pic={
+      \node at (0, 0) {\includegraphics[width = 0.06\textwidth]{img/boite_96.png}};
+    }
+  }
+
+  \tikzset{
+    pcr plate/.pic={
+      \node at (0, 0) {\includegraphics[width = 0.05\textwidth]{img/pcr_plate.jpeg}};
+    }
+  }
+
+  \tikzset{legende fleche/.style={Gray, dotted, thick, opacity = 0.6}}
+  \tikzset{legende text/.style={black, text width = 7cm, font = \scriptsize, above}}
+
+  \begin{tikzpicture}
+
+    % tube eppendorf seul
+    \draw [->]
+    (0, 0) node[above]
+    {\includegraphics[width=0.05\textwidth]{img/eppendorf.png}}
+    % boite de petri
+    -- (0, -1) node[below]
+    {\includegraphics[width=0.2\textwidth]{img/petri_open.png}}
+    ;
+
+    %% tubes de culture
+    \draw[out = 210, in = 90] [->] (0, -3) to ++(-3.5, -1) pic[below] {culture};
+    \draw[out = 210, in = 90] [->] (0, -3) to ++(-2.5, -1) pic[below] {culture};
+    \draw[out = -90, in = 90] [->] (0, -3) to ++(-0.5, -1) pic[below] {culture};
+    \draw[out = -90, in = 90] [->] (0, -3) to ++(+0.5, -1) pic[below] {culture};
+    \draw[out = -30, in = 90] [->] (0, -3) to ++(+2.5, -1) pic[below] {culture};
+    \draw[out = -30, in = 90] [->] (0, -3) to ++(+3.5, -1) pic[below] {culture};
+
+    %% tubes de transfo
+    \draw [->] (-3.5, -7) node[above, font = \scriptsize] {GC} -- ++(0, -0.7) pic[below] {transfo};
+    \draw [->] (-2.5, -7) node[above, font = \scriptsize] {GC} -- ++(0, -0.7) pic[below] {transfo};
+    \draw [->] (-0.5, -7) node[above, font = \scriptsize] {AT} -- ++(0, -0.7) pic[below] {transfo};
+    \draw [->] (+0.5, -7) node[above, font = \scriptsize] {AT} -- ++(0, -0.7) pic[below] {transfo};
+    \draw [->] (+2.5, -7) node[above, font = \scriptsize] {\(\nicefrac{GC}{AT}\)} -- ++(0, -0.7) pic[below] {transfo};
+    \draw [->] (+3.5, -7) node[above, font = \scriptsize] {\(\nicefrac{AT}{GC}\)} -- ++(0, -0.7) pic[below] {transfo};
+
+    %% étalement sur boiîtes de pétri
+    \draw [->] (-3.5, -9) -- ++(0, -0.5) pic[below] {petri};
+    \draw [->] (-2.5, -9) -- ++(0, -0.5) pic[below] {petri};
+    \draw [->] (-0.5, -9) -- ++(0, -0.5) pic[below] {petri};
+    \draw [->] (+0.5, -9) -- ++(0, -0.5) pic[below] {petri};
+    \draw [->] (+2.5, -9) -- ++(0, -0.5) pic[below] {petri};
+    \draw [->] (+3.5, -9) -- ++(0, -0.5) pic[below] {petri};
+
+    %% purification sur boîtes
+    \draw [->] (-3.5, -10.5) -- ++(0, -0.5) pic[below] {etalement};
+    \draw [->] (-2.5, -10.5) -- ++(0, -0.5) pic[below] {etalement};
+    \draw [->] (-0.5, -10.5) -- ++(0, -0.5) pic[below] {etalement};
+    \draw [->] (+0.5, -10.5) -- ++(0, -0.5) pic[below] {etalement};
+    \draw [->] (+2.5, -10.5) -- ++(0, -0.5) pic[below] {etalement};
+    \draw [->] (+3.5, -10.5) -- ++(0, -0.5) pic[below] {etalement};
+
+    %% suspension dans 50µL d'eau
+    \draw [->] (-3.5, -12.2) -- ++(0, -0.5) pic[below] {boite};
+    \draw [->] (-2.5, -12.2) -- ++(0, -0.5) pic[below] {boite};
+    \draw [->] (-0.5, -12.2) -- ++(0, -0.5) pic[below] {boite};
+    \draw [->] (+0.5, -12.2) -- ++(0, -0.5) pic[below] {boite};
+    \draw [->] (+2.5, -12.2) -- ++(0, -0.5) pic[below] {boite};
+    \draw [->] (+3.5, -12.2) -- ++(0, -0.5) pic[below] {boite};
+
+    %% PCR
+    \draw [->] (-3.5, -13.6) -- ++(0, -0.5) pic[below] {pcr plate};
+    \draw [->] (-2.5, -13.6) -- ++(0, -0.5) pic[below] {pcr plate};
+    \draw [->] (-0.5, -13.6) -- ++(0, -0.5) pic[below] {pcr plate};
+    \draw [->] (+0.5, -13.6) -- ++(0, -0.5) pic[below] {pcr plate};
+    \draw [->] (+2.5, -13.6) -- ++(0, -0.5) pic[below] {pcr plate};
+    \draw [->] (+3.5, -13.6) -- ++(0, -0.5) pic[below] {pcr plate};
+
+    %% gels électrophorèse
+    \draw [->] (-3.5, -15) -- ++(0, -0.5) node[below] {\includegraphics[width = 0.06\textwidth]{img/s1_plate.jpg}};
+    \draw [->] (-2.5, -15) -- ++(0, -0.5) node[below] {\includegraphics[width = 0.06\textwidth]{img/s3_plate.jpg}};
+    \draw [->] (-0.5, -15) -- ++(0, -0.5) node[below] {\includegraphics[width = 0.06\textwidth]{img/w1_plate.jpg}};
+    \draw [->] (+0.5, -15) -- ++(0, -0.5) node[below] {\includegraphics[width = 0.06\textwidth]{img/w2_plate.jpg}};
+    \draw [->] (+2.5, -15) -- ++(0, -0.5) node[below] {\includegraphics[width = 0.06\textwidth]{img/sw_plate.jpg}};
+    \draw [->] (+3.5, -15) -- ++(0, -0.5) node[below] {\includegraphics[width = 0.06\textwidth]{img/ws_plate.jpg}};
+
+    %%
+    %% ANNOTATIONS
+    %%
+
+    % %% trait de légende
+    \draw[legende fleche] [<-] (1.5, -1.5) -- (2, -1.5) -- (3, 0) -- (8, 0)
+    node[legende text] {%
+      Une culture cryogénisée d'\emph{Acinetobacter baylyi BD413} est purifiée
+      par étalement sur milieu non sélectif de Luria Bertani.
+      %
+    } node {$\bullet$} ;
+
+    \draw[legende fleche] [<-] (4, -4.5) -- (8, -4.5) node[legende text] {%
+      Une colonie isolée est pré-cultivée pendant \si{24\hour} à \si{30\celsius}
+      en milieu LB. \si{50\uL} de cette pré-culture sont resuspensdus dans
+      \si{5\mL} de LB.
+      %
+    } node {$\bullet$} ;
+
+    \draw[legende fleche] [<-] (4, -8.0) -- (8, -8.0) node[legende text] {%
+      Lorsque la culture a atteint une absorbance à \si{600\nm} de \(0.8\),
+      \si{400\ng} de construction plasmidique linéarises sont ajoutées dans
+      \si{390\uL} de culture, et incubés pendant \si{1\hour} à \si{30\celsius}.
+
+      Les transformations ont été réalisées avec trois constructions différentes
+      : les constructions introduisant des G et des C, celles introduisant des A
+      et des T, et celles introduisant les deux à la fois en alternance.
+      %
+    } node {$\bullet$} ;
+
+    \draw[legende fleche] [<-] (4, -10.0) -- (8, -10.0) node[legende text] {%
+      Après \si{1\hour} d'incubation, les plasmides résiduels sont dégradés par
+      l'ajout de DNAse à \SI{20}{\ug\per\mL}, et incubation \si{15\min} à
+      \si{37\celsius}. La culture est ensuite étalée en spirale sur milieu
+      sélectif LB additionné de kanamycine à \SI{50}{\ug\per\mL}, et incubés
+      pendant \SI{24}{\hour} à \SI{37}{\celsius}.
+      %
+    } node {$\bullet$} ;
+
+    \draw[legende fleche] [<-] (4, -11.5) -- (8, -11.5) node[legende text]
+    {%
+      \(96\) colonies transformantes, résistantes à la kanamycines sont isolées
+      par étalement sur le même milieu sélectif LB+Kan.
+      %
+    } node {$\bullet$} ;
+
+
+    \draw[legende fleche] [<-] (4, -13.0) -- (8, -13.0) node[legende text] {%
+      Pour chaque transformant isolé, 1 colonie est prélevée à l'œse et
+      suspendue dans \SI{50}{\uL} d'eau ultrapure.
+      %
+    } node {$\bullet$} ;
+
+    \draw[legende fleche] [<-] (4, -14.5) -- (8, -14.5) node[legende text] {%
+      Des PCRs cibles de la région d'intérêt sont réalisées en utilisant
+      \SI{2}{\uL} des suspensions précédemment réalisées.
+      %
+    } node {$\bullet$} ;
+
+    \draw[legende fleche] [<-] (4, -16.2) -- (8, -16.2) node[legende text] {%
+      Les PCRs ont été contrôlées par électrophorèse sur gel d'agarose à
+      \(1\%\). Les amplicons ont été ensuite séquencés par la technique de
+      Sanger.
+      %
+    } node {$\bullet$} ;
+
+  \end{tikzpicture}
+
+\end{center}
