@@ -1,69 +1,88 @@
 \begin{center}
   \setstretch{1.0}
-  \begin{tikzpicture}[scale=0.7, line width = 2pt, join=round]
+    \rmfamily
 
-    \tikzstyle{every node}=[font=\scriptsize]
-    \tikzset{>=Stealth}
+    \tikzset{legende fleche/.style={Gray, dotted, thick, opacity = 0.6}}
+    \tikzset{legende text/.style={black, text width = 5cm, font = \scriptsize, above}}
+    \tikzset{align fleche/.style={midway, right, align = left, darkgray,
+        font=\scriptsize}}
 
-    %% ref align
-    \begin{scope}[shift={(0, 17.5)}]
-      \draw[Black] (0, 2) node {\Large \bfseries a};
+    \begin{tikzpicture}[join=round]
 
-      \draw[Red] [->] (0, 0) -- (10, 0);
-      \draw[Cerulean] [->] (0, 1) -- (10, 1);
+      \draw [->]
+       (0, 0) node[above] {\includegraphics[width = 0.4\textwidth]{img/electropherogram.jpg}}
+       -- ++(0, -1)
+       node[align fleche] {Conversion en \\ FASTA par Phred}
+       node[below] {\texttt{\textcolor{am1_col}{ATCG.......................ACCG}}}
+       ;
 
-      \foreach \x in {1,2,...,9}
-      {
-        \draw[color = Red, fill = Red] (\x, 0) circle (0.1);
-        \draw[color = Cerulean, fill = Cerulean] (\x, 1) circle (0.1);
-      }
+       \node at (0, -2.5) {\texttt{\textcolor{gs_rec_col}{ATCG.......................ATCG}}}; % receveur
+       \node at (0, -3.0) {\texttt{\textcolor{gs_don_col}{ACCG.......................ACCG}}}; % donneur
+       \node[opacity = 0.7] at (0, -3.5) {\texttt{\textcolor{am1_col}{ATCG.......................ACCG}}}; % recombinant
+       \node[gs_rec_col, font=\scriptsize] at (-4, -2.5) {Receveur :};
+       \node[gs_don_col, font=\scriptsize] at (-4, -3.0) {Donneur :};
 
-      \draw[Red] (11, 0) node {Receveur};
-      \draw[Cerulean] (11, 1) node {Donneur};
+       \draw[bend left=90,  dotted, thick] [->]
+       (+3.2, -1.2) to
+       node[midway, right, align fleche, align = left, text width = 6cm] {%
+         %
+         \textbf{Alignement avec la référence par \texttt{muscle}.} La référence
+         est composée de l'alignement de la séquence receveuse sauvage et de la
+         séquence donneuse synthétique.
+         %
+       } ++(0, -2.2) ;
 
-      \draw[Green] [->] (-2, -2) -- (7, -2);
-      \draw[Green] [->] (1, -2.3) -- (11, -2.3);
-      \draw[Green] [->] (-1, -2.6) -- (9, -2.6);
-      \draw[Green] [->] (-1.5, -2.9) -- (8.5, -2.9);
+       \draw[align fleche] [->] (0, -4.0) -- ++(0, -1.5) %
+       node[align fleche, midway, right, align = left, text width = 7cm] {%
+         Détermination de la polarité des événèments de conversion \\
+         et attribution du score de qualité aux bases. L'information de la
+         position sur la séquence de référence permet de comparer les lectures
+         de séquençage entre elles.} %
+       node[font=\tiny, below] {%
+         %
+         \fontspec{Gill Sans}
+         \begin{tabular}{>{\color{gs_rec_col}}c>{\color{gs_don_col}}c>{\color{am1_col}}cccc}
+           \toprule
+           \head{Receveur} & \head{Donneur} & \head{Recombinant} & \head{Position} & \head{Qualité} & \head{Conversion} \\
+           \midrule
+           A        & A       & A           & 31      & 30      &          \\
+           \rowcolor{LightGray}
+           T        & C       & C           & 32      & 40      & oui      \\
+           C        & C       & C           & 33      & 42      &          \\
+           G        & G       & G           & 34      & 42      &          \\
+           .        & .       & .           & .       & .       &          \\
+           .        & .       & .           & .       & .       &          \\
+           .        & .       & .           & .       & .       &          \\
+           A        & A       & A           & 61      & 42      &          \\
+           \rowcolor{LightGray}
+           T        & C       & T           & 62      & 30      & non      \\
+           C        & C       & C           & 63      & 40      &          \\
+           G        & G       & G           & 64      & 28      &          \\
+           \bottomrule
+           %
+         \end{tabular}
+       };
 
-      \foreach \x in {-1,0,...,6} { \draw[color = Green, fill = Green] (\x, -2)   circle (0.05);  }
-      \foreach \x in {2,3,...,10} { \draw[color = Green, fill = Green] (\x, -2.3) circle (0.05);  }
-      \foreach \x in {0,1,...,8 } { \draw[color = Green, fill = Green] (\x, -2.6) circle (0.05);  }
-      \foreach \x in {-0.5,0.5,...,7.5 } { \draw[color = Green, fill = Green] (\x, -2.9) circle (0.05);  }
+       \draw[legende fleche] [<-] (3.8, -6.5) -- (4.4, -6.5) -- (5, -8.5);
+       \draw[legende fleche] [<-] (3.8, -8.3) -- (4.4, -8.3) -- (5, -8.5) -- (8,
+       -8.5) %
+       node[opacity = 1, DarkGray, text width = 5cm, font=\scriptsize, above] {%
+         Ces positions sont les positions d'intérêt. Elles correspondent à
+         l'introduction d'une base G ou C par le donneur, alors que le receveur
+         présente une base A ou T. La base présente chez le clone recombinant
+         permet de déterminer la polarité de la conversion. Le score de qualité
+         permet d'accorder plus ou moins de confiance à la base appelée par le
+         programme \texttt{phred}.
+         %
+       } node {$\bullet$} ;
 
-      \draw[Gray] [->] (5, -3.5) -- (5, -4);
-    \end{scope}
 
-    \begin{scope}[shift={(0, 10)}]
-      %% align reads to reference
-      \draw[Black] (0, 3.2) node {\Large \bfseries b};
-
-      \draw[Red] (11, 0) node {Receveur};
-      \draw[Cerulean] (11, 2.5) node {Donneur};
-
-      \draw[Red] [->] (0, 0) -- (10, 0);
-      \draw[Cerulean] [->] (0, 2.5) -- (10, 2.5);
-
-      \foreach \x in {1,2,...,9}
-      {
-        \draw[color = Red, fill = Red] (\x, 0) circle (0.1);
-        \draw[color = Cerulean, fill = Cerulean] (\x, 2.5) circle (0.1);
-      }
-
-      \draw[Green] [->] (0.7, 0.5) -- (9.7, 0.5);
-      \foreach \x in {5,6,...,9} { \draw[color = Cerulean, fill = Cerulean] (\x, 0.5)   circle (0.07);  }
-      \foreach \x in {1,2,...,4} { \draw[color = Red, fill = Red] (\x, 0.5)   circle (0.07);  }
-      \draw[Green] [->] (1.5, 1) -- (9.5, 1);
-      \foreach \x in {5,6,...,9} { \draw[color = Cerulean, fill = Cerulean] (\x, 1.0)   circle (0.07);  }
-      \foreach \x in {2,3,...,7} { \draw[color = Red, fill = Red] (\x, 1.0)   circle (0.07);  }
-      \draw[Green] [->] (0.3, 1.5) -- (8.7, 1.5);
-      \foreach \x in {1,2,...,7} { \draw[color = Red, fill = Red] (\x, 1.5)   circle (0.07);  }
-      \foreach \x in {3,4,...,8} { \draw[color = Cerulean, fill = Cerulean] (\x, 1.5)   circle (0.07);  }
-      \draw[Green] [->] (0.6, 2.0) -- (7.8, 2.0);
-      \foreach \x in {1,2,...,7} { \draw[color = Red, fill = Red] (\x, 2.0)   circle (0.07);  }
-      \foreach \x in {4,5,...,7} { \draw[color = Cerulean, fill = Cerulean] (\x, 2.0)   circle (0.07);  }
-    \end{scope}
-
+       %%
+       %% Flèches montrant le basculement de ligne à colonne.
+       %%
+       \draw[dotted, am1_col, thin, bend left ] [->] (+2.9, -3.7) to (-0.5, -8.8);
+       \draw[dotted, am1_col, thin, bend right] [->] (-2.9, -3.7) to (-0.7, -6.3);
 
   \end{tikzpicture}
+
 \end{center}

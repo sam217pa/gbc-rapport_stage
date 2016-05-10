@@ -17,7 +17,7 @@
 %\usepackage[scaled=0.9]{zi4}
 %% sans font as default
 \renewcommand\familydefault{\sfdefault}
-\usepackage[x11names, dvipsnames]{xcolor}
+\usepackage[x11names, dvipsnames, table]{xcolor}
 
 %%
 %% project management
@@ -40,10 +40,12 @@
 %% images
 %%
 \usepackage{graphicx}
+\usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{rotating}
+
 
 %%
 %% maths
@@ -198,6 +200,9 @@
 \definecolor{am3_col}{HTML}{53ADF6}
 \definecolor{genome_col}{HTML}{C9A15A}
 
+\definecolor{LightGray}{gray}{0.9}
+\definecolor{DarkGray}{gray}{0.1}
+
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows.meta}
 % \usetikzlibrary{colorbrewer}
@@ -218,3 +223,7 @@
 
 % caption
 \usepackage[figurename=Figure]{caption} % must be loaded after babel
+
+\newcolumntype{r}{>{\columncolor{gs_rec_col}}c}
+\newcolumntype{d}{>{\columncolor{gs_don_col}}c}
+\newcolumntype{e}{>{\columncolor{am1_col}}c}
