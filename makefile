@@ -1,17 +1,18 @@
 CHAPTER=$(wildcard *.tex)
+PDFLATEX=xelatex
 TEXFLAGS=-interaction nonstopmode
 
 preview: $(CHAPTER)
-	latexmk -pdf rapport.tex -f -pdflatex="pdflatex $(TEXFLAGS)" -pvc
+	latexmk rapport.tex
 
 rapport: $(CHAPTER)
-	pdflatex rapport.tex $(TEXFLAGS)
+	$(PDFLATEX) rapport.tex $(TEXFLAGS)
 	bibtex rapport
-	pdflatex rapport.tex $(TEXFLAGS)
-	pdflatex rapport.tex $(TEXFLAGS)
+	$(PDFLATEX) rapport.tex $(TEXFLAGS)
+	$(PDFLATEX) rapport.tex $(TEXFLAGS)
 
 # latexmk -pdf rapport.tex -f -output-directory=.tmp \
-# -pdflatex="pdflatex -interaction nonstopmode"
+# -pdflatex="$(PDFLATEX) -interaction nonstopmode"
 
 commit:
 	git add *.tex makefile schema/*.tex

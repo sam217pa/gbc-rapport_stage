@@ -20,6 +20,11 @@
 \usepackage[x11names, dvipsnames]{xcolor}
 
 %%
+%% project management
+%%
+
+\usepackage{newclude}
+%%
 %% marges
 %%
 \usepackage[a4paper]{geometry}
@@ -44,7 +49,7 @@
 %% maths
 %%
 \usepackage{amsmath}
-\usepackage[]{mathspec}
+% \usepackage[]{mathspec}
 \usepackage{textcomp}
 \usepackage{marvosym}
 \usepackage{wasysym}
@@ -73,48 +78,7 @@
 \usepackage[]{acro}
 % probably a good idea for the nomenclature entries:
 \acsetup{first-style=short}
-
-% class `abbrev': abbreviations:
-\DeclareAcronym{gc}{
-  short = GC\% ,
-  long  = Contenu en GC ,
-  class = abbrev
-}
-\DeclareAcronym{gbgc}{
-  short = gBGC ,
-  long  = GC--biased gene conversion : conversion génique biaisée vers GC ,
-  class = abbrev
-}
-\DeclareAcronym{dsb}{
-  short = DSB ,
-  long  = Double strand break : cassures doubles brins ,
-  class = abbrev
-}
-\DeclareAcronym{mmr}{
-  short = MMR ,
-  long  = Mismatch repair : machinerie de réparation des mésappariements ,
-  class = abbrev
-}
-\DeclareAcronym{ber}{
-  short = BER ,
-  long  = Base Excision Repair ,
-  class = abbrev
-}
-\DeclareAcronym{ner}{
-  short = NER ,
-  long  = Nucleotide Excision Repair ,
-  class = abbrev
-}
-\DeclareAcronym{har}{
-  short = HAR ,
-  long  = Human Accelerated Regions : région accélérée spécifique à la lignée humaine ,
-  class = abbrev
-}
-\DeclareAcronym{sdsa}{
-  short = SDSA ,
-  long  = Synthesis-Dependent Strand-Annealing ,
-  class = abbrev
-}
+\input{acro.tex}
 
 %%
 %% table des matières
@@ -236,8 +200,8 @@
 
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows.meta}
-\usetikzlibrary{colorbrewer}
-\usetikzlibrary{graphs}
+% \usetikzlibrary{colorbrewer}
+% \usetikzlibrary{graphs}
 
 %%
 %% title page
@@ -253,6 +217,4 @@
 \setmainlanguage{french}
 
 % caption
-\usepackage[figurename=Figure]{caption} % must be loaded after babel
-
-\usepackage{newclude}
+% \usepackage[figurename=Figure]{caption} % must be loaded after babel
