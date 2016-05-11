@@ -7,8 +7,8 @@ library(tikzDevice)
 library(extrafont)
 
 snp <- read_phruscle("../seq_mars/data/phruscle_snpcall.csv")
-height <- 6
-width <- 4
+height <- 8.3
+width <- 5.8
 
 pdf('img/trace_w.pdf', family = "Ubuntu", height = height, width = width, onefile = FALSE)
 plot_align(snp, "w" ,plot_title = "") +
