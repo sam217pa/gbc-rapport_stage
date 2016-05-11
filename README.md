@@ -10,6 +10,7 @@ de stage.
   rédaction.
 - img : j'y ai mis les images du rapport, celles que je n'ai plus à travailler sous R ou LaTeX.
 - schema : les différents schémas du rapport en tikz la plupart du temps.
+- src : les scripts permettant de générer les figures des rapports
 
 ## Fichiers
 
