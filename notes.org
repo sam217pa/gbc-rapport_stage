@@ -1,0 +1,7 @@
+* Notes pour le rapport
+
+[2016-05-11 Wed 19:45] Je pense qu'il est préférable de ne présenter qu'un
+graphique, de façon détaillée, avec toutes les clés de lecture, et
+éventuellement de mettre les autres graphiques en annexe. Ça maintient la
+cohésion du rapport, permet de gagner un peu de place, et de maintenir le rythme
+de 1 figure par page de gauche

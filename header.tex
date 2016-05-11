@@ -206,11 +206,8 @@
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows.meta}
 
-% \usepackage[]{pgfplots}
-% \usepgfplotslibrary{external}
-% \tikzexternalize
-% \usetikzlibrary{colorbrewer}
-% \usetikzlibrary{graphs}
+\newcommand{\tikzcircle}[2][Red, fill=Red]{\tikz[baseline = -0.5ex]
+  \draw[#1, radius=#2] (0,0) circle; }
 
 %%
 %% title page
@@ -232,3 +229,6 @@
 \newcolumntype{r}{>{\columncolor{gs_rec_col}}c}
 \newcolumntype{d}{>{\columncolor{gs_don_col}}c}
 \newcolumntype{e}{>{\columncolor{am1_col}}c}
+
+\usepackage{dpfloat}
+\usepackage{subcaption}

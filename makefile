@@ -1,11 +1,11 @@
-CHAPTER=$(wildcard *_*.tex)
+CHAPTER:= $(wildcard *.tex)
 PDFLATEX=xelatex
 TEXFLAGS=-interaction nonstopmode
 
 preview: $(CHAPTER)
 	latexmk rapport.tex
 
-rapport.pdf: $(CHAPTER)
+rapport:
 	$(PDFLATEX) rapport.tex $(TEXFLAGS)
 	bibtex rapport
 	$(PDFLATEX) rapport.tex $(TEXFLAGS)

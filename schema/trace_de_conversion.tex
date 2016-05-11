@@ -1,19 +1,72 @@
 \begin{center}
+  \rmfamily
+  \setstretch{1.0}
+
+  \tikzset{trace text/.style = {align = left, below right, font = \scriptsize}}
+  \tikzset{trace legend/.style = {opacity = 1, align = center, text width = 4.5cm,
+      above, font = \scriptsize}} %
+  \tikzset{trace fleche/.style={Gray, dotted, thick, opacity = 0.6}}
+  % \tikzset{trace text/.style={black, text width = 7cm, font = \scriptsize, above}}
 
   \begin{tikzpicture}
 
     %% Trace de conversion des donneurs strong
-    \node at (0, 0) {\includegraphics[width = 0.4\textwidth]{img/trace_s.pdf}};
 
-    %% Trace de conversion des donneurs weak
-    \node at (7, 0) {\includegraphics[width = 0.4\textwidth]{img/trace_w.pdf}};
+    \node[trace text] at (0, 0) {%
+      Haplotype donneur de bases GC \\
+      \includegraphics[width = 0.65\textwidth]{img/trace_ws.pdf}};
 
-    %% Trace de conversion des donneurs weak/strong
-    \node at (0, -10) {\includegraphics[width = 0.4\textwidth]{img/trace_ws.pdf}};
+    \coordinate (complexe) at (7, -14);
+    \coordinate (complexe weak) at (1.6, -9);
 
-    %% Trace de conversion des donneurs strong/weak
-    \node at (7, -10) {\includegraphics[width = 0.4\textwidth]{img/trace_sw.pdf}};
+    % \draw[opacity = 0.2, line width = 0.01pt, Gray] (0,0) grid (15, -15);
+    % \draw[opacity = 0.2, line width = 0.005pt, step = 0.5, Gray] (0,0) grid (15, -15);
+
+    \draw[trace fleche, gs_rec_col] [<-] (10.2, -1.0) -- (12, -1.0)
+    node[trace legend] {\textcolor{gs_rec_col}{Génotype du receveur}}
+    node {\(\bullet\)}
+    ;
+
+    \draw[trace fleche, gs_don_col] [<-] (10.2, -14.5) -- (12, -14.5)
+    node[trace legend] {\textcolor{gs_don_col}{Génotype du donneur}}
+    node {\(\bullet\)}
+    ;
+
+    \draw[trace fleche] [->] (10.5, -16) %
+    node{\(\bullet\)} %
+    node[trace legend, darkgray] {Restauration de l'haplotype sauvage GC.}
+    -- (7.8, -16) -- (complexe);
+
+    \draw[trace fleche] [->] (11.5, -5) %
+    node{\(\bullet\)} %
+    node[trace legend, darkgray] {Restauration de l'haplotype sauvage AT.}
+    -- (8, -5) -- (complexe weak);
+
+    %%
+    %% TODO flèche au dessus du graphe pour qu'on voit les bases de mauvaises
+    %% qualité.
+    %%
+    \node[trace legend, align = left] at (13.5, -13) {%
+      Chaque ligne horizontale représente une séquence. Les points représentent
+      les positions des marqueurs sur les séquences. La couleur des points
+      représente leur polarité. Ils sont \tikzcircle[gs_don_col,
+      fill=gs_don_col, opacity = 0.4]{3pt} lorsque le site est dans la région
+      convertie : ils correspondent l'haplotype du donneur. Ils sont
+      \tikzcircle[gs_rec_col, fill = gs_rec_col, opacity = 0.4]{3pt} lorsque le
+      site est dans la région conservée.
+
+      Les alternances \tikzcircle[gs_don_col, fill=gs_don_col, opacity =
+      0.4]{3pt} \tikzcircle[gs_rec_col, fill=gs_rec_col, opacity = 0.4]{3pt}
+      marquent la transition de l'haplotype converti à l'haplotype sauvage : le
+      point de recombinaison est localisé entre ces deux marqueurs.
+
+      Les séquences sont triées par longueur de région convertie. Certains
+      transformants ont converti tous les marqueurs.
+      %% TODO insérer flèche vers le bas.
+      Certains transformants ont conservé tous les marqueurs
+      %% TODO insérer flèche vers le haut.
+      %
+    };
 
   \end{tikzpicture}
-
 \end{center}
