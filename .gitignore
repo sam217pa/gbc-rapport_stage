@@ -118,3 +118,4 @@ flycheck_*.el
 *.vrb
 *.xdy
 *.tdo
+parser_table.py
