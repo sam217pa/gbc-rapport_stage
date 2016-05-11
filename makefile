@@ -1,18 +1,18 @@
-CHAPTER=$(wildcard *.tex)
+CHAPTER=$(wildcard *_*.tex)
 PDFLATEX=xelatex
 TEXFLAGS=-interaction nonstopmode
 
 preview: $(CHAPTER)
 	latexmk rapport.tex
 
-rapport: $(CHAPTER)
+rapport.pdf: $(CHAPTER)
 	$(PDFLATEX) rapport.tex $(TEXFLAGS)
 	bibtex rapport
 	$(PDFLATEX) rapport.tex $(TEXFLAGS)
 	$(PDFLATEX) rapport.tex $(TEXFLAGS)
 
-# latexmk -pdf rapport.tex -f -output-directory=.tmp \
-# -pdflatex="$(PDFLATEX) -interaction nonstopmode"
+3_resultat.tex: src/conversion_tract.R img/trace_s.pdf
+	Rscript $<
 
 commit:
 	git add *.tex makefile schema/*.tex

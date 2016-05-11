@@ -4,35 +4,22 @@ library(dplyr)
 library(ggthemes)
 library(cowplot)
 library(tikzDevice)
+library(extrafont)
 
 snp <- read_phruscle("../../seq_mars/data/phruscle_snpcall.csv")
 
-tikz('../img/conv_align.tex', width = 5, height = 10)
-plot_grid(
-    plot_align(snp, "w"
-              ,plot_title = "Génotype des clones transformés par la construction introduisant des AT")
-   ,plot_align(snp, "s"
-              ,plot_title = "Génotype des clones transformés par la construction introduisant des GC")
-   ,plot_align(snp, "ws"
-              ,plot_title = "Génotype des clones transformés par la construction introduisant des GC et AT")
-   ,plot_align(snp, "sw"
-              ,plot_title = "Génotype des clones transformés par la construction introduisant des AT et GC")
-)
+pdf('../img/trace_w.pdf', family = "Ubuntu", height = 11.69, width = 8.27, onefile = FALSE)
+plot_align(snp, "w" ,plot_title = "Donneur AT") +
+    guides(color = FALSE, size = FALSE, shape = FALSE)
 dev.off()
-
-plot_align(snp, "w")
-
-snp_test <- snp %>%
-    filter(mutant %in% "ws") %>%
-    keep_clean_only() %>%
-    sort_by_tract_length() %>%
-    filter(cons == "x" | cons == "X") %>%
-    rowwise() %>%
-    mutate(expb = ifelse(expb %in% c("A", "T"), "w", "s"))
-
-snp_test
-
-group_by(snp_test, refp) %>%
-    summarise(don_label = unique(snpb),
-              rec_label = unique(refb),
-              ref_pos   = unique(refp))
+pdf('../img/trace_s.pdf', family = "Ubuntu", height = 11.69, width = 8.27, onefile = FALSE)
+plot_align(snp, "s" ,plot_title = "Donneur GC")+
+    guides(color = FALSE, size = FALSE, shape = FALSE)
+dev.off()
+pdf('../img/trace_ws.pdf', family = "Ubuntu", height = 11.69, width = 8.27, onefile = FALSE)
+plot_align(snp, "ws" ,plot_title = "Donneur AT / GC")+
+    guides(color = FALSE, size = FALSE, shape = FALSE)
+dev.off()
+pdf('../img/trace_sw.pdf', family = "Ubuntu", height = 11.69, width = 8.27, onefile = FALSE)
+   plot_align(snp, "sw" ,plot_title = "Donneur GC / AT")
+dev.off()
