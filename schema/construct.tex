@@ -4,6 +4,7 @@
   \tikzset{>=stealth}
   \tikzset{plasmid lines/.style={xscale = 0.2, yscale = 0.2, very thick}}
   \tikzset{legende/.style={font=\scriptsize, color=Gray, align=right}}
+  \tikzset{transition/.style={color=Gray, very thick}}
   \tikzset{legende text/.style={font=\scriptsize, color=Black, align=right}}
 
   \tikzset{
@@ -39,24 +40,26 @@
     }
   }
 
-  \begin{tikzpicture}[scale=0.7, line width = 2pt, join=round]
+  \begin{tikzpicture}[scale=0.7, line width = 2pt, join=round, allow upside down]
     \begin{scope}[shift={(-3.5, 12)}]
       \draw[gs_don_col] (0, 0) -- (1, 0);
       \draw[am1_col] (0.8, 0) -- (1, 0);
-      \draw[Gray] [->] (1.5, 0) -- (2.7, 0) node[below, midway, font=\scriptsize] {PCR};
+      \draw[transition] [->] (1.5, 0) -- (2.7, 0) node[below, midway, font=\scriptsize] {PCR};
     \end{scope}
 
-    \begin{scope}[shift={(-0.3, 10)}]
-	    % \draw[plasmid_col] (0, 0) arc (0:30:3);
-	    \draw[Gray]  (1, 0.5) node {\scriptsize +};
-	    \draw[plasmid_col, thick] (0, 0) arc (150:390:1);
-	    \draw[plasmid_col] (1, -0.5) node {\scriptsize pGEM-T};
-	    \draw[plasmid_col] (0.1, 0.3) node {\tiny \sffamily T};
-	    \draw[plasmid_col] (1.7, 0.3) node {\tiny \sffamily T};
+    \begin{scope}[shift={(-0.8, 10.7)}]
+	    \draw[Gray]  (1.2, 0) node {\scriptsize +};
+      \draw[plasmid_col, rounded corners = 1ex, thick]
+      (0, 0) node[right, font=\tiny\sffamily] {T}
+      -- ++(-0.5, 0)
+      -- ++(0, -0.5)
+      -- ++(3.5, 0) node[below, midway, font=\scriptsize] {pGEM-T}
+      -- ++(0, 0.5)
+      -- ++(-0.5, 0) node[left, font=\tiny\sffamily] {T};
     \end{scope}
 
 
-    \begin{scope}[shift={(0, 11)}, line width = 0.5 pt]
+    \begin{scope}[shift={(0, 11)}, line width = 1 pt]
 	    \foreach \y in {0,0.2,...,2} {
         \draw[gs_don_col] (0, \y) -- (1, \y);
         \draw[am1_col   ] (0.9, \y) -- (1, \y);
@@ -67,24 +70,23 @@
       % essaie d'aligner
     \end{scope}
 
-    \draw[Gray] [->] (3, 12) -- (4, 12)
-    node[above, midway]
-    {\includegraphics[width=0.1\textwidth, angle = 90]{schema/construct-img/ligation.png}}
+    \draw[transition] [->] (2, 12) -- ++(1, 0)
+    % node[above, midway]
+    % {\includegraphics[width=0.1\textwidth, angle = 90]{schema/construct-img/ligation.png}}
     node[below, midway, font=\scriptsize]
     {Ligature};
 
-    \begin{scope}[shift={(5.0, 13)}, scale = 0.8]
-	    % plasmide pGEM-T avec construction, avant infusion
-	    \draw[plasmid_col, semithick] (0, 0) arc (150:390:1);
-	    \draw[am3_col] (0, 0) arc (150:20:1) ;
-	    \draw[am1_col] (0, 0) arc (150:30:1);
-	    \draw[gs_don_col] (0, 0) arc (150:40:1) ;
+    \begin{scope}[shift={(4.5, 12.5)}, scale = 0.8]
+	    %% plasmide pGEM-T avec construction, avant infusion
+      \draw[plasmid_col, rounded corners = 1ex, thick] (-0.8, -1) rectangle (2, 0);
+      \draw[gs_don_col] (0, 0) -- (1, 0);
+      \draw[am1_col] (0.8, 0) -- (1, 0) node[font =\scriptsize] {\(|\)} node[above, font=\scriptsize\itshape] {SpeI};
+      \draw[am3_col] (1.0, 0) -- ++(0.2, 0);
     \end{scope}
 
 
-    \draw[Gray] [->] (7, 12) -- ++(2, -0.5)
-    node[midway, above, font=\scriptsize]
-    {Digestion};
+    \draw[transition, out = 0, in = 90] [->] (7, 12) to ++(2, -0.5);
+    \node[above, font=\scriptsize, Gray] at (8, 12) {Digestion par \emph{SpeI}};
 
     \begin{scope}[shift={(7, 10.5)}]
 	    % plasmide ouvert, avec ancre et kana
@@ -105,7 +107,7 @@
 	    \draw[am3_col] (0, 0) -- (0.2, 0);
     \end{scope}
 
-    \draw[Gray] [->] (14, 9.5) -- ++(0, -1) node[legende, midway, left] {Ligature \\ InFusion};
+    \draw[transition] [->] (14, 9.5) -- ++(0, -1) node[legende, midway, left] {Ligature \\ InFusion};
 
     \begin{scope}[shift={(7, 8)}]
       % Plasmide fermé avec infusion
@@ -120,9 +122,9 @@
 	    \draw[am3_col ] (9.8, 0) -- (10.0, 0);
     \end{scope}
 
-    \draw[Gray] [->] (14, 7) -- (14, 6)
+    \draw[transition] [->] (14, 7) -- (14, 6)
     node[legende, midway, left]
-    {Amplification clonale\\dans \emph{E.coli}};
+    {Transformation et\\extraction Plasmidique};
 
     \begin{scope}[shift={(14, 4.5)}]
       % Plasmide apmplifié avec infusion
@@ -137,7 +139,7 @@
 
     \end{scope}
 
-    \draw[Gray] [->] (14, 2.75) -- ++(0, -1)
+    \draw[transition] [->] (14, 2.75) -- ++(0, -1)
     node[legende, midway, left]
     {Linéarisation par\\digestion enzymatique};
 
@@ -206,7 +208,12 @@
       \draw[genome_col, thick] (2, -1) -- (5, -1);
       \draw[arrows = {-Stealth[left]}, genome_col, thick] (8.8, -1) -- (12, -1) node[font=\tiny, above, align = right] {Génome \\ \emph{Acinetobacter}};
       %amorces
-      \draw[Red3, ultra thick] (4, -1) -- (4.2, -1) node[above left, font=\tiny] {Amorce};
+      % \draw[Red3, ultra thick] (4, -1) -- (4.2, -1) node[above left, font=\tiny] {Amorce};
+      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(3, 0) node[above, midway, font=\tiny] {Homologues} -- ++(0.5, +0.4);
+      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(3, 0) -- ++(0.5, -0.4);
+      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, +0.4);
+      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, -0.4);
+
       \draw[gs_rec_col] (5, -1.2) -- (7, -1.2);
       \draw[ancre_don_col] (7.0, -1.2) -- (8.8, -1.2);
       \draw[arrows = {Stealth[right, swap]-}, genome_col, thick] (2, -1.2) -- (5, -1.2);
@@ -226,7 +233,7 @@
       %%
       %% RÉSECTION
       %%
-      \draw[Gray] [->] (7, -1.6) -- (7, -2.4) node[legende, left, midway] {Résection};
+      \draw[transition] [->] (7, -1.6) -- (7, -2.4) node[legende, left, midway] {Résection};
 
       % brin ->
       \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -2.5) -- (7, -2.5);
@@ -242,7 +249,7 @@
       %%
       %% RÉPARATION
       %%
-      \draw[Gray] [->] (7, -2.8) -- (7, -3.4) node[legende, midway, left] {Réparation};
+      \draw[transition] [->] (7, -2.8) -- (7, -3.4) node[legende, midway, left] {Réparation};
 
       \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -3.5) -- (7, -3.5);
       \draw[ancre_don_col] (8.3, -3.5) -- (8.8, -3.5);
@@ -283,7 +290,7 @@
       %% RÉAPPARIEMMENT
       %%
 
-      \draw[Gray] [->] (7, -4.8) -- ++(0, -1) node[midway, left, legende] {Réappariemment};
+      \draw[Gray, transition] [->] (7, -4.8) -- ++(0, -1) node[midway, left, legende] {Réappariemment};
 
       % brin ->
       \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -6) -- (7, -6);
@@ -304,10 +311,15 @@
       \draw[genome_col, thick]                            (11.4, -6.2) -- ++(1, 0);
       \draw[genome_col, thick, arrows = {Stealth[left]-}] (2, -6.2) --      (5, -6.2);
 
+	    \draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3]
+      (6, -8.4) rectangle ++(1, +0.6);
+	    \draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3]
+      (6, -6.4) rectangle ++(1, +0.6);
+
       %%
       %% SYNTHÈSE DU BRIN 5'
       %%
-      \draw[Gray] [->] (7, -6.5) -- ++(0, -1)
+      \draw[transition] [->] (7, -6.5) -- ++(0, -1)
       node[midway, left, legende, align = right] {Synthèse du brin \\ complémentaire };
 
       %% brin ->
@@ -356,7 +368,7 @@
       %% RÉSULTAT FINAL
       %%
 
-      \draw[Gray] [->] (7, -8.5) -- ++(0, -1) node[midway, left, legende] {Ligature};
+      \draw[transition] [->] (7, -8.5) -- ++(0, -1) node[midway, left, legende] {Ligature};
 
       \draw[gs_rec_col, very thick]
       (5, -10.0) -- (7, -10.0);
@@ -481,22 +493,26 @@
 
     \node[text width=6.5cm, legende text, align = left] at (14, -4) {%
       % 14 lignes possibles
-      Les constructions linéarisées sont assimilées par \emph{Acinetobacter} en
-      phase exponentielle de croissance. Les cassures doubles-brins occasionnées
-      aléatoirement au cours de la réplication au locus d'intérêt entraînent la
-      résection de la région en \(3'\) du site de cassure. Cette résection est
-      réparée par synthèse utilisant une matrice d'ADN homologue. En cultivant
-      les transformants sur un milieu sélectif, nous avons sélectionné les
-      clones qui ont utilisé la construction plasmidique pour matrice, ayant
-      intégré la cassette de résistance à la kanamycine.
+      Les constructions linéarisées sont intégrées par recombinaison homologue
+      entre le génome d'\emph{Acinetobacter} en phase exponentielle de
+      croissance et la construction intégrée sous forme simple brin. Les
+      cassures doubles-brins occasionnées aléatoirement au cours de la
+      réplication au locus d'intérêt entraînent la résection de la région en
+      \(3'\) du site de cassure. Cette résection est réparée par synthèse
+      utilisant une matrice d'ADN homologue. En cultivant les transformants sur
+      un milieu sélectif, nous avons sélectionné les clones qui ont utilisé la
+      construction plasmidique pour matrice, ayant intégré la cassette de
+      résistance à la kanamycine.
 
-      Au cours du réappariemment des brins, un hétéroduplex se forme : les brins
-      homologues ne sont pas rigoureusement complémentaires. Le donneur
-      \tikz[baseline = -0.5ex, very thick, scale = 0.3]{\draw[gs_don_col] (0, 0)
-        -- ++(1, 0);} introduit des mésappariemments avec la séquence du
-      receveur \tikz[baseline = -0.5ex, very thick, scale =
-      0.3]{\draw[gs_rec_col] (0, 0) -- ++(1, 0);} ; ils doivent être corrigés.
-    };
+      Au cours du réappariemment des brins, un hétéroduplex~\tikz[scale =
+      0.2]{\draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3] (0, 0)
+        rectangle (1.618,1);} se forme : les brins homologues ne sont pas
+      rigoureusement complémentaires. Le donneur \tikz[baseline = -0.5ex, very
+      thick, scale = 0.3]{\draw[gs_don_col] (0, 0) -- ++(1, 0);} introduit des
+      mésappariemments avec la séquence du receveur~\tikz[baseline = -0.5ex,
+      very thick, scale = 0.3]{\draw[gs_rec_col] (0, 0) -- ++(1, 0);} ; ils
+      doivent être corrigés. };
+
 
     \node[text width = 7.4cm, legende text, align = left] at (3.2, -12.8) {%
       % 6 lignes possibles
