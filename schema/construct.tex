@@ -209,10 +209,10 @@
       \draw[arrows = {-Stealth[left]}, genome_col, thick] (8.8, -1) -- (12, -1) node[font=\tiny, above, align = right] {Génome \\ \emph{Acinetobacter}};
       %amorces
       % \draw[Red3, ultra thick] (4, -1) -- (4.2, -1) node[above left, font=\tiny] {Amorce};
-      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(3, 0) node[above, midway, font=\tiny] {Homologues} -- ++(0.5, +0.4);
-      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(3, 0) -- ++(0.5, -0.4);
-      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, +0.4);
-      \draw[Gray, dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, -0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) node[above right=-1pt , font=\tiny] {Homologues} -- ++(3, 0)  -- ++(0.5, +0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) -- ++(3, 0) -- ++(0.5, -0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, +0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, -0.4);
 
       \draw[gs_rec_col] (5, -1.2) -- (7, -1.2);
       \draw[ancre_don_col] (7.0, -1.2) -- (8.8, -1.2);
@@ -494,15 +494,14 @@
     \node[text width=6.5cm, legende text, align = left] at (14, -4) {%
       % 14 lignes possibles
       Les constructions linéarisées sont intégrées par recombinaison homologue
-      entre le génome d'\emph{Acinetobacter} en phase exponentielle de
-      croissance et la construction intégrée sous forme simple brin. Les
-      cassures doubles-brins occasionnées aléatoirement au cours de la
-      réplication au locus d'intérêt entraînent la résection de la région en
-      \(3'\) du site de cassure. Cette résection est réparée par synthèse
-      utilisant une matrice d'ADN homologue. En cultivant les transformants sur
-      un milieu sélectif, nous avons sélectionné les clones qui ont utilisé la
-      construction plasmidique pour matrice, ayant intégré la cassette de
-      résistance à la kanamycine.
+      entre le génome d'\emph{Acinetobacter} et la construction intégrée sous
+      forme simple brin. Les cassures doubles-brins occasionnées aléatoirement
+      au cours de la réplication au locus d'intérêt entraînent la résection de
+      la région en \(3'\) du site de cassure. Cette résection est réparée par
+      synthèse utilisant une matrice d'ADN homologue. En cultivant les
+      transformants sur un milieu sélectif, nous avons sélectionné les clones
+      qui ont utilisé la construction plasmidique pour matrice, ayant intégré la
+      cassette de résistance à la kanamycine.
 
       Au cours du réappariemment des brins, un hétéroduplex~\tikz[scale =
       0.2]{\draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3] (0, 0)
@@ -526,7 +525,7 @@
       soit vers G ou C, selon la construction donneuse.
 
       L'amplification spécifique de la région convertie puis le séquençage des
-      amplicons permet de déterminer la polarité des évènements de conversion et
+      amplicons permet de déterminer le sens des évènements de conversion et
       la position des points de recombinaison.
       %
     };

@@ -1,0 +1,58 @@
+\begin{center}
+
+  \fontspec{Gill Sans}
+
+  \tikzset{>=Latex}
+  \tikzset{amorce fleche/.style={arrows={-Latex[scale = 0.5]}, thin}}
+  \tikzset{amorce/.style={font=\tiny, above, midway}}
+
+\begin{tikzpicture}[line width = 2pt, scale = 0.5, join = round]
+  % \draw[opacity = 0.2, line width = 0.01pt, Gray] (0,0) grid (15, 15);
+  % \draw[opacity = 0.2, line width = 0.005pt, step = 0.5, Gray] (0,0) grid (15, -15);
+  % \draw (0,)
+  \draw[genome_col, thin] [->] (0, 0) -- (20, 0);
+
+  \draw[gs_don_col, fill=white, thick]
+  (4, -0.5) rectangle ++(4, 1)
+  node[font=\tiny, pos=0.5, align = left] {Gène\\Synthétique};
+
+  \draw[kanr_col, fill=white, thick]
+  (8.5, -0.5) rectangle ++(4, 1)
+  node[font=\tiny, pos=0.5, align = left] {KanR};
+
+  \draw[ancre_don_col, fill=white, thick]
+  (13, -0.5) rectangle ++(4, 1)
+  node[font=\tiny, pos=0.5, align = left] {Ancre};
+
+  \draw[amorce fleche] (1, 0.7) -- ++(1, 0) node[amorce] {1073}; % amorce 1073
+  \draw[amorce fleche]  (4,    +0.7) -- ++(1, 0) node[amorce] {1393};
+  \draw[amorce fleche]  (8.5,  -0.7) -- ++(-1, 0) node[amorce, below] {1392};
+  \draw[amorce fleche]  (8.0,  +0.7) -- ++(+1, 0) node[amorce] {1408};
+  \draw[amorce fleche]  (13.0, -0.7) -- ++(-1, 0) node[amorce, below] {1409};
+  \draw[amorce fleche]  (12.5, +0.7) -- ++(+1, 0) node[amorce] {1410};
+  \draw[amorce fleche]  (17.5, -0.7) -- ++(-1, 0) node[amorce, below] {1411};
+\end{tikzpicture}
+
+\vspace{1cm}
+
+\begin{tabular}{cc>{\ttfamily}lc}
+  \toprule
+  % \rowcolor{LightGray}
+  Cible           & Amorce & Séquence                              & Tm    \\
+  \midrule
+  Génome          & 1073   &                                       &       \\
+  % \midrule
+  Construction    & 1392   &                                       &       \\
+                  & 1393   &                                       &       \\
+                  & 1408   & CACCTTAATCACTAGTTAGACATCTAAATCTAGGTAC & 61.50 \\
+                  & 1409   & GGTAAAGTCAGAGGAGAGGATGAGGAGGCAGATTG   & 68.66 \\
+                  & 1410   & TCCTCTGACTTTACCAACAAC                 & 48.04 \\
+                  & 1411   & AGGCGGCCGCACTAGCTTTCTGAGGGGAACGATCA   & 71.62 \\
+  Plasmide pGEM-T & M13R   &                                       &       \\
+                  & M13F   &                                       &       \\
+  \bottomrule
+  %
+\end{tabular}
+
+
+\end{center}

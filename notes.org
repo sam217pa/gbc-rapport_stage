@@ -12,12 +12,12 @@ de 1 figure par page de gauche
 ** DONE transformation et extractions plasmidiques à la place de amplification clonale dans E.coli
 ** TODO splitter figure 1 en A et B
 ** DONE changer la phrase assimilées par acinetobacter
-** TODO kanR pas en rouge.
+** DONE kanR pas en rouge.
 ** DONE figurés pour montrer homologie
-** TODO rapprocher étiquette homologue
+** DONE rapprocher étiquette homologue
 ** DONE carré gris hétéroduplex
-** TODO parler de simple brin dans la figure.
-** TODO remplacer polarité par sens
+** DONE parler de simple brin dans la figure.
+** DONE remplacer polarité par sens
 ** TODO parler de stratégie plutôt que de trois constructions.
 ** TODO intro : pourquoi acineto ?
 ** TODO corriger noms des fournisseurs

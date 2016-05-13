@@ -12,38 +12,45 @@
       \draw [->]
        (0, 0) node[above] {\includegraphics[width = 0.4\textwidth]{img/electropherogram.jpg}}
        -- ++(0, -1)
-       node[align fleche] {Conversion en \\ FASTA par Phred}
-       node[below] {\texttt{\textcolor{am1_col}{ATCG.......................ACCG}}}
+       node[align fleche, text width = 6cm ] {%
+         \textsf{{\color{Black} A.}} %
+         Analyses des électrophérogrammes obtenus par le programme
+         \texttt{phred} et attribution du score de qualité aux bases.
+         %
+       }
+       node[below] {\texttt{\textcolor{kanr_col}{ATCG.......................ACCG}}}
        ;
 
        \node at (0, -2.5) {\texttt{\textcolor{gs_rec_col}{ATCG.......................ATCG}}}; % receveur
        \node at (0, -3.0) {\texttt{\textcolor{gs_don_col}{ACCG.......................ACCG}}}; % donneur
-       \node[opacity = 0.7] at (0, -3.5) {\texttt{\textcolor{am1_col}{ATCG.......................ACCG}}}; % recombinant
+       \node[opacity = 0.7] at (0, -3.5) {\texttt{\textcolor{kanr_col}{ATCG.......................ACCG}}}; % recombinant
        \node[gs_rec_col, font=\scriptsize] at (-4, -2.5) {Receveur :};
        \node[gs_don_col, font=\scriptsize] at (-4, -3.0) {Donneur :};
+       \node[kanr_col, font=\scriptsize] at (-4, -3.5) {Recombinant :};
 
        \draw[bend left=90,  dotted, thick] [->]
        (+3.2, -1.2) to
        node[midway, right, align fleche, align = left, text width = 6cm] {%
-         %
-         \textbf{Alignement avec la référence par \texttt{muscle}.} La référence
-         est composée de l'alignement de la séquence receveuse sauvage et de la
-         séquence donneuse synthétique.
+         \textsf{{\color{Black} B.}} %
+         Alignement avec la référence par \texttt{muscle}. %
+         La référence est composée de l'alignement de la séquence receveuse
+         sauvage et de la séquence donneuse synthétique.
          %
        } ++(0, -2.2) ;
 
        \draw[align fleche] [->] (0, -4.0) -- ++(0, -1.5) %
        node[align fleche, midway, right, align = left, text width = 7cm] {%
-         Détermination de la polarité des événèments de conversion \\
-         et attribution du score de qualité aux bases. L'information de la
-         position sur la séquence de référence permet de comparer les lectures
-         de séquençage entre elles.} %
+         \textsf{{\color{Black} C.}} %
+         Détermination du sens des événèments de conversion et attribution du
+         score de qualité aux bases. L'information de la position sur la
+         séquence de référence permet de comparer les lectures de séquençage
+         entre elles.} %
        node[font=\tiny, below] {%
          %
          \fontspec{Gill Sans}
-         \begin{tabular}{>{\color{gs_rec_col}}c>{\color{gs_don_col}}c>{\color{am1_col}}cccc}
+         \begin{tabular}{>{\color{gs_rec_col}}c>{\color{gs_don_col}}c>{\color{kanr_col}}cccc}
            \toprule
-           \head{Receveur} & \head{Donneur} & \head{Recombinant} & \head{Position} & \head{Qualité} & \head{Conversion} \\
+           Receveur & Donneur & Recombinant & Position & Qualité & Conversion \\
            \midrule
            A        & A       & A           & 31      & 30      &          \\
            \rowcolor{LightGray}
@@ -66,7 +73,7 @@
        \draw[legende fleche] [<-] (3.8, -6.5) -- (4.4, -6.5) -- (5, -8.5);
        \draw[legende fleche] [<-] (3.8, -8.3) -- (4.4, -8.3) -- (5, -8.5) -- (8,
        -8.5) %
-       node[opacity = 1, DarkGray, text width = 5cm, font=\scriptsize, above] {%
+       node[opacity = 1, Gray, text width = 5cm, font=\scriptsize, above] {%
          Ces positions sont les positions d'intérêt. Elles correspondent à
          l'introduction d'une base G ou C par le donneur, alors que le receveur
          présente une base A ou T. La base présente chez le clone recombinant
@@ -80,8 +87,8 @@
        %%
        %% Flèches montrant le basculement de ligne à colonne.
        %%
-       \draw[dotted, am1_col, thin, bend left ] [->] (+2.9, -3.7) to (-0.5, -8.8);
-       \draw[dotted, am1_col, thin, bend right] [->] (-2.9, -3.7) to (-0.7, -6.3);
+       \draw[dotted, kanr_col, thin, bend left ] [->] (+2.9, -3.7) to (-0.5, -8.8);
+       \draw[dotted, kanr_col, thin, bend right] [->] (-2.9, -3.7) to (-0.7, -6.3);
 
   \end{tikzpicture}
 
