@@ -29,3 +29,10 @@ de 1 figure par page de gauche
 ** DONE locus d'intérêt = zone de recombinaison
 ** DONE séquençage = GATC.
 ** TODO éventuellement placer des numéros de séquence dans les figures ?
+* Analyses
+
+[2016-05-14 Sat 19:18] Le taux de GC ne suit pas une loi normale. Pour comparer
+les moyennes entre les groupes, il faut donc utiliser le test de wilcoxon, avec
+des données appariées : le taux de GC dans le donneur est apparié au taux de gc
+dans le receveur et au taux de GC du recombinant. Peut être que les analyses
+seront modifiées lorsque j'aurai reconstruit le génotype des transformants.
