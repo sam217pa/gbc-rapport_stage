@@ -1,6 +1,7 @@
 library(gcbiasr)
 library(ggplot2)
 library(dplyr)
+library(extrafont)
 
 snp <- conversion_tract
 
