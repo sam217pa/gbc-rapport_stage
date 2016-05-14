@@ -6,7 +6,7 @@ graphique, de façon détaillée, avec toutes les clés de lecture, et
 cohésion du rapport, permet de gagner un peu de place, et de maintenir le rythme
 de 1 figure par page de gauche
 
-* TODO  Prendre en compte les commentaires de franck [5/22]
+* DONE Prendr en compte les commentaires de franck [18/22]
 ** DONE spe I tiret
 ** TODO sca I tiret
 ** DONE transformation et extractions plasmidiques à la place de amplification clonale dans E.coli
@@ -18,14 +18,14 @@ de 1 figure par page de gauche
 ** DONE carré gris hétéroduplex
 ** DONE parler de simple brin dans la figure.
 ** DONE remplacer polarité par sens
-** TODO parler de stratégie plutôt que de trois constructions.
+** DONE parler de stratégie plutôt que de trois constructions.
 ** TODO intro : pourquoi acineto ?
-** TODO corriger noms des fournisseurs
-** TODO changer le titre de la figure 2
-** TODO enzyme de restriction en italique
-** TODO placer des points principaux dans la figure des alignements
-** TODO digestion pendant 1H pas nécessaire
-** TODO plasmides résiduels, pas trace
-** TODO locus d'intérêt = zone de recombinaison
-** TODO séquençage = GATC.
+** DONE corriger noms des fournisseurs
+** DONE changer le titre de la figure 2
+** DONE enzyme de restriction en italique
+** DONE placer des points principaux dans la figure des alignements
+** DONE digestion pendant 1H pas nécessaire
+** DONE plasmides résiduels, pas trace
+** DONE locus d'intérêt = zone de recombinaison
+** DONE séquençage = GATC.
 ** TODO éventuellement placer des numéros de séquence dans les figures ?

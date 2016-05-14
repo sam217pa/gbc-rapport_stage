@@ -26,3 +26,5 @@ pdf('img/trace_sw.pdf', family = "Ubuntu", height = height, width = width, onefi
    plot_align(snp, "sw" ,plot_title = "")+
     guides(color = FALSE, size = FALSE, shape = FALSE)
 dev.off()
+
+# pas content.

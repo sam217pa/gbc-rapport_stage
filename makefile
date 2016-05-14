@@ -1,22 +1,44 @@
-CHAPTER:= $(wildcard *.tex)
-PDFLATEX=xelatex
-TEXFLAGS=-interaction nonstopmode
+CHAPTER  := $(wildcard *.tex)
+TEXFILE		= rapport
+PDFLATEX	= latexmk -quiet
+TEXFLAGS	= -interaction nonstopmode
+RDIR      = ./src
+FIGDIR    = ./img
 
-preview: $(CHAPTER)
-	latexmk rapport.tex
+# list R files
+RFILES := $(wildcard $(RDIR)/*.R)
+# pdf figures created by R
+PDFFIGS := $(wildcard $(FIGDIR)/*.pdf)
+# indicator files to show R file has run
+OUT_FILES := $(RFILES:.R=.Rout)
+# indicator files to show pdfcrop has run
 
-rapport:
-	$(PDFLATEX) rapport.tex $(TEXFLAGS)
-	bibtex rapport
-	$(PDFLATEX) rapport.tex $(TEXFLAGS)
-	$(PDFLATEX) rapport.tex $(TEXFLAGS)
+all: $(TEXFILE).pdf $(OUT_FILES)
 
-3_resultat.tex: src/conversion_tract.R img/trace_s.pdf
-	Rscript $<
+preview: $(TEXFILE).tex
+	$(PDFLATEX) -pvc $<
+
+# compile main tex file and show errors
+$(TEXFILE).pdf: $(TEXFILE).tex $(OUT_FILES)
+	$(PDFLATEX) $(TEXFILE)
+
+# run every r file
+$(RDIR)/%.Rout: $(RDIR)/%.R
+	R CMD BATCH --no-save $<
+
+
+# run r files
+R: $(OUT_FILES)
+
+view: $(TEXFILE).pdf
+	open -a Skim $(TEXFILE).pdf
+
 
 commit:
 	git add *.tex makefile schema/*.tex
 	git commit -m "sauvegarde"
 
 clean:
-	latexmk -C rapport.tex
+	latexmk -C $(TEXFILE)
+
+.PHONY: all clean
