@@ -1,12 +1,9 @@
 library(gcbiasr)
 library(ggplot2)
 library(dplyr)
-library(ggthemes)
-library(cowplot)
-library(tikzDevice)
-library(extrafont)
 
-snp <- read_phruscle("../seq_mars/data/phruscle_snpcall.csv")
+snp <- conversion_tract
+
 height <- 8.3
 width <- 5.8
 
@@ -26,5 +23,3 @@ pdf('img/trace_sw.pdf', family = "Ubuntu", height = height, width = width, onefi
    plot_align(snp, "sw" ,plot_title = "")+
     guides(color = FALSE, size = FALSE, shape = FALSE)
 dev.off()
-
-# pas content.
