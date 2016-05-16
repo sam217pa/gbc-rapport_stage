@@ -5,7 +5,7 @@ library(ggplot2)
 library(broom)
 
 snp <- conversion_tract
-height <- 5
+height <- 3
 width <- 6
 
 set_gcbiasr_theme()
@@ -27,3 +27,8 @@ tidy(
    ,paired = TRUE
     )
 )
+
+## ==============================================================================
+## Doublets
+## ==============================================================================
+count_last_snp(snp) %>% knitr::kable(format = "latex")

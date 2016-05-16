@@ -1,7 +1,7 @@
 
 \addfig{%
   \input{schema/trace_de_conversion.tex}
-  \caption{\textbf{Traces de conversion d'un locus génomique
+  \caption[Trace de conversions]{\textbf{Traces de conversion d'un locus génomique
       d'\emph{Acinetobacter baylyi} par un gène synthétique donneur d'allèles GC
     et AT.}%
   \rmfamily
@@ -31,23 +31,99 @@ représentent les zones de recombinaison des 96 clones transformés par la
 construction \(\nicefrac{AT}{GC}\), celles des clones transformés par la
 construction GC et celles des clones transformés par la construction AT.
 
+\subsection{Analyses de la position des points de recombinaison}
+
+% TODO étudier la position des points de recombinaison
+
+% TODO graphique des points de bascule dans le rapport
+
+\lipsum[1]
+
+\begin{table}[htbp]
+  \centering
+  \rmfamily
+  \begin{tabular}{cccc}
+    \toprule
+    \thead{Dernier\\marqueur\\converti} & \thead{Premier\\marqueur\\conservé} & Donneur & Total                    \\
+    \midrule
+    AT                        & CG                        & AT/CG   & 55                       \\
+                              &                           & CG/AT   & 37                       \\
+                              &                           &         & \cellcolor{LightGray} 92 \\
+    \midrule[0.1pt]
+    CG                        & AT                        & AT/CG   & 33                       \\
+                              &                           & CG/AT   & 50                       \\
+                              &                           &         & \cellcolor{LightGray} 83 \\
+    \bottomrule
+  \end{tabular}
+  \caption[Dénombrements des derniers marqueurs avant le point de
+  recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
+      recombinaison.} \\
+    \rmfamily Nous avons compté le nombre de séquence dont le dernier marqueur
+    dans la région convertie est un marqueur AT ou GC. Selon l'hypothèse
+    \ac{gbgc}, ce nombre devrait être plus élevé aux positions GC qu'aux
+    positions AT. Contrairement à l'hypothèse, il y a plus de transformants dont
+    le dernier marqueur converti est AT que de transformants dont le dernier
+    marqueur converti est GC. Cet écart n'est pas statistiquement significatif
+    (test du \(\chi^2\) d'indépendance, probabilité critique~\(=0.49\)).
+    % TODO Voir avec laurent comment on conclut là dessus. On peut prendre l'info dans le sens qu'on veut
+    %
+  }
+  \label{tab:doublets}
+\end{table}
+
+\subsection{Analyses des restaurations de l'haplotype sauvage}
+\label{subsec:restaur}
+
+% DONE mettre table de restauration des haplotypes sauvages.
+\lipsum[1]
+
+\begin{table}[htbp]
+  \centering
+  \rmfamily
+  \begin{tabular}{ccc}
+    \toprule
+    Allèle restauré & Donneur & Total                    \\
+    \midrule
+    CG              & AT      & 4                        \\
+                    & AT/CG   & 2                        \\
+                    & CG/AT   & 4                        \\
+                    &         & \cellcolor{LightGray} 10 \\
+    \midrule[0.1pt]
+    AT              & CG      & 0                        \\
+                    & AT/CG   & 3                        \\
+                    & CG/AT   & 1                        \\
+                    &         & \cellcolor{LightGray} 4  \\
+    \bottomrule
+  \end{tabular}
+  \caption[Dénombrement des cas de restauration]{\textbf{Dénombrement des cas de
+      restauration} \\
+    % TODO compléter légende tab:restaur
+    \rmfamily Nous n'avons conservées que les bases dont la qualité permettait de
+    s'affranchir d'une possible erreur de séquençage. L'écart n'est pas
+    statistiquement significatif (test du \(\chi^2\) d'indépendance, probabilité
+    critique~\(= 0.11\)).
+    %
+  }
+  \label{tab:restaur}
+\end{table}
 
 \subsection{Quantification du rapport en base}
 \label{subsec:tauxgc}
 
-\begin{figure}
+\begin{figure}[ht]
   \includegraphics[width = \textwidth]{img/gc_content.pdf}
 
-  \caption{\textbf{Modification du rapport en base par la
+  \caption[Modification du rapport en base ?]{\textbf{Modification du rapport en base par la
       conversion génique} \\
-    Chaque point représente le taux de GC d'une séquence recombinante. Chaque
-    panneau du graphique indique le type de construction donneuse. Comme
+    \rmfamily Chaque point représente le taux de GC d'une séquence recombinante.
+    Chaque panneau du graphique indique le type de construction donneuse. Comme
     attendu, le taux de GC des recombinants transformés par la construction AT
     est inférieur à celui de la séquence receveuse. De même, lorsque la
     construction donneuse est GC, le taux de GC moyen est supérieur à celui du
     receveur. Cependant, lorsque la construction donneuse a le même taux de GC
     que le receveur (dans les constructions $\nicefrac{AT}{GC}$ et
-    $\nicefrac{GC}{AT}$), le taux de GC moyen des recombinants n'est pas
-    statistiquement différent de celui du receveur. }\label{fig:tauxgc}
+    $\nicefrac{GC}{AT}$), le taux de GC moyen des recombinants est inférieur à
+    celui du receveur (test des rangs de Wilcoxon apparié, probabilité
+    critique~\(= 5.5\e{-16}\) ) }\label{fig:tauxgc}
 
 \end{figure}

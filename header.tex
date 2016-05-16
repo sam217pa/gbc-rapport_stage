@@ -1,29 +1,41 @@
 %%
 %% fonts
 %%
-% \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
-\usepackage[]{fontspec}
+\usepackage{euler}
+\usepackage[no-math]{fontspec}
+\usepackage{unicode-math}
+\usepackage[osf]{mathpazo} % 'o'ld 's'tyle 'f'igures are used in the manual, but you can leave this away, of course.
 \setsansfont[Ligatures = TeX]{Helvetica}
-\setmainfont[Ligatures = TeX]{ETBembo}
+\setmainfont[Ligatures = TeX]{Linux Libertine O}
 \setmonofont{Inconsolata}
-\usepackage{xunicode}
-% \usepackage[french, frenchb]{babel}
-% \usepackage[osf, sc]{mathpazo}
-% \usepackage{sansmath}
-% \usepackage[euler-digits, small]{eulervm}
-% \sansmath
-% \usepackage[scaled]{helvet}
-%\usepackage[scaled=0.9]{zi4}
+
 %% sans font as default
 \renewcommand\familydefault{\sfdefault}
+
+%%
+%% color
+%%
 \usepackage[x11names, dvipsnames, table]{xcolor}
+\definecolor{plasmid_col}{HTML}{15588D}
+\definecolor{gs_don_col}{HTML}{1F78B4} % paired1 bleu foncé
+\definecolor{gs_rec_col}{HTML}{E31A1C} % paired1 rouge foncé
+\definecolor{kanr_col}{HTML}{06A858}
+\definecolor{am1_col}{HTML}{E12C74}
+\definecolor{am2_col}{HTML}{09997E}
+\definecolor{ancre_don_col}{HTML}{9F3E85}
+\definecolor{ancre_rec_col}{HTML}{FD73F7}
+\definecolor{am3_col}{HTML}{53ADF6}
+\definecolor{genome_col}{HTML}{C9A15A}
+
+\definecolor{LightGray}{gray}{0.9}
+\definecolor{DarkGray}{gray}{0.1}
 
 %%
 %% project management
 %%
-
 \usepackage{newclude}
+\usepackage[french]{todonotes}
+
 %%
 %% marges
 %%
@@ -40,6 +52,8 @@
 %% images
 %%
 \usepackage{graphicx}
+% \usepackage{tabularx}
+\usepackage[]{makecell}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{float}
@@ -51,13 +65,23 @@
 %% maths
 %%
 \usepackage{amsmath}
-% \usepackage[]{mathspec}
 \usepackage{textcomp}
 \usepackage{marvosym}
 \usepackage{wasysym}
 \usepackage{amssymb}
 \usepackage{siunitx}
 \usepackage[version=4]{mhchem} % pour les formules chimiques comme H2O
+
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
+
+\sisetup{math-micro = \fontspec{Palatino} \textmu, text-micro = \fontspec{Palatino} \textmu}
+\sisetup{
+  detect-mode=true,
+  detect-family=false,
+  detect-display-math=false,
+  detect-shape=false}
+
 
 %%
 %% references
@@ -70,8 +94,6 @@
 \usepackage[para, perpage, symbol*]{footmisc}
 \renewcommand\footnotelayout{\Large}
 
-%% todo
-\usepackage[french]{todonotes}
 % \usepackage[]{cleveref}
 %   \crefname{enumi}{position}{positions}
 %%
@@ -88,13 +110,10 @@
 \setcounter{tocdepth}{3}
 %% pas de titre
 \deftocheading{toc}{\section*{Sommaire}}%
-% \renewcommand{\contentsname}{Sommaire}
-
 
 %%
 %% typographie
 %%
-% \usepackage[protrusion=true, expansion=alltext, tracking=true, kerning=true]{microtype}
 \providecommand\newthought[1]{%
    \addvspace{0.5\baselineskip plus 0.3ex minus 0.1ex}%
    \noindent\textrm{\bsc{#1}} % small caps text out
@@ -121,7 +140,7 @@
 \usepackage[]{nicefrac}
 
 %%
-%% color
+%% title
 %%
 \usepackage[]{titlesec}
 %% section format
@@ -148,13 +167,9 @@
   []% after the title body
 
 %%
-%% lang
-%%
-
-
-%%
 %% figures
 %%
+
 %% pour avoir le texte à droite et les figures à gauche
 %% voir http://www.latex-community.org/forum/viewtopic.php?f=47&p=50022
 % \usepackage{semioneside}
@@ -189,19 +204,6 @@
 
 \usepackage[]{tikz}
 
-\definecolor{plasmid_col}{HTML}{15588D}
-\definecolor{gs_don_col}{HTML}{1F78B4} % paired1 bleu foncé
-\definecolor{gs_rec_col}{HTML}{E31A1C} % paired1 rouge foncé
-\definecolor{kanr_col}{HTML}{06A858}
-\definecolor{am1_col}{HTML}{E12C74}
-\definecolor{am2_col}{HTML}{09997E}
-\definecolor{ancre_don_col}{HTML}{9F3E85}
-\definecolor{ancre_rec_col}{HTML}{FD73F7}
-\definecolor{am3_col}{HTML}{53ADF6}
-\definecolor{genome_col}{HTML}{C9A15A}
-
-\definecolor{LightGray}{gray}{0.9}
-\definecolor{DarkGray}{gray}{0.1}
 
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows.meta}
@@ -232,7 +234,7 @@
 \setmainlanguage{french}
 
 % caption
-\usepackage[figurename=Figure]{caption} % must be loaded after babel
+\usepackage[figurename=Figure, tablename=Table]{caption} % must be loaded after babel
 \numberwithin{figure}{section}
 
 
