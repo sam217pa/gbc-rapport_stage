@@ -1,0 +1,44 @@
+# -*- R -*-
+
+library(gcbiasr)
+library(dplyr)
+library(ggplot2)
+
+neomut_df <- conversion_tract[
+    conversion_tract$refb == conversion_tract$snpb &
+    conversion_tract$refb != conversion_tract$expb,
+    ]
+
+str(neomut_df)
+
+set_gcbiasr_theme()
+
+neomut_df %>%
+    filter(
+        qual > 20,
+        inconv == TRUE
+    ) %>%
+    group_by(expb) %>%
+    summarise(count = n())
+
+conversion_tract %>%
+    filter(inconv, cons == "x" | cons == "X", qual < 40, refp < 650) %>%
+    qplot(data = ., x = refp, binwidth = 1, fill = expb) +
+    legend_position() +
+    facet_grid(mutant ~ .)
+
+
+neomut_df %>%
+    keep_clean_only() %>%
+    filter(refp > 150) %>%
+    mutate(
+        expb = ifelse(expb %in% c("A", "T", "C", "G"),
+               ifelse(expb %in% c("A", "T"), "W", "S"),
+               "N"
+               )
+    ) %>%
+    qplot(data = ., x = refp, binwidth = 1, fill = expb, alpha = qual) +
+    facet_grid(mutant ~ ., scales = "free") +
+    scale_alpha(range = c(0, 0.2)) +
+    scale_x_reverse() +
+    legend_position()
