@@ -31,17 +31,61 @@ représentent les zones de recombinaison des 96 clones transformés par la
 construction \(\nicefrac{AT}{GC}\), celles des clones transformés par la
 construction GC et celles des clones transformés par la construction AT.
 
+
+\begin{center}
+  \rmfamily
+  \scriptsize
+  \tikzset{traces/.style={below right}}
+  \tikzset{traces text/.style={draw, circle, Gray}}
+  \begin{tikzpicture}
+    \node[traces]      at (0, 0)  {\includegraphics[scale = 0.3]{img/trace_w.pdf}};
+    \node[traces]      at (5, 0)  {\includegraphics[scale = 0.3]{img/trace_s.pdf}};
+    \node[traces]      at (10, 0) {\includegraphics[scale = 0.3]{img/trace_sw.pdf}};
+    \node[traces text] at (0, 0)  {\textsf{A}};
+    \node[traces text] at (5, 0)  {\textsf{B}};
+    \node[traces text] at (10, 0) {\textsf{C}};
+  \end{tikzpicture}
+  \caption{\label{img:traces3}\textbf{Régions de recombinaisons des clones
+      transformés.} \\
+    \rmfamily En \textsf{A} par le donneur AT, en \textsf{B} par le donneur GC
+    et en \textsf{C} par le donneur AT/GC.}}
+\end{center}
+
+
 \subsection{Analyses de la position des points de recombinaison}
 
-% TODO étudier la position des points de recombinaison
+Selon l'hypothèse \ac{gbgc}, la région convertie devrait être plus longue
+lorsque la construction donneuse induit des réparations vers GC que lorsqu'elle
+induit des réparations vers AT. La différence entre la longueur moyenne de
+région convertie par les donneurs GC et la longueur moyenne de région convertie
+par des donneurs AT n'est pas significative (test de Wilcoxon, probabilité
+critique~\(= 0.31\)) (voir figure \ref{img:distrircb}). De la même façon, la
+différence entre la longueur de région convertie par le donneur AT/GC et celle
+par le donneur GC/AT n'est pas significative (test de Wilcoxon, probabilité
+critique~\(= 0.22\)). Globalement, le type de construction donneuse n'explique
+pas la variabilité de la longueur de région convertie (test de Kruskal-Wallis,
+probabilité critique~\(=0.10\))
 
-% TODO graphique des points de bascule dans le rapport
 
-\lipsum[1]
-
-\begin{table}[htbp]
+\addfig{%
+\begin{figure}[t!]
   \centering
+  \includegraphics[ height = 10cm]{img/distr_rcb_pt.pdf}
+  \caption[Distribution de la position du dernier marqueur]{%
+    \label{fig:distrircb} \textbf{Distribution de la position du dernier
+      marqueur converti} \\ \rmfamily Ce graphique représente en ordonnées le nombre
+    de transformants dont le dernier marqueur converti est à la position représentée
+    en abscisse. Les panneaux du graphique représentent les quatres constructions
+    donneuses. La position du dernier marqueur converti indique la position du point
+    de recombinaison. Les transformants qui ne montrent pas de région converties
+    sont indiqués par des $N$.
+    %
+  }
   \rmfamily
+\end{figure}
+\begin{table}[h!]
+  \rmfamily
+  \centering
   \begin{tabular}{cccc}
     \toprule
     \thead{Dernier\\marqueur\\converti} & \thead{Premier\\marqueur\\conservé} & Donneur & Total                    \\
@@ -70,6 +114,11 @@ construction GC et celles des clones transformés par la construction AT.
   }
   \label{tab:doublets}
 \end{table}
+}
+
+% TODO graphique des points de bascule dans le rapport
+
+
 
 \subsection{Analyses des restaurations de l'haplotype sauvage}
 \label{subsec:restaur}
@@ -98,7 +147,7 @@ construction GC et celles des clones transformés par la construction AT.
   \caption[Dénombrement des cas de restauration]{\textbf{Dénombrement des cas de
       restauration} \\
     % TODO compléter légende tab:restaur
-    \rmfamily Nous n'avons conservées que les bases dont la qualité permettait de
+    \rmfamily Nous n'avons conservé que les bases dont la qualité permettait de
     s'affranchir d'une possible erreur de séquençage. L'écart n'est pas
     statistiquement significatif (test du \(\chi^2\) d'indépendance, probabilité
     critique~\(= 0.11\)).
@@ -110,20 +159,24 @@ construction GC et celles des clones transformés par la construction AT.
 \subsection{Quantification du rapport en base}
 \label{subsec:tauxgc}
 
-\begin{figure}[ht]
-  \includegraphics[width = \textwidth]{img/gc_content.pdf}
+% \begin{figure}[ht]
+%   \includegraphics[width = \textwidth]{img/gc_content.pdf}
 
-  \caption[Modification du rapport en base ?]{\textbf{Modification du rapport en base par la
-      conversion génique} \\
-    \rmfamily Chaque point représente le taux de GC d'une séquence recombinante.
-    Chaque panneau du graphique indique le type de construction donneuse. Comme
-    attendu, le taux de GC des recombinants transformés par la construction AT
-    est inférieur à celui de la séquence receveuse. De même, lorsque la
-    construction donneuse est GC, le taux de GC moyen est supérieur à celui du
-    receveur. Cependant, lorsque la construction donneuse a le même taux de GC
-    que le receveur (dans les constructions $\nicefrac{AT}{GC}$ et
-    $\nicefrac{GC}{AT}$), le taux de GC moyen des recombinants est inférieur à
-    celui du receveur (test des rangs de Wilcoxon apparié, probabilité
-    critique~\(= 5.5\e{-16}\) ) }\label{fig:tauxgc}
+%   \caption[Modification du rapport en base ?]{\textbf{Modification du rapport en base par la
+%       conversion génique} \\
+%     \rmfamily Chaque point représente le taux de GC d'une séquence recombinante.
+%     Chaque panneau du graphique indique le type de construction donneuse. Comme
+%     attendu, le taux de GC des recombinants transformés par la construction AT
+%     est inférieur à celui de la séquence receveuse. De même, lorsque la
+%     construction donneuse est GC, le taux de GC moyen est supérieur à celui du
+%     receveur. Cependant, lorsque la construction donneuse a le même taux de GC
+%     que le receveur (dans les constructions $\nicefrac{AT}{GC}$ et
+%     $\nicefrac{GC}{AT}$), le taux de GC moyen des recombinants est inférieur à
+%     celui du receveur (test des rangs de Wilcoxon apparié, probabilité
+%     critique~\(= 5.5\e{-16}\) ) }\label{fig:tauxgc}
 
-\end{figure}
+% \end{figure}
+
+% Je suis pas certain que ça ait beaucoup de sens. À voir avec Laurent, comment
+% on pourrait comparer ces taux de GC. Je suis pas certain qu'on puisse en tirer
+% quoi que ce soit.
