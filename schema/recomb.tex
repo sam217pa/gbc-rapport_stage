@@ -1,0 +1,256 @@
+\begin{center}
+  \rmfamily
+
+  \tikzset{plasmid lines/.style={xscale = 0.2, yscale = 0.2, very thick}}
+  \tikzset{legende/.style={font=\scriptsize, color=Gray, align=right}}
+  \tikzset{transition/.style={color=Gray, very thick}}
+  \tikzset{legende text/.style={font=\scriptsize, color=Black, align=right}}
+
+  \begin{tikzpicture}[scale = 0.7, line width = 2pt, join = round]
+
+    \begin{scope}
+      % représente la construction, avec l'insertion de la cassette de résistance
+      \draw[gs_don_col] (4, 0) -- (6, 0) node[above, midway, font=\tiny] {Gène cible};
+      \draw[am1_col, ultra thick] (6, 0) -- (6.2, 0);
+      \draw[kanr_col] (6.2, 0) -- (7.8, 0) node[above, midway, font=\tiny] {KanR};
+      \draw[genome_col, ultra thick] (7.8, 0) -- (8.0, 0);
+      \draw[ancre_don_col] (8.0, 0) -- (9.8, 0) node[above, midway, font=\tiny] {Ancre};
+      \draw[am3_col, ultra thick] (9.8, 0) -- (10.0, 0);
+      \draw[plasmid_col, thick] (2, 0) -- (4, 0);
+
+      \draw[arrows = {-Stealth[left]}, plasmid_col, thick] (10, 0) -- (12, 0)
+      node[font = \tiny, above, align = right]
+      {Construction \\ plasmidique};
+
+      \draw[plasmid_col, dotted, thin, out=0, in = 15]
+      [->] (12.1, 0) to (10.8, -4.6)
+      node[Gray, legende, right]
+      {Transformation};
+
+      % Génome acinetobacter
+      % brin 5' 3'
+      \draw[gs_rec_col] (5, -1) -- (7, -1);
+      \draw[ancre_don_col] (7.0, -1) -- (8.8, -1);
+      \draw[genome_col, thick] (2, -1) -- (5, -1);
+      \draw[arrows = {-Stealth[left]}, genome_col, thick] (8.8, -1) -- (12, -1) node[font=\tiny, above, align = right] {Génome \\ \emph{Acinetobacter}};
+      %amorces
+      % \draw[Red3, ultra thick] (4, -1) -- (4.2, -1) node[above left, font=\tiny] {Amorce};
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) node[above right=-1pt , font=\tiny] {Homologues} -- ++(3, 0)  -- ++(0.5, +0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) -- ++(3, 0) -- ++(0.5, -0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, +0.4);
+      \draw[Gray, densely dotted, thin] [->] (2, -0.5) -- ++(6, 0) -- ++(0.5, -0.4);
+
+      \draw[gs_rec_col] (5, -1.2) -- (7, -1.2);
+      \draw[ancre_don_col] (7.0, -1.2) -- (8.8, -1.2);
+      \draw[arrows = {Stealth[right, swap]-}, genome_col, thick] (2, -1.2) -- (5, -1.2);
+      \draw[genome_col, thick] (8.8, -1.2) -- (12, -1.2);
+
+      % Lignes reliant les fragments
+      \draw[gs_don_col, thin, dotted] (4, 0) -- (5, -1);
+      \draw[gs_don_col, thin, dotted] (6, 0) -- (7, -1);
+      \draw[ancre_don_col,  thin, dotted] (8, 0) -- (7, -1);
+      \draw[ancre_don_col,  thin, dotted] (9.8, 0) -- (8.8, -1);
+
+      % petit éclair pour marquer la cassure
+      \node[Gold2, font=\Large] at (7, -1.1) {\Lightning};
+      \node[Gray, font=\tiny] at (7, -1.4) {Cassure Double Brin};
+
+
+      %%
+      %% RÉSECTION
+      %%
+      \draw[transition] [->] (7, -1.6) -- (7, -2.4) node[legende, left, midway] {Résection};
+
+      % brin ->
+      \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -2.5) -- (7, -2.5);
+      \draw[ancre_don_col] (8.3, -2.5) -- (8.8, -2.5);
+      \draw[genome_col, thick] (2, -2.5) -- (5, -2.5);
+      \draw[arrows = {-Stealth[left]}, genome_col, thick] (8.8, -2.5) -- (12, -2.5);
+      % brin <-
+      \draw[gs_rec_col, ultra thick] (5, -2.7) -- (5.5, -2.7);
+      \draw[arrows = {Stealth[right, swap, scale = 1]-}, ancre_don_col, very thick] (7.0, -2.7) -- (8.8, -2.7);
+      \draw[arrows = {Stealth[right, swap]-}, genome_col, thick] (2, -2.7) -- (5, -2.7);
+      \draw[genome_col, thick] (8.8, -2.7) -- (12, -2.7);
+
+      %%
+      %% RÉPARATION
+      %%
+      \draw[transition] [->] (7, -2.8) -- (7, -3.4) node[legende, midway, left] {Réparation};
+
+      \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -3.5) -- (7, -3.5);
+      \draw[ancre_don_col] (8.3, -3.5) -- (8.8, -3.5);
+      \draw[genome_col, thick] (2, -3.5) -- (5, -3.5);
+      \draw[arrows = {-Stealth[left]}, genome_col, thick] (8.8, -3.5) -- (12, -3.5);
+      % brin <-
+      \draw[gs_rec_col, ultra thick] (5, -3.7) -- (5.5, -3.7);
+      \draw[ ancre_don_col, very thick] (8.8, -3.7) -- ++(-0.5, 0) -- ++(-0.2, -0.6) -- ++(-0.7, 0);
+      \draw[arrows = {Stealth[right, swap]-}, genome_col, thick] (2, -3.7) -- (5, -3.7);
+      \draw[genome_col, thick] (8.8, -3.7) -- (12, -3.7);
+
+      %% fragment insert avec boucle pour cassette de résistance
+      % je place l'origine de la construction au début da la région ancre sur le
+      % génome d'acinetobacter. C'est plus facile pour s'aligner
+      \draw[ancre_don_col, very thick]                     (8.8, -4.6) -- ++(-2, 0);
+      \draw[genome_col, very thick]                  (6.8, -4.6) -- ++(-0.2, 0);
+      \draw[kanr_col, very thick]                     (6.6, -4.6) -- ++(-2, 0);
+      \draw[am1_col, very thick]                       (4.6, -4.6) -- ++(-0.2, 0);
+      \draw[gs_don_col, very thick]                    (4.4, -4.6) -- ++(-2, 0);
+      \draw[plasmid_col, thick]                            (2.4, -4.6) -- ++(-0.4, 0);
+      \draw[plasmid_col, thick, arrows = {-Stealth[left]}] (8.8, -4.6) -- ++(2, 0);
+
+
+      %%
+      %% RESYNTHÈSE
+      %%
+
+      \draw[densely dotted, ancre_don_col, very thick]    (7.35, -4.3) --  (6.8, -4.3);
+      \draw[densely dotted, genome_col, very thick] (6.8, -4.3) -- ++(-0.2, 0);
+      \draw[densely dotted, kanr_col, very thick]    (6.6, -4.3) -- ++(-2, 0);
+      \draw[densely dotted, am1_col, very thick]      (4.6, -4.3) -- ++(-0.2, 0);
+      \draw[densely dotted, gs_don_col, very thick, arrows = {-Stealth[left, scale = 0.5]}]   (4.4, -4.3) -- ++(-1.5, 0);
+      %% lignes permettant de montrer l'appariemment des régions
+      \draw[gs_don_col, thin, dotted ] (2.9, -4.3) -- (5, -3.5);
+      \draw[gs_don_col, thin, dotted ] (4.4, -4.3) -- (7, -3.5);
+
+      %%
+      %% RÉAPPARIEMMENT
+      %%
+
+      \draw[Gray, transition] [->] (7, -4.8) -- ++(0, -1) node[midway, left, legende] {Réappariemment};
+
+      % brin ->
+      \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick] (5, -6) -- (7, -6);
+      \draw[ancre_don_col, very thick] (11.4, -6) -- ++(-0.5, 0);
+      \draw[genome_col, thick, arrows = {-Stealth[left]}] (11.4, -6) -- ++(1, 0);
+      % \draw[ancre_don_col] (8.3, -6) -- (8.8, -6);
+      \draw[genome_col, thick] (2, -6) -- (5, -6);
+      %% brin <-
+      % petit bout bleu
+      \draw[gs_rec_col, ultra thick]                        (5, -6.2)   --   (5.5, -6.2);
+      \draw[gs_don_col, densely dotted, very thick, arrows = {Stealth[left, scale = 0.5]-}] (6.0, -6.2) -- ++(1.0, 0);
+      \draw[densely dotted, am1_col, very thick]            (7.0, -6.2) -- ++(0.2, 0);
+      \draw[densely dotted, kanr_col, very thick]          (7.2, -6.2) -- ++(2.0, 0);
+      \draw[densely dotted, genome_col, very thick]       (9.2, -6.2) -- ++(0.2, 0);
+      \draw[densely dotted, ancre_don_col, very thick]          (9.4, -6.2) --   (9.9, -6.2);
+      \draw[solid, ancre_don_col, very thick]                   (9.9, -6.2) -- ++(1.5, 0);
+      % génome
+      \draw[genome_col, thick]                            (11.4, -6.2) -- ++(1, 0);
+      \draw[genome_col, thick, arrows = {Stealth[left]-}] (2, -6.2) --      (5, -6.2);
+
+	    \draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3]
+      (6, -8.4) rectangle ++(1, +0.6);
+	    \draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3]
+      (6, -6.4) rectangle ++(1, +0.6);
+
+      %%
+      %% SYNTHÈSE DU BRIN 5'
+      %%
+      \draw[transition] [->] (7, -6.5) -- ++(0, -1)
+      node[midway, left, legende, align = right] {Synthèse du brin \\ complémentaire };
+
+      %% brin ->
+      \draw[gs_rec_col, arrows = {-Stealth[left, scale = 1]}, very thick]
+      (5, -8.0) -- (7, -8.0);
+      \draw[ancre_don_col, very thick]
+      (11.4, -8.0) -- ++(-0.5, 0);
+      \draw[genome_col, thick, arrows = {-Stealth[left]}]
+      (11.4, -8.0) -- ++(1, 0);
+      \draw[genome_col, thick]
+      (2, -8.0) -- (5, -8.0);
+      \draw[densely dotted, am1_col, very thick]
+      (7.0, -8.0) -- ++(0.2, 0);
+      \draw[densely dotted, kanr_col, very thick]
+      (7.2, -8.0) -- ++(2.0, 0);
+      \draw[densely dotted, genome_col, very thick]
+      (9.2, -8.0) -- ++(0.2, 0);
+      \draw[densely dotted, ancre_don_col, very thick]
+      (9.4, -8.0) -- ++(1.5, 0);
+
+      %% brin <-
+      \draw[gs_rec_col, very thick]
+      (5, -8.2)   --   (5.5, -8.2);
+      \draw[gs_don_col, solid, very thick]
+      (6.0, -8.2) -- ++(1.0, 0);
+      \draw[gs_rec_col, densely dotted, very thick, arrows = {-Stealth[left, scale = 0.5]}]
+      (6.0, -8.2) -- ++(-0.5, 0);
+      \draw[solid, am1_col, very thick]
+      (7.0, -8.2) -- ++(0.2, 0);
+      \draw[solid, kanr_col, very thick]
+      (7.2, -8.2) -- ++(2.0, 0);
+      \draw[solid, genome_col, very thick]
+      (9.2, -8.2) -- ++(0.2, 0);
+      \draw[solid, ancre_don_col, very thick]
+      (9.4, -8.2) --   (9.9, -8.2);
+      \draw[solid, ancre_don_col, very thick]
+      (9.9, -8.2) -- ++(1.5, 0);
+      % génome
+      \draw[genome_col, thick]
+      (11.4, -8.2) -- ++(1, 0);
+      \draw[genome_col, thick, arrows = {Stealth[left]-}]
+      (2, -8.2) -- (5, -8.2);
+
+
+      %%
+      %% RÉSULTAT FINAL
+      %%
+
+      \draw[transition] [->] (7, -8.5) -- ++(0, -1) node[midway, left, legende] {Ligature};
+
+      \draw[gs_rec_col, very thick]
+      (5, -10.0) -- (7, -10.0);
+      \draw[ancre_don_col, very thick]
+      (11.4, -10.0) -- ++(-0.5, 0);
+      \draw[genome_col, thick, arrows = {-Stealth[left]}]
+      (11.4, -10.0) -- ++(1, 0);
+      \draw[genome_col, thick]
+      (2, -10.0) -- (5, -10.0);
+      \draw[solid, am1_col, very thick]
+      (7.0, -10.0) -- ++(0.2, 0);
+      \draw[solid, kanr_col, very thick]
+      (7.2, -10.0) -- ++(2.0, 0);
+      \draw[solid, genome_col, very thick]
+      (9.2, -10.0) -- ++(0.2, 0);
+      \draw[solid, ancre_don_col, very thick]
+      (9.4, -10.0) -- ++(1.5, 0);
+
+      %% brin <-
+      \draw[gs_rec_col, very thick]
+      (5, -10.2)   -- (5.5, -10.2);
+      \draw[gs_don_col, solid, very thick]
+      (6.0, -10.2) -- ++(1.0, 0);
+      \draw[gs_rec_col, solid, very thick]
+      (6.0, -10.2) -- ++(-0.5, 0);
+      \draw[solid, am1_col, very thick]
+      (7.0, -10.2) -- ++(0.2, 0);
+      \draw[solid, kanr_col, very thick]
+      (7.2, -10.2) -- ++(2.0, 0);
+      \draw[solid, genome_col, very thick]
+      (9.2, -10.2) -- ++(0.2, 0);
+      \draw[solid, ancre_don_col, very thick]
+      (9.4, -10.2) --   (9.9, -10.2);
+      \draw[solid, ancre_don_col, very thick]
+      (9.9, -10.2) -- ++(1.5, 0);
+      % génome
+      \draw[genome_col, thick]
+      (11.4, -10.2) -- ++(1, 0);
+      \draw[genome_col, thick, arrows = {Stealth[left]-}]
+      (2, -10.2) -- (5, -10.2);
+
+      %% rectangle de zoom
+	    \draw[Gray, thick, densely dotted, fill = Gray, opacity = 0.3]
+      (6, -10.4) rectangle (7, -9.8);
+
+      % \draw[Gray, very thick, densely dotted, opacity = 0.6, bend right = 5]
+      % [->] (7, -10.4) to (14.75, -10.75);
+
+	    \draw[Gray, thick, densely dotted]
+      (4, -10.6) rectangle (7.6, -9.6);
+
+      % \draw[Gray, very thick, densely dotted, opacity = 0.6, out = 180, in = 180]%, bend right = 75]
+      % [->] (4, -10.6) to (3.8, -17);
+    \end{scope}
+
+
+  \end{tikzpicture}
+
+\end{center}

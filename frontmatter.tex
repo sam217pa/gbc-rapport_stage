@@ -1,5 +1,7 @@
+\rmfamily
 \pagenumbering{roman}
-\includepdf{img/titlepage.pdf}
+% \includepdf{img/titlepage.pdf}
+\blankpage
 \clearpage
 \subsubsection*{Crédits photographiques}
 Photographie de l'image de couverture reproduite avec permissions depuis
@@ -14,10 +16,14 @@ Wikimedia Commons, domaine public, accès libre.\\
 \afterpage{\blankpage}
 
 \setstretch{1.0}
+
 \printacronyms[include-classes=abbrev,name=Abbréviations]
+
 \setstretch{1.5}
+
 \listoffigures
 \listoftables
+
 \blankpage
 \blankpage
 \clearpage
@@ -27,3 +33,5 @@ Wikimedia Commons, domaine public, accès libre.\\
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
+
+\sffamily

@@ -1,63 +1,91 @@
+%==============================================================================
+% début de la page de figure.
+% - stratégies envisagées
+% - protocole de constructions moléculaires
+%
+\null
+\vfill
 
+% ------------------------------------------------------------
+% TODO placer la figure des stratégies
+% ------------------------------------------------------------
+% ------------------------------------------------------------
 
+% ------------------------------------------------------------
+% TODO placer la figure des constructions
+\input{schema/construct.tex}
+\caption[Constructions moléculaires]{%
+  \textbf{Constructions moléculaires} \\
+  \rmfamily %
+  Les gènes de synthèse sont amplifié par PCR spécifique. Des bases adénines
+  sont ajoutées naturellement sur les fragments au cours des derniers cycles
+  de PCR. Ces fragments sont ensuite ligaturés dans le plasmide pGEM-T.
+  Celui-ci est disponible ouvert avec des bases thymines sortantes. La
+  ligature est catalysée par la T4DNA Ligase. Le plasmide obtenu est
+  linéarisé par digestion enzymatique au site d'insertion des fragments.
+  
+  La cassette de résistance à la kanamycine KanR ainsi que la région
+  facilitant l'homologie Ancre sont préalablement amplifiées par PCR en
+  utilisant des amorces porteuses de régions 3' flottantes, complémentaires
+  des extrémités des fragments voisins. La ligature entre les trois
+  fragments obtenus est réalisée à l'aide du kit Takara InFusion. Les
+  constructions plasmidiques obtenues sont amplifiées clonalement par
+  culture en milieu sélectif liquide, et linéarisées par digestion
+  enzymatique. 
+}
+% ------------------------------------------------------------
+\vfill
+
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
+
+% fin de la page de figure
+% ==============================================================================
+
+% ==============================================================================
 \section{Matériels \& Méthodes}
 \label{sec:materiel}
+% ==============================================================================
 
-\addfig{%
+
+\afterpage{%
+  \null
+  \vfill
   \input{schema/manip.tex}
   \caption[Protocoles de transformation]{\textbf{Protocole de transformation et
       d'obtention des amplicons des zones de recombinaison.} \rmfamily%
     \setstretch{1.1} %
   }
   \label{img:manip}
+  \vfill
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \newpage
 }
+
+
+
+
 
 \subsection{Constructions des plasmides}
 \label{subsec:constructions}
 
-
-Nous avons utilisé deux approches. La première consiste à introduire
-exclusivement des bases GC ou AT. (voir figure \label{img:strategies}). Sous
+Nous avons utilisé deux approches (voir figure \ref{img:strategies}). La
+première consiste à introduire exclusivement des bases GC ou AT. Sous
 l'hypothèse d'une conversion biaisée vers GC, les régions converties devraient
 être plus longues lorsqu'on introduit exclusivement des bases GC que lorsqu'on
-introduit des bases AT. Sur un locus du génome d'\emph{Acinetobacter
-  baylyi}, 23 dinucléotides séparés par trente bases ont été choisis. Ce sont
-tous des dinucléotides alternant AT et GC. Un gène de synthèse a été conçu pour
-introduire un mésappariemment entre la base A ou T du génome et une base G ou C
-: cette construction sera appelée GC dans la suite de ce rapport. La
-construction AT a été conçue de façon à introduire un mésappariemment entre les
-bases G ou C du génome et une base A ou T.
+introduit des bases AT. Sur un locus du génome d'\emph{Acinetobacter baylyi},
+$23$ dinucléotides séparés par trente bases ont été choisis\footnote{Ils
+  introduisent 3\% de divergence avec la séquence sauvage. Un plus grand nombre
+  de marqueurs diminue les fréquences de recombinaison ; un nombre inférieur
+  diminue la qualité du signal.}. Ce sont tous des dinucléotides alternant AT et
+GC. Un gène de synthèse a été conçu pour introduire des mésappariemments entre
+les bases A ou T des dinucléotides choisis et une base G ou C~: cette
+construction sera appelée GC dans la suite de ce rapport. La construction AT a
+été conçue de façon à introduire un mésappariemment entre les bases G ou C des
+dinucléotides choisis et une base A ou T.
 
-  \begin{center}
-    \rmfamily \footnotesize
-    \setstretch{1.0}
-    \begin{tikzpicture}
-      \draw[gs_don_col] [->] (0, 0) -- ++(0.5, +0.5) -- ++(0.5, 0)
-      node[above = 3pt, midway, draw, circle, fill, opacity = 0.3, font=\tiny] {1}
-      node[right, align = left] {Régions\\converties ?};
-      \draw[kanr_col]   [->] (0, 0) -- ++(0.5, -0.5) -- ++(0.5, 0)
-      node[above = 3pt, midway, draw, circle, fill, opacity = 0.3, font=\tiny] {2}
-      node[right, align = left] {Rapport\\en base ?};
-
-      \draw[gs_don_col] [->] (2.7, +0.5) -- ++(0.5, +0.25) -- ++(0.5, 0)
-      node[right] {\texttt{--C--G--C--G--} : Construction GC};
-      \draw[gs_don_col] [->] (2.7, +0.5) -- ++(0.5, -0.25) -- ++(0.5, 0)
-      node[right] {\texttt{-A--T--A--T---} : Construction AT};
-      \draw[kanr_col]   [->] (2.7, -0.5) -- ++(0.5, +0.25) -- ++(0.5, 0)
-      node[right] {\texttt{--C-T---C-T---} : Construction CG/AT};
-      \draw[kanr_col]   [->] (2.7, -0.5) -- ++(0.5, -0.25) -- ++(0.5, 0)
-      node[right] {\texttt{-A---G-A---G--} : Construction AT/CG};
-
-      \node[right,gs_rec_col] at (3.7, 1.2) {\texttt{-CA-CA-CA-CA--} : Séquence sauvage};
-    \end{tikzpicture}
-    \caption[Schéma des stratégies]{\label{img:strategies} \textbf{Schéma des deux approches et des constructions utilisées} \\
-      \rmfamily%
-      \setstretch{1.1} %
-      Des dinucléotides ont été choisis sur la séquence sauvage pour alterner AT
-      et CG. La construction CG introduit uniquement des bases C et G, la
-      construction AT des bases A et T, la construction AT/CG alterne AT et CG,
-      et la construction CG/AT alterne CG et AT. }
-  \end{center}
 
 La seconde approche consiste à introduire à la fois des bases AT et CG. En
 l'absence de biais, le rapport en base ne devrait pas être affecté : on
@@ -71,21 +99,20 @@ Une première partie du travail a consisté à construire le vecteur permettant
 d'introduire le gène synthétique porteur des mésappariemments chez
 \emph{Acinetobacter} par transformation naturelle. Les gènes synthétiques ont
 été synthétisés par quelqu'un.
-%% TODO qui a synthétisé les gènes ?
+%% TODO Franck qui a synthétisé les gènes ?
 Les PCRs spécifiques du gène d'intérêt ont été réalisées. Les amplicons ainsi
 obtenus ont été insérés par ligature dans le plasmide pGEM-T. Le plasmide a été
 inséré dans la souche d'\textit{E.coli} One
 Shot\textsuperscript{{\textregistered}} \texttt{TOP-10} (Invitrogen, Carlsbad,
 États-Unis), suivant le protocole du fabriquant. Les cellules transformantes
 possédant l'insert ont été discriminées par un crible bleu / blanc sur gélose
-solide Luria-Bertani additionnée d'Ampicilline à \SI{75}{\ug\per\mL}, de XGal et
-d' IPTG. Le sens d'insertion du fragment a été vérifié par PCR M13R-1392 (voir
-annexe la fameuse annexe).
-%% TODO schéma des amorces
-Les inserts des clones positifs ont été séquencés par séquençage Sanger (GATC
-Biotech, Constance, Allemagne). Les plasmides des clones validés par séquençage
-ont été extraits par le kit Nucleospin-Plasmid (Macherey-Nagel, Düren,
-Allemagne), et ouverts par digestion \emph{Spe}I.
+solide Luria-Bertani \ac{lb} additionnée d'Ampicilline à \SI{75}{\ug\per\mL}, de
+XGal et d' IPTG. Le sens d'insertion du fragment a été vérifié par PCR M13R-1392
+(voir annexe \ref{img:amorces}). Les inserts des clones positifs ont été
+séquencés par séquençage Sanger (GATC Biotech, Constance, Allemagne). Les
+plasmides des clones validés par séquençage ont été extraits par le kit
+Nucleospin-Plasmid (Macherey-Nagel, Düren, Allemagne), et ouverts par digestion
+\emph{Spe}I.
 
 La cassette de résistance à la kanamycine \emph{aphA}3 est amplifiée par PCR
 avec les amorces 1408 et 1409. La région \emph{ancre} facilitant la
@@ -97,10 +124,40 @@ produit de ligature obtenu a été inséré dans la souche optimisée pour la
 chimio-compétence \emph{E.coli} Stellar (Takara Clontech). Les transformants ont
 été séléctionnés sur milieu LB solide additionné d'Ampicilline à
 \SI{75}{\ug\per\mL} de kanamycine à \SI{50}{\ug\per\mL}. Les transformants ont
-été confirmés par PCR spécifique de l'insert avec les amorces XXXX et YYYY.
+été confirmés par PCR spécifique de l'insert avec les amorces 1393 et 1411
+(voir annexe \ref{img:amorces}).
 
-\addfig{%
+% -----------------------------------------------------------------------------
+\subsection{Transformations d'\emph{Acinetobacter baylyi}}
+\label{subsec:transfo}
+% -----------------------------------------------------------------------------
 
+
+\SI{1}{\ug} de plasmide a été extrait et linéarisé par digestion \emph{Sca}I.
+L'enzyme a été inactivée par incubation \SI{10}{\minute} à \SI{70}{\celsius}.
+\SI{390}{\uL} d'une culture pure d'\emph{Acinetobacter baylyi} ADP1, avec une
+absorbance de \SI{0,8} à \SI{600}{\nm} ont été incubés pendant \SI{1}{\hour} à
+\SI{28}{\celsius} en présence de \SI{200}{\ng} de plasmide linéarisé. Les
+suspensions ont été ensuite incubées \SI{15}{\minute} à \SI{37}{\celsius} en
+présence de DNAse à \SI{20}{\umol\per\L} pour éliminer les plasmides résiduels.
+Les cellules recombinantes ont été sélectionnées par étalement en spirales
+(InterScience, St Nom la Bretêche, France) sur milieu LB solide additionné de
+kanamycine à \SI{50}{\ug\per\mL} et incubées \SI{24}{\hour} à \SI{30}{\celsius}.
+Les dénombrements ont été effectués via un compteur automatique
+Scan\textsuperscript{\textregistered}1200 (InterScience).
+
+96 clones isolés ont été purifiés par isolement sur milieu LB solide additionné
+de kanamycine à \SI{50}{\umol\per\mL} et incubés \SI{24}{\hour} à
+\SI{30}{\celsius}. Une colonie isolée par clone a été mise en suspension dans
+\SI{50}{\uL} d'\ce{H_2O} ultra-pure. \SI{2}{\uL} de ces suspensions ont servi de
+matrice pour amplifier les régions recombinantes en PCR par la Taq polymérase
+haute fidélité Phusion (ThermoFischer, Waltham, États-Unis). L'amplification a
+été confirmée par migration sur gel d'agarose à 1\%. Les amplicons ont été
+séquencés par la technique de Sanger\cite{sanger_dna_1977} (GATC Biotech).
+
+\afterpage{%
+ \null
+ \vfill
   \input{schema/align.tex}
   \caption[Analyses des zones de recombinaison]{\textbf{Exemple d'analyse de la
       zone de recombinaison pour un clone
@@ -113,37 +170,18 @@ chimio-compétence \emph{E.coli} Stellar (Takara Clontech). Les transformants on
     d'inférer pour chaque site polymorphe le sens de la conversion du
     recombinant. }
   \label{img:align}
+  \vfill
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \newpage
 }
 
-\subsection{Transformations d'\emph{Acinetobacter baylyi}}
-\label{subsec:transfo}
+\newpage
 
-
-\SI{1}{\ug} de plasmide a été extrait et linéarisé par digestion \emph{Sca}I.
-L'enzyme a été inactivée par incubation \SI{10}{\minute} à \SI{70}{\celsius}.
-\SI{390}{\uL} d'une culture pure d'\emph{Acinetobacter baylyi} ADP1,
-avec une absorbance de \SI{0,8} à \SI{600}{\nm} ont été incubés pendant
-\SI{1}{\hour} à \SI{28}{\celsius} en présence de \SI{200}{\ng} de plasmide linéarisé.
-Les suspensions ont été incubées \SI{15}{\minute} à \SI{37}{\celsius} en présence de
-DNAse à \SI{20}{\umol\per\L} pour éliminer les plasmides résiduels. Les cellules
-recombinantes ont été sélectionnées par étalement en spirales (InterScience, St
-Nom la Bretêche, France) sur milieu LB solide additionné de Kanamycine à
-\SI{50}{\ug\per\mL} et incubés \SI{24}{\hour} à \SI{30}{\celsius}. Les
-dénombrements ont été effectués via un compteur automatique
-Scan\textsuperscript{\textregistered}1200 (InterScience).
-
-96 clones isolés ont été purifiés par isolement sur milieu LB solide additionné
-de kanamycine à \SI{50}{\umol\per\mL} et incubation \SI{24}{\hour} à
-\SI{30}{\celsius}. Une colonie isolée par clone a été suspendue dans
-\SI{50}{\uL} d'\ce{H_2O} ultra-pure. \SI{2}{\uL} de ces suspensions ont servi de
-matrice pour amplifier les régions recombinantes en PCR par la Taq polymérase
-haute fidélité Phusion (ThermoFischer, Waltham, États-Unis). L'amplification a
-été confirmée par migration sur gel d'agarose à 1\%. Les amplicons ont été
-séquencés par la technique de Sanger\cite{sanger_dna_1977} (GATC Biotech).
-
+% ------------------------------------------------------------------------------
 \subsection{Alignements}
 \label{subsec:align}
-
+% ------------------------------------------------------------------------------
 
 Les spectrogrammes de séquençage reçus au format propriétaire \texttt{abi}
 (Applied Biosystem, Foster City, États-Unis) ont été analysés par le programme
@@ -152,10 +190,10 @@ Les spectrogrammes de séquençage reçus au format propriétaire \texttt{abi}
 alignées à la référence par \texttt{ muscle v3.8.31} \cite{edgar_muscle:_2004}.
 La référence en question correspond à l'alignement de la séquence sauvage et de
 la séquence du gène synthétique, respectivement \emph{receveur} et
-\emph{donneur} de l'évènement de recombinaison. Un script Python
+\emph{donneur} de l'évènement de recombinaison. Un programme Python
 \cite{cock_biopython:_2009} a été développé pour analyser les alignements
-obtenus. Il infère les positions des SNPs d'intérêt dans l'alignement de
-référence, et détermine le génotype du clone séquencé. Les alignements par paire
+obtenus. Il détermine les positions des SNPs d'intérêt dans l'alignement de
+référence, et infère le génotype du clone séquencé. Les alignements par paire
 en colonne obtenus ont été analysés par \textrm{R} \texttt{3.2.3}
 \cite{r_core_team_r:_2015}. Les programmes développés sont accessibles à
 l'adresse \url{https://github.com/sam217pa/gbc-seq_mars}. Les données formattées

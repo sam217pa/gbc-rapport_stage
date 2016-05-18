@@ -1,9 +1,9 @@
 %%
 %% fonts
 %%
-\usepackage{euler}
+% \usepackage{euler}
 \usepackage[no-math]{fontspec}
-\usepackage{unicode-math}
+% \usepackage{unicode-math}
 % \usepackage[osf]{mathpazo} % 'o'ld 's'tyle 'f'igures are used in the manual, but you can leave this away, of course.
 \setsansfont[Ligatures = TeX]{Helvetica}
 \setmainfont[Ligatures = TeX]{Linux Libertine O}
@@ -178,22 +178,29 @@
 \usepackage{dpfloat}
 
 \makeatletter
-\newcommand\@addfig{\relax}
-\newcommand\addfig[1]{\global\long\def\@addfig{#1}}
-\newcommand\@putfig{\@addfig\addfig{\relax}}
+% \newcommand\@addfig{\relax}
+% \newcommand\addfig[1]{\global\long\def\@addfig{#1}}
+% \newcommand\@putfig{\@addfig\addfig{\relax}}
+% \newcommand\blankpage{%
+% \null
+% \vfill
+% \@putfig%
+% \vfill
+% \thispagestyle{empty}% BEWARE, if you want the header and footer, you should put
+%                      % the correct style here
+% \clearpage%
+% \addtocounter{page}{-1}% BEWARE, if you want the left pages to be numbered,
+%                        % don't put this line, this is intended to have picture
+%                        % page with the same number as the facing text page
+% \afterpage{\blankpage}}
+
 \newcommand\blankpage{%
-\null
-\vfill
-\@putfig%
-\vfill
-\thispagestyle{empty}% BEWARE, if you want the header and footer, you should put
-                     % the correct style here
-\clearpage%
-\addtocounter{page}{-1}% BEWARE, if you want the left pages to be numbered,
-                       % don't put this line, this is intended to have picture
-                       % page with the same number as the facing text page
-\afterpage{\blankpage}}
-\makeatother
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+% \makeatother
 
 %% permet d'utiliser caption en dehors des floats
 \makeatletter
@@ -237,7 +244,8 @@
 
 % caption
 \usepackage[figurename=Figure, tablename=Table]{caption} % must be loaded after babel
-\numberwithin{figure}{section}
+% \numberwithin{figure}{section}
+% \numberwithin{table}{section}
 
 
 \newcolumntype{r}{>{\columncolor{gs_rec_col}}c}
