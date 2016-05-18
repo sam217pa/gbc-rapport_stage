@@ -7,15 +7,23 @@ Wikimedia Commons, domaine public, accès libre.\\
 \url{https://commons.wikimedia.org/wiki/File:Dark_side_of_the_moon.jpg}
 \newpage
 
-\afterpage{\blankpage}
 \tableofcontents
 \vfill
 \addtocontents{toc}{\protect\vfill}
 \newpage
+\afterpage{\blankpage}
+
+\setstretch{1.0}
 \printacronyms[include-classes=abbrev,name=Abbréviations]
+\setstretch{1.5}
 \listoffigures
 \listoftables
-\newpage
+\blankpage
+\blankpage
+\clearpage
+% \cleardoublepage
+% \newpage
+% \afterpage{\cleardoublepage}
 
 \pagenumbering{arabic}
 \setcounter{page}{1}

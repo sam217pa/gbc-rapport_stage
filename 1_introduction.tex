@@ -1,41 +1,57 @@
-\section*{Introduction}
-\addcontentsline{toc}{section}{Introduction}
-\label{sec:introduction}
 
-\addfig{%
+\newpage
+
+% figure de la recombinaison homologue
+\afterpage{%
+  \null
+  \vfill
   \input{schema/construct.tex}
   \caption[Mécanismes moléculaires de conversion génique]{\textbf{Constructions
       moléculaires et mécanismes de conversion génique au cours de la
       transformation naturelle} }%
   \label{img:construct}
+  \vfill
+
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \newpage
 }
 
-Le contenu en base est un paramètre clé de variation des séquences au sein des
-génomes et entre génomes. Chez les procaryotes, le taux de guanine et cytosine
-(\ac{gc}) varie de 16.5\% à 75\% dans les génomes séquencés à ce jour. Une telle
-amplitude soulève plusieurs questions. Celles qui nous intéressent concernent
-les mécanismes responsables de ces variations : est-ce qu'ils sont associés à la
-réplication de l'ADN, à sa réparation ou à une pression de sélection sur l'usage
-du code génétique ? Au cours des quinzes dernières années, il a été démontré que
-la recombinaison homologue tend à augmenter localement le taux de GC dans les
-régions fortement recombinantes des génomes
+
+%==============================================================================
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\label{sec:introduction}
+%==============================================================================
+
+
+%==============================================================================
+% # INTRODUCTION
+%==============================================================================
+Chez les procaryotes, le taux de guanine et cytosine (\ac{gc}) varie de 16.5\% à
+75\% dans les génomes séquencés à ce jour. Une telle amplitude soulève plusieurs
+questions. Celles qui nous intéressent concernent les mécanismes responsables de
+ces variations : est-ce qu'ils sont associés à la réplication de l'ADN, à sa
+réparation ou à une pression de sélection sur l'usage du code génétique ? Au
+cours des quinzes dernières années, il a été démontré que la recombinaison
+homologue tend à augmenter localement le taux de GC dans les régions fortement
+recombinantes des génomes
 eucaryotes\cite{duret_biased_2009,lesecque_gc-biased_2013,williams_non-crossover_2015}.
-Au cours de la réparation des cassures doubles brins par recombinaison
-homologue, les mésappariemments locaux sont réparés par un mécanisme
-occasionnant de la \emph{conversion génique}\cite{chen_gene_2007}. Ce mécanisme
-est biaisé vers l'introduction préférentielle des bases C et G chez les
-mammifères et probablement chez un grand nombre
-d'eucaryotes\cite{pessia_evidence_2012}. C'est un processus neutre : il impacte
-les régions codantes et non-codantes. Il peut s'opposer à l'action de la
-sélection en augmentant la probabilité de fixation des allèles G et
-C\cite{ratnakumar_detecting_2010}.
+Lors de la réparation des cassures doubles brins par recombinaison homologue,
+les mésappariemments locaux sont réparés par un mécanisme occasionnant de la
+\emph{conversion génique}\cite{chen_gene_2007}. Ce mécanisme est biaisé vers
+l'introduction préférentielle des bases C et G chez les mammifères et
+probablement chez un grand nombre d'eucaryotes\cite{pessia_evidence_2012}. C'est
+un processus non adaptatif : il impacte les régions codantes et non-codantes. Il
+peut s'opposer à l'action de la sélection en augmentant la probabilité de
+fixation des allèles G et C\cite{ratnakumar_detecting_2010}.
 
 En 2010, deux études simultanées\cite{hildebrand_evidence_2010,
-  hershberg_evidence_2010} démontrent que : 1) la \emph{mutation} est
-universellement biaisée vers A et T chez les procaryotes, et 2) les bases G et C
+  hershberg_evidence_2010} démontrent que : 1) le patron de \emph{mutation} est
+universellement biaisé vers A et T chez les procaryotes, et 2) les bases G et C
 ont une probabilité de fixation plus élevée, probablement sous l'effet d'un
 processus à l'action semblable à celle de la sélection naturelle. Hildebrand
-\emph{et al} avancent que le \ac{gc} est en soi un trait soumis à la Sélection,
+\emph{et al} avancent que le \ac{gc} est en soi un trait soumis à la sélection,
 et rejettent l'hypothèse d'un biais de conversion génique biaisé vers GC chez
 les procaryotes. Cependant, les analyses récentes de Lassalle \emph{et al}
 \cite{lassalle_gc-content_2015} et de Yahara \emph{et
@@ -46,6 +62,7 @@ conversion biaisé vers GC (\ac{gbgc}). Elles montrent également que la fixatio
 préférentielle des allèles GC va à l'encontre de la fixation des allèles
 optimaux des codons, une signature caractéristique de l'action d'un processus
 non adaptatif tel que le \ac{gbgc}.
+
 
 Ces observations sont compatibles avec l'hypothèse d'une conversion génique
 biaisée vers GC chez les procaryotes. L'objectif de ce travail était d'obtenir
@@ -63,22 +80,21 @@ mésappariemments entre la séquence donneuse --- notre construction --- et la
 séquence receveuse --- le génome (voir figure \ref{img:construct}). La
 réparation de ces mésappariemments donne lieu à la conversion génique d'un brin
 par l'autre : l'information génétique portée par un brin est transmise
-unidirectionnellement du brin donneur au brin receveur.
-
-On distingue donc la région convertie, dont le génotype correspond à celui de
-l'haplotype donneur, de la région conservée, dont le génotype correspond à celui
-de l'haplotype receveur. Elles sont séparées par le point de recombinaison (voir
-figure \ref{img:construct}). Les constructions présentent des mésappariemments
-avec la séquence receveuse. Ces marqueurs permettent 1) de localiser la position
-du point de recombinaison et 2) de déterminer la polarité de la conversion. À un
+unidirectionnellement du brin donneur au brin receveur. On distingue donc la
+région convertie, dont le génotype correspond à celui de l'haplotype donneur, de
+la région conservée, dont le génotype correspond à celui de l'haplotype
+receveur. Elles sont séparées par le point de recombinaison (voir figure
+\ref{img:construct}). Les constructions présentent des mésappariemments avec la
+séquence receveuse. Ces marqueurs permettent 1) de localiser la position du
+point de recombinaison et 2) de déterminer la polarité de la conversion. À un
 site donné, une base peut être convertie ou restaurée lorsqu'elle conserve la
-base de la séquence receveuse. La réparation des mésappariemments introduits nous renseigne sur les
-fréquences de conversion en faveur de GC chez \emph{A.baylyi}.
+base de la séquence receveuse. La réparation des mésappariemments introduits
+nous renseigne sur les fréquences de conversion en faveur de GC chez
+\emph{A.baylyi}.
 
 \todo[inline]{insérer débuts de conclusions ici}
 
-%%
-%% TODO compléter en fonction des résultats.
-%%
-%% TODO dire pourquoi acinetobacter
-%% TODO dire pourquoi trente snp.
+\newpage
+% TODO compléter en fonction des résultats.
+% TODO dire pourquoi acinetobacter
+% TODO dire pourquoi trente snp.
