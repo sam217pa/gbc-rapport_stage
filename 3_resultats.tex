@@ -6,6 +6,17 @@
     d'\emph{Acinetobacter baylyi} et un gène synthétique donneur d'allèles GC
     et AT.}%
   \rmfamily
+
+  Chaque ligne horizontale représente une séquence. Les points représentent
+  les positions des marqueurs sur les séquences. L'intensité et le diamètre
+  des points représentent le score de qualité du site. Les points sont bleus lorsque le site est dans la
+  région convertie : ils correspondent à l'haplotype du donneur. Ils sont
+  rouges lorsque le site est dans la région conservée.
+  Les séquences sont triées par longueur de région convertie.
+  Les alternances rouge / bleu marquent la transition de l'haplotype
+  converti à l'haplotype sauvage : le point de recombinaison est localisé
+  entre ces deux marqueurs.
+
   % TODO rajouter légende figure trace de conversion. Que tirer du graphe ?
 }%
 \vfill
@@ -71,7 +82,6 @@
   \addtocounter{page}{-1}
   \newpage
 }
-%------------------------------------------------------------------------------
 % ==============================================================================
 \section{Résultats}
 \label{sec:resultats}
@@ -92,39 +102,19 @@ représenté graphiquement les zones de recombinaison (voire figure
 convertie. Les 96 séquences obtenues sont triées par longueur de région
 convertie. La figure \ref{img:convtract} représente le détail des zones de
 recombinaison obtenues en transformant avec une construction alternant CG et AT.
-La figure \ref{img:traces3} représente les zones de recombinaisons des
-clones transformés par les donneurs GC, AT et AT/GC. Elles sont détaillées en
-annexe \ref{sec:trac-de-conv}.
+Les zones de recombinaisons des clones transformés par les donneurs GC, AT et
+AT/GC sont détaillées en annexe \ref{sec:trac-de-conv}.
 % DONE référencer les figures en annexes.
-
-% \begin{center}
-%   \rmfamily
-%   \scriptsize
-%   \tikzset{traces/.style={below right}}
-%   \tikzset{traces text/.style={draw, circle, Gray}}
-%   \begin{tikzpicture}
-%     \node[traces]      at (0, 0)  {\includegraphics[scale = 0.3]{img/trace_w.pdf}};
-%     \node[traces]      at (5, 0)  {\includegraphics[scale = 0.3]{img/trace_s.pdf}};
-%     \node[traces]      at (10, 0) {\includegraphics[scale = 0.3]{img/trace_sw.pdf}};
-%     \node[traces text] at (0, 0)  {\textsf{A}};
-%     \node[traces text] at (5, 0)  {\textsf{B}};
-%     \node[traces text] at (10, 0) {\textsf{C}};
-%   \end{tikzpicture}
-%   \caption[Régions des recombinaisons des clones
-%   transformés]{\label{img:traces3}\textbf{Régions de recombinaisons des clones
-%       transformés.} \\
-%     \rmfamily En \textsf{A} par le donneur AT, en \textsf{B} par le donneur GC
-%     et en \textsf{C} par le donneur AT/GC.}
-% \end{center}
-
 
 % ------------------------------------------------------------------------------
 \subsection{Analyses de la position des points de recombinaison}
+\label{subsec:distribution-points}
 % TODO label here
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
 % figure de la distribution du dernier marqueur
+% ------------------------------------------------------------------------------
 
 Selon l'hypothèse \ac{gbgc}, la région convertie devrait être plus longue
 lorsque la construction donneuse induit des réparations vers GC que lorsqu'elle
@@ -143,7 +133,6 @@ recombinaison se situe plus souvent après un marqueur introduisant une
 conversion vers GC qu'après un marqueur introduisant une conversion vers AT
 (voir table \ref{tab:doublets}).
 
-
 % DONE graphique des points de bascule dans le rapport
 
 
@@ -151,7 +140,6 @@ conversion vers GC qu'après un marqueur introduisant une conversion vers AT
 \subsection{Analyses des restaurations de l'haplotype sauvage}
 \label{subsec:restaur}
 % ------------------------------------------------------------------------------
-
 
 % DONE mettre table de restauration des haplotypes sauvages.
 

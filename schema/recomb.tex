@@ -6,11 +6,11 @@
   \tikzset{transition/.style={color=Gray, very thick}}
   \tikzset{legende text/.style={font=\scriptsize, color=Black, align=right}}
 
-  \begin{tikzpicture}[scale = 0.7, line width = 2pt, join = round]
+  \begin{tikzpicture}[line width = 2pt, join = round]
 
     \begin{scope}
       % représente la construction, avec l'insertion de la cassette de résistance
-      \draw[gs_don_col] (4, 0) -- (6, 0) node[above, midway, font=\tiny] {Gène cible};
+      \draw[gs_don_col] (4, 0) -- (6, 0) node[above, midway, font=\tiny, align = center] {Gène \\ de synthèse};
       \draw[am1_col, ultra thick] (6, 0) -- (6.2, 0);
       \draw[kanr_col] (6.2, 0) -- (7.8, 0) node[above, midway, font=\tiny] {KanR};
       \draw[genome_col, ultra thick] (7.8, 0) -- (8.0, 0);
