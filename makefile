@@ -24,7 +24,7 @@ $(TEXFILE).pdf: $(TEXFILE).tex $(OUT_FILES)
 
 # run every r file
 $(RDIR)/%.Rout: $(RDIR)/%.R
-	R CMD BATCH --no-save $<
+	R CMD BATCH --vanilla $<
 
 
 # run r files
