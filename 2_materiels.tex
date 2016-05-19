@@ -10,17 +10,17 @@
 % TODO placer la figure des constructions
 % ------------------------------------------------------------
 \input{schema/construct.tex}
-\caption[Constructions moléculaires]{\textbf{Constructions moléculaires} \\
-  \rmfamily Les gènes de synthèse sont amplifiés par PCR spécifique. Les
-  fragments sont ensuite ligaturés dans le plasmide pGEM-T. Le plasmide obtenu
-  est linéarisé par digestion enzymatique au site d'insertion des fragments. La
-  cassette de résistance à la kanamycine KanR ainsi que la région facilitant
-  l'homologie Ancre sont préalablement amplifiées par PCR en utilisant des
+\caption[Constructions moléculaires]{\textbf{Constructions moléculaires et
+    préparation de l'ADN recombinant} \\ \rmfamily Les gènes de synthèse sont
+  amplifiés par PCR spécifique. Les fragments sont ensuite ligaturés dans le
+  plasmide pGEM-T. Les plasmides obtenus sont linéarisés par digestions
+  enzymatiques \emph{Spe}I au
+  niveau des sites d'insertion de la cassette de résistance à la kanamycine et de
+  l'ancre. Ces fragments sont préalablement amplifiés par PCR en utilisant des
   amorces porteuses de régions 3' flottantes, complémentaires des extrémités des
-  fragments voisins. La ligature entre les trois fragments obtenus est réalisée
-  à l'aide du kit InFusion. Les constructions plasmidiques obtenues sont
-  amplifiées par culture et extraites, et linéarisées par digestion
-  enzymatique. %
+  fragments voisins. La ligature entre les trois fragments obtenus est réalisée à
+  l'aide du kit InFusion. Les constructions plasmidiques obtenues sont amplifiées
+  par culture, extraites et linéarisées par digestion enzymatique \emph{Sca}I.
   \label{img:construct}
 }
 % ------------------------------------------------------------
@@ -59,22 +59,26 @@
 % ------------------------------------------------------------------------------
 
 Pour étudier la correction des mésappariemments au cours de la recombinaison
-homologue chez \emph{A.baylyi}, nous avons conçu des séquences permettant
+homologue chez \emph{A. baylyi}, nous avons conçu des séquences permettant
 d'introduire ces mésappariemments. Nous avons choisi 23 sites sur un locus
 neutre du génome, séparés par 30 paires de bases\footnote{Ils introduisent 3\%
   de divergence avec la séquence sauvage. Un plus grand nombre de marqueurs
   diminue les fréquences de recombinaison ; un nombre inférieur diminue la
-  qualité du signal.}. Ces sites sont des dinucléotides alternant une base GC
-avec une base AT. Le gène de synthèse GC introduit des mésappariemments GC aux
-sites AT (GC $|$ AT), le gène de synthèse AT introduit des mésappariemments AT
-aux sites GC (AT $|$ GC) (voir figure \ref{img:construct}). Pour s'affranchir
-d'un possible effet dû à l'écart de \ac{gc} entre la séquence synthétique et la
-séquence sauvage, nous avons également conçu deux séquences qui introduisent en
-alternance un mésappariemment GC $|$ AT et AT $|$ GC. Le gène de synthèse CG/AT
-introduit d'abord un mésappariemment GC $|$ AT, puis un mésappariemment AT $|$
-GC, le gène de synthèse AT/CG suit l'ordre inverse. (voir
-figure~\ref{img:construct}). Les quatre séquences ont été synthétisées par
-ThermoFischer (Waltham, États-Unis).
+  qualité du signal.}. Ce locus est connu au laboratoire pour permettre de
+fortes efficacités de transformations. Il code putativement une 3-oxoacyl-ACP
+reductase, impliqué dans la synthèse des acides
+gras\cite{vallenet_microscopeintegrated_2013}.
+
+Les sites choisis sont des dinucléotides alternant une base GC avec une base AT.
+Le gène de synthèse GC introduit des mésappariemments GC aux sites AT (GC $|$
+AT), le gène de synthèse AT introduit des mésappariemments AT aux sites GC (AT
+$|$ GC) (voir figure \ref{img:construct}). Pour s'affranchir d'un possible effet
+dû à l'écart de \ac{gc} entre la séquence synthétique et la séquence sauvage,
+nous avons également conçu deux séquences qui introduisent en alternance un
+mésappariemment GC $|$ AT et AT $|$ GC. Le gène de synthèse CG/AT introduit
+d'abord un mésappariemment GC $|$ AT, puis un mésappariemment AT $|$ GC, le gène
+de synthèse AT/CG suit l'ordre inverse. (voir figure~\ref{img:construct}). Les
+quatre séquences ont été synthétisées par ThermoFischer (Waltham, États-Unis).
 
 % ------------------------------------------------------------------------------
 \subsection{Constructions des plasmides}
@@ -82,34 +86,34 @@ ThermoFischer (Waltham, États-Unis).
 % ------------------------------------------------------------------------------
 
 De façon à pouvoir sélectionner les clones recombinants au locus d'intérêt, nous
-avons construit les plasmides en figure \ref{img:construct}. Le gène synthétique
-est associé avec une cassette de résistance à la kanamycine, ainsi qu'une région
-``ancre''. Cette région est complètement homologue à la séquence en 3' du locus
-d'intérêt et permet d'augmenter les fréquences de transformation
-\cite{de_vries_integration_2002}.
+avons construit les plasmides représentés dans la figure \ref{img:construct}. Le
+gène synthétique est associé avec une cassette de résistance à la kanamycine,
+ainsi qu'une région ``ancre''. Cette région est complètement homologue à la
+séquence en 3' du locus d'intérêt et permet d'augmenter les fréquences de
+transformation \cite{de_vries_integration_2002}.
 
-Les gènes synthétiques ont d'abord été amplifiés par PCR avec les amorces 1393
-et 1392 (voir annexe~\ref{subsec:amorces}), puis ligaturés dans le plasmide
+Les gènes synthétiques ont d'abord été amplifiés par PCR avec les amorces 1392
+et 1393 (voir annexe~\ref{subsec:amorces}), puis ligaturés dans le plasmide
 pGEM-T. Les plasmides obtenus ont été insérés dans la souche \emph{E.coli}
 OneShot\textsuperscript{{\textregistered}} \texttt{TOP-10} (Invitrogen,
 Carlsbad, États-Unis), suivant le protocole du fabriquant. Le sens d'insertion
 du gène synthétique dans le plasmide a été vérifié par PCR avec les amorces M13R
-et 1392 (voir annexe~\ref{subsec:amorces}). Les inserts des clones vérifiés ont
-été séquencés (GATC Biotech, Constance, Allemagne). Les plasmides des clones
-validés par séquençage ont été extraits par le kit Nucleospin-Plasmid
+et 1392 (voir annexe~\ref{subsec:amorces}), et l'absence de mutation a été
+vérifié par séquençage (GATC Biotech, Constance, Allemagne). Les plasmides des
+clones validés par séquençage ont été extraits par le kit Nucleospin-Plasmid
 (Macherey-Nagel, Düren, Allemagne), et linéarisés par l'enzyme \emph{Spe}I
 (ThermoFischer).
 
-La cassette de résistance à la kanamycine \emph{aphA}3 a été amplifiée par PCR
-avec les amorces 1408 et 1409. La région \emph{ancre} a été amplifiée avec les
-amorces 1410 et 1411. Les deux amplicons obtenus ont été ligaturés dans le
-plasmide pGEM-T porteurs des gènes de synthèse. La ligature a été réalisée
-simultanément par le kit InFusion (Takara Clontech, Saint Germain en Layes,
-France). Le produit de ligature obtenu a été inséré dans la souche optimisée
-pour la chimio-compétence \emph{E.coli} Stellar (Takara Clontech). Les
-transformants ont été séléctionnés sur milieu LB solide additionné d'ampicilline
-à \SI{75}{\ug\per\mL} de kanamycine à \SI{50}{\ug\per\mL}. Les transformants ont
-été confirmés par PCR spécifique de l'insert avec les amorces 1393 et 1411 (voir
+La cassette de résistance à la kanamycine \emph{aphA}3 et l'ancre ont été
+respectivement amplifiés par PCR avec le couple d'amorce 1408 / 1409 et 1410 /
+1411. Les deux amplicons obtenus ont été ligaturés dans le plasmide pGEM-T
+porteurs des gènes de synthèse. La ligature a été réalisée simultanément par le
+kit InFusion (Takara Clontech, Saint Germain en Layes, France). Le produit de
+ligature obtenu a été inséré dans la souche optimisée pour la chimio-compétence
+\emph{E.coli} Stellar (Takara Clontech). Les transformants ont été séléctionnés
+sur milieu LB solide additionné d'ampicilline à \SI{75}{\ug\per\mL} de
+kanamycine à \SI{50}{\ug\per\mL}. Les transformants ont été confirmés par PCR
+spécifique de l'insert avec les amorces 1393 et 1411 (voir
 annexe~\ref{subsec:amorces}).
 
 % -----------------------------------------------------------------------------

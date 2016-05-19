@@ -1,15 +1,23 @@
 \begin{center}
   \rmfamily
-
+  \setstretch{1.0}
   \tikzset{plasmid lines/.style={xscale = 0.2, yscale = 0.2, very thick}}
   \tikzset{legende/.style={font=\scriptsize, color=Gray, align=right}}
   \tikzset{transition/.style={color=Gray, very thick}}
   \tikzset{legende text/.style={font=\scriptsize, color=Black, align=right}}
 
-  \begin{tikzpicture}[line width = 2pt, join = round]
+  \begin{tikzpicture}[line width = 2pt, join = round, scale = 0.8]
 
     \begin{scope}
       % représente la construction, avec l'insertion de la cassette de résistance
+      \node[font=\bfseries\sffamily] at (1, 0)    {a};
+      \node[font=\bfseries\sffamily] at (1, -1)   {b};
+      \node[font=\bfseries\sffamily] at (1, -2.5) {c};
+      \node[font=\bfseries\sffamily] at (1, -6)   {d};
+      \node[font=\bfseries\sffamily] at (1, -6)   {d};
+      \node[font=\bfseries\sffamily] at (1, -12)  {e};
+      \node[font=\bfseries\sffamily] at (1, -16.5)  {f};
+
       \draw[gs_don_col] (4, 0) -- (6, 0) node[above, midway, font=\tiny, align = center] {Gène \\ de synthèse};
       \draw[am1_col, ultra thick] (6, 0) -- (6.2, 0);
       \draw[kanr_col] (6.2, 0) -- (7.8, 0) node[above, midway, font=\tiny] {KanR};
@@ -249,11 +257,11 @@
 
      \draw[gs_rec_col, thick, dotted, fill = gs_rec_col, opacity = 0.3]
      (-0.5, -0.5) rectangle (4.5, 2.5)
-     node[midway, opacity = 1, font = \scriptsize] {Région conservée};
+     node[midway, opacity = 1, font = \tiny] {Région conservée};
 
      \draw[gs_don_col, thick, dotted, fill = gs_don_col, opacity = 0.3]
      (4.5, -0.5) rectangle (10.5, 2.5)
-     node[midway, opacity = 1, font = \scriptsize] {Région convertie};
+     node[midway, opacity = 1, font = \tiny] {Région convertie};
 
       \draw[gs_rec_col, thick, arrows = {-Stealth[left]}] (0, 2) -- ++(10, 0);
       \draw[gs_don_col, thick, arrows = {Stealth[left]-}] (0, 0) -- ++(10, 0);
@@ -272,7 +280,7 @@
 
       \draw[Gray, densely dash dot, very thick]
       (4.5, 2.6) -- ++(0, -3.6)
-      node[below, font=\scriptsize] {Point de recombinaison};
+      node[below, font=\tiny] {Point de recombinaison};
     \end{scope}
 
     \begin{scope}[shift={(0, -6.5)}]
