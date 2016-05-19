@@ -50,28 +50,27 @@
     \centering
     \begin{tabular}{cccc}
       \toprule
-      \thead{Dernier\\marqueur\\converti} & \thead{Premier\\marqueur\\conservé} & Donneur & Total \\
+      \thead{Dernier\\marqueur\\converti} &  Donneur & Total \\
       \midrule
-      AT & CG & AT/CG & 55                       \\
-         &    & CG/AT & 37                       \\
-         &    &       & \cellcolor{LightGray} 92 \\
+      AT                                  &  AT/CG   & 55                       \\
+                                          &  CG/AT   & 37                       \\
+                                          &          & \cellcolor{LightGray} 92 \\
       \midrule[0.1pt]
-      CG & AT & AT/CG & 33                       \\
-         &    & CG/AT & 50                       \\
-         &    &       & \cellcolor{LightGray} 83 \\
+      CG                                  &  AT/CG   & 33                       \\
+                                          &  CG/AT   & 50                       \\
+                                          &          & \cellcolor{LightGray} 83 \\
       \bottomrule
     \end{tabular}
     \caption[Dénombrements des derniers marqueurs avant le point de
     recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
         recombinaison.} \\
-      \rmfamily Nous avons compté le nombre de séquence dont le dernier marqueur
+      \rmfamily Nous avons compté le nombre de séquences dont le dernier marqueur
       dans la région convertie est un marqueur AT ou GC. Selon l'hypothèse
       \ac{gbgc}, ce nombre devrait être plus élevé aux positions GC qu'aux
       positions AT. Contrairement à l'hypothèse, il y a plus de transformants dont
       le dernier marqueur converti est AT que de transformants dont le dernier
       marqueur converti est GC. Cet écart n'est pas statistiquement significatif
       (test du \(\chi^2\) d'indépendance, probabilité critique~\(=0.49\)).
-      % TODO Voir avec laurent comment on conclut là dessus. On peut prendre l'info dans le sens qu'on veut
       %
     }
     \label{tab:doublets}
@@ -109,7 +108,6 @@ AT/GC sont détaillées en annexe \ref{sec:trac-de-conv}.
 % ------------------------------------------------------------------------------
 \subsection{Analyses de la position des points de recombinaison}
 \label{subsec:distribution-points}
-% TODO label here
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
@@ -126,12 +124,15 @@ différence entre la longueur de région convertie par le donneur AT/GC et celle
 par le donneur GC/AT n'est pas significative (test de Wilcoxon, probabilité
 critique~\(= 0.22\)). Globalement, le type de construction donneuse n'explique
 pas la variabilité de la longueur de région convertie (test de Kruskal-Wallis,
-probabilité critique~\(=0.10\))
+probabilité critique~\(=0.10\)). Le type de donneur n'a pas d'influence sur la
+longueur de région convertie.
 
 Les constructions alternant AT et GC permettent de déterminer si le point de
 recombinaison se situe plus souvent après un marqueur introduisant une
 conversion vers GC qu'après un marqueur introduisant une conversion vers AT
-(voir table \ref{tab:doublets}).
+(voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
+transfomants ; il est GC dans 83 transformants. Cet écart n'est pas
+significatif (voir table \ref{tab:doublets}).
 
 % DONE graphique des points de bascule dans le rapport
 
@@ -156,13 +157,16 @@ de séquençage : celle-ci se traduit généralement par un indice de qualité p
 faible au site concerné. Le score de qualité moyen est de 41.40 aux sites
 restaurés, contre 47.67 aux sites non-restaurés. Pour tester si l'écart entre
 les score de qualités aux sites restaurés et aux sites non restaurés était
-significatif, nous avons échantillonnés autant de marqueurs non-restaurés que de
+significatif, nous avons comparé la proportion de sites  autant de marqueurs non-restaurés que de
 marqueurs restaurés et répété ces échantillonnages 100 fois. Dans $49\%$ des
 cas, l'écart n'est pas significatif avec un niveau de confiance de $5\%$.
 % DONE calculer score de qualité moyen aux néomutations.
-. En conclusion, les marqueurs correspondant à des restaurations de l'haplotype
-sauvage ne sont pas des erreurs de séquençage, et correspondent à un signal
-biologique.
+Les marqueurs correspondant à des restaurations de l'haplotype sauvage ne sont
+pas des erreurs de séquençage, et correspondent à un signal biologique.
+
+Sur les 14 cas de restaurations de l'haplotype sauvage, 4 sont des restaurations
+de l'allèle AT, 10 sont des restaurations de l'allèle GC. Cet écart n'est pas
+significatif (voir la table \ref{tab:restaur}).
 
 % tables de comptage des cas de restaurations
 \afterpage{
