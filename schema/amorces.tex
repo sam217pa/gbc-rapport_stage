@@ -1,5 +1,6 @@
 \begin{center}
 
+  \setstretch{1.0}
   % \fontspec{Gill Sans}
   \rmfamily
 
@@ -34,23 +35,23 @@
   \draw[amorce fleche]  (17.5, -0.7) -- ++(-1, 0) node[amorce, below] {1411};
 \end{tikzpicture}
 
-\vspace{1cm}
+\vspace{0.5cm}
 
-\begin{tabular}{cc>{\ttfamily}lc}
+\begin{tabular}{cc>{\fontspec{Gill Sans} \scriptsize}ll}
   \toprule
   % \rowcolor{LightGray}
-  Cible           & Amorce & Séquence                              & Tm    \\
+  Cible           & Amorce & \thead{\rmfamily \normalsize Séquence} & Tm (\si{\celsius}) \\
   \midrule
-  Génome          & 1073   &                                       &       \\
+  Génome          & 1073   & CAGGCTGACGTGATTGTTCA                   & 56.6               \\
   % \midrule
-  Construction    & 1392   &                                       &       \\
-                  & 1393   &                                       &       \\
-                  & 1408   & CACCTTAATCACTAGTTAGACATCTAAATCTAGGTAC & 61.50 \\
-                  & 1409   & GGTAAAGTCAGAGGAGAGGATGAGGAGGCAGATTG   & 68.66 \\
-                  & 1410   & TCCTCTGACTTTACCAACAAC                 & 48.04 \\
-                  & 1411   & AGGCGGCCGCACTAGCTTTCTGAGGGGAACGATCA   & 71.62 \\
-  Plasmide pGEM-T & M13R   &                                       &       \\
-                  & M13F   &                                       &       \\
+  Construction    & 1392   & AAGGTGGAAGAGAAGGAGGC                   & 58.7               \\
+                  & 1393   & GCGAGGAGGAAAGCAAAGAG                   & 58.2               \\
+                  & 1408   & CACCTTAATCACTAGTTAGACATCTAAATCTAGGTAC  & 61.50              \\
+                  & 1409   & GGTAAAGTCAGAGGAGAGGATGAGGAGGCAGATTG    & 68.66              \\
+                  & 1410   & TCCTCTGACTTTACCAACAAC                  & 48.04              \\
+                  & 1411   & AGGCGGCCGCACTAGCTTTCTGAGGGGAACGATCA    & 71.62              \\
+  Plasmide pGEM-T & M13R   & GAGGAAACAGCTATGAC                      & 47.8               \\
+                  & M13F   & GTAAAACGACGGCCAGT                      & 53.9               \\
   \bottomrule
   %
 \end{tabular}

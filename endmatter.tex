@@ -8,8 +8,9 @@
 \footnotesize
 \bibliography{references}
 \end{multicols}
+\afterpage{\blankpage}
 
-\newpage
+% \newpage
 % \setcounter{listoffigures}{1}
 
 \setcounter{section}{0}
@@ -20,11 +21,11 @@
 \subsection{Amorces utilisées}
 \label{subsec:amorces}
 
-\begin{figure}[h]
+% \begin{figure}[h]
 \input{schema/amorces.tex}
-\caption[Liste des amorces utilisées]{\label{img:amorces}\textbf{Liste des
+\caption[Liste des amorces utilisées]{\label{fig:amorces}\textbf{Liste des
     amorces utilisées}}
-%% TODO completer la liste des amorces.
+%% DONE completer la liste des amorces.
 \end{figure}
 
 \subsection{Carte des constructions donneuses}
@@ -32,50 +33,45 @@
 
 % TODO carte des plasmides
 
-\vfill
+% \vfill
 
 % ==============================================================================
 \subsection{Traces de conversions}
 \label{sec:trac-de-conv}
 % ==============================================================================
 
-\begin{figure}[p]% will be the left-side figure
-  \begin{leftfullpage}
-    \includegraphics[width = 0.65\textwidth]{img/trace_w.pdf}
-    \caption[Zones de recombinaison des clones transformés par la construction
-    AT]{\label{fig:tracew}\textbf{Zones de recombinaisons des clones transformés
-        par la construction AT}. \\
-      \rmfamily Lorsqu'on introduit uniquement des
-      polymorphismes AT, on observe quatre cas indépendants de restauration du
-      génotype sauvage, et un cinquième pour une base de qualité inférieure. }
-  \end{leftfullpage}
-\end{figure}
-\begin{figure}[p]% will be the right-side figure
-  \begin{fullpage}
-    \includegraphics[width = 0.65\textwidth]{img/trace_s.pdf}
-    \caption[Zones de recombinaisons des clones transformés par la construction
-    GC]{\label{fig:traces} \textbf{Zones de recombinaisons des clones
-        transformés par la construction GC}. \\
-      \rmfamily Lorsqu'on introduit uniquement des polymorphismes GC, on n'observe pas de
-      cas de restauration du génotype sauvage. }
-  \end{fullpage}
-\end{figure}
-\begin{figure}[p]% will be the left-side figure
-  \begin{leftfullpage}
-    \includegraphics[width = 0.65\textwidth]{img/trace_sw.pdf}
-    \caption[Zones de recombinaisons des clones transformés par la construction
-    AT/GC]{\label{fig:tracesw} }
-  \end{leftfullpage}
-\end{figure}
+La figure \ref{fig:trace-4} page \ref{fig:trace-4} montre l'alignement de toutes
+les positions de marqueurs lorsque le donneur est GC, AT, GC/AT et AT/GC.
+L'interprétation des figures est détaillée dans la figure \ref{fig:convtract} en
+page \pageref{fig:convtract}.
 
-% ==============================================================================
+% \includepdf[noautoscale, landscape = true]{img/trace_4.pdf}
+
+\afterpage{%
+  \clearpage
+  \KOMAoptions{ pagesize, paper=landscape}
+  \recalctypearea
+  \begin{figure}
+    \includegraphics[height = \textheight, width = \textwidth]{img/trace_4.pdf}
+    \caption%
+    [Régions converties]%
+    {\label{fig:trace-4} \rmfamily Pellentesque dapibus suscipit ligula. Donec
+      posuere augue in quam. Aliquam feugiat tellus ut neque. Nulla facilisis,
+      risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc
+      justo sit amet elit. }
+    \centering
+  \end{figure}
+  \clearpage
+  \KOMAoptions{paper=A4, paper=portrait, pagesize}
+  \recalctypearea
+}
+
 \subsection{Confirmations des restaurations des haplotypes sauvages}
 \label{subsec:confirm-haplotype}
 
-
 \begin{figure}[ht]
   \centering
-  \includegraphics[width = \textwidth]{img/confirmation_altern.pdf}
+  \includegraphics[width = 0.6\textwidth]{img/confirmation_altern.pdf}
   \caption[Confirmation des restaurations]{\label{fig:confirm-haplotype}
     \textbf{Confirmation d'une restauration d'haplotype sauvage} \\
     \rmfamily Pour s'affranchir d'une possible erreur de séquençage sur les

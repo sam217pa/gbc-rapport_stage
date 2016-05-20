@@ -18,7 +18,7 @@
   entre ces deux marqueurs.
 }%
 \vfill
-\label{img:convtract}
+\label{fig:convtract}
 \thispagestyle{empty}
 \addtocounter{page}{-1}
 \newpage
@@ -30,15 +30,17 @@
     \centering
     \includegraphics[ height = 10cm]{img/distr_rcb_pt.pdf}
     \caption[Distribution de la position du dernier marqueur]{%
-      \label{img:distrircb} \textbf{Distribution de la position du dernier
-        marqueur converti} \\ \rmfamily Ce graphique représente en ordonnées le nombre
-      de transformants dont le dernier marqueur converti est à la position représentée
-      en abscisse. Les panneaux du graphique représentent les quatres constructions
-      donneuses. La position du dernier marqueur converti indique la position du point
-      de recombinaison. Les transformants qui ne montrent pas de marqueur converti
-      sont indiqués par des $N$.
+      \label{fig:distrircb} \textbf{Distribution de la position du dernier
+        marqueur converti} \\ \rmfamily Ce graphique représente en ordonnées le
+      nombre de transformants dont le dernier marqueur converti est à la
+      position représentée en abscisse. Les panneaux du graphique représentent
+      les quatres constructions donneuses. La position du dernier marqueur
+      converti indique la position du point de recombinaison. Les transformants
+      qui ne montrent aucun marqueur converti sont indiqués par des $N$.
       \\
-      La distribution du dernier marqueur converti est très variable.
+      La distribution du dernier marqueur converti est variable. La région entre
+      \num{580} et \num{780} paires de bases semble montrer un point froid de
+      recombinaison.
       %
     }
     \rmfamily
@@ -97,9 +99,9 @@ dont l'intégration dans le génome par recombinaison homologue entraîne la
 réparation des mésappariemments, un mécanisme qui est biaisé vers l'introduction
 des bases GC chez les eucaryotes. Pour chaque construction, nous avons
 représenté graphiquement les zones de recombinaison (voire figure
-\ref{img:convtract}). L'origine du graphique correspond au début de la région
+\ref{fig:convtract}). L'origine du graphique correspond au début de la région
 convertie. Les 96 séquences obtenues sont triées par longueur de région
-convertie. La figure \ref{img:convtract} représente le détail des zones de
+convertie. La figure \ref{fig:convtract} représente le détail des zones de
 recombinaison obtenues en transformant avec une construction alternant CG et AT.
 Les zones de recombinaisons des clones transformés par les donneurs GC, AT et
 AT/GC sont détaillées en annexe \ref{sec:trac-de-conv}.
@@ -115,7 +117,7 @@ lorsque la construction donneuse induit des réparations vers GC que lorsqu'elle
 induit des réparations vers AT. La différence entre la longueur moyenne de
 région convertie par les donneurs GC et la longueur moyenne de région convertie
 par des donneurs AT n'est pas significative (test de Wilcoxon, probabilité
-critique~\(=\) \num{0.31}) (voir figure \ref{img:distrircb}). De la même façon, la
+critique~\(=\) \num{0.31}) (voir figure \ref{fig:distrircb}). De la même façon, la
 différence entre la longueur de région convertie par le donneur AT/GC et celle
 par le donneur GC/AT n'est pas significative (test de Wilcoxon, probabilité
 critique~\(=\) \num{0.22}). Globalement, le type de construction donneuse n'explique
@@ -142,7 +144,7 @@ significatif (voir table \ref{tab:doublets}).
 
 Certains transformants montrent des régions de conversions qui alternent entre
 l'allèle sauvage receveur et l'allèle donneur. Ces alternances ponctuelles
-affectent de 1 à 3 marqueurs consécutifs (voir figure \ref{img:convtract}). Nous
+affectent de 1 à 3 marqueurs consécutifs (voir figure \ref{fig:convtract}). Nous
 avons confirmé qu'il s'agissait bien de restaurations de l'allèle sauvage de
 deux façons. 1) Expérimentalement, nous avons séquencé une sous-population de
 clones issues d'un isolat séquencé en premier lieu. Tous montrent la même
@@ -160,6 +162,8 @@ séquençage, et correspondent à un signal biologique.
 Sur les 14 cas de restaurations de l'haplotype sauvage, 4 sont des restaurations
 de l'allèle AT, 10 sont des restaurations de l'allèle GC. Cet écart n'est pas
 significatif (voir la table \ref{tab:restaur}).
+
+\texttt{Si encore places après modifications, placer tableau suivant là. }
 
 % tables de comptage des cas de restaurations
 \afterpage{
