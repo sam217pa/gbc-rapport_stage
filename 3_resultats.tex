@@ -16,8 +16,6 @@
   Les alternances rouge / bleu marquent la transition de l'haplotype
   converti à l'haplotype sauvage : le point de recombinaison est localisé
   entre ces deux marqueurs.
-
-  % TODO rajouter légende figure trace de conversion. Que tirer du graphe ?
 }%
 \vfill
 \label{img:convtract}
@@ -37,9 +35,10 @@
       de transformants dont le dernier marqueur converti est à la position représentée
       en abscisse. Les panneaux du graphique représentent les quatres constructions
       donneuses. La position du dernier marqueur converti indique la position du point
-      de recombinaison. Les transformants qui ne montrent pas de région converties
-      sont indiqués par des $N$. La distribution du dernier marqueur converti est
-      très variable.
+      de recombinaison. Les transformants qui ne montrent pas de marqueur converti
+      sont indiqués par des $N$.
+      \\
+      La distribution du dernier marqueur converti est très variable.
       %
     }
     \rmfamily
@@ -48,6 +47,20 @@
   \begin{table}[h!]
     \rmfamily
     \centering
+    \caption[Dénombrements des derniers marqueurs avant le point de
+    recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
+        recombinaison.} \\
+      \rmfamily Nous avons compté le nombre de séquences dont le dernier marqueur
+      dans la région convertie est un marqueur AT ou GC. Selon l'hypothèse
+      \ac{gbgc}, ce nombre devrait être plus élevé aux positions GC qu'aux
+      positions AT. Contrairement à l'hypothèse, il y a plus de transformants dont
+      le dernier marqueur converti est AT que de transformants dont le dernier
+      marqueur converti est GC. Cet écart n'est pas statistiquement significatif
+      (test du \(\chi^2\) d'indépendance, probabilité critique~\(=\)~\num{0.49}).
+      %
+    }
+    \label{tab:doublets}
+
     \begin{tabular}{cccc}
       \toprule
       \thead{Dernier\\marqueur\\converti} &  Donneur & Total \\
@@ -61,19 +74,6 @@
                                           &          & \cellcolor{LightGray} 83 \\
       \bottomrule
     \end{tabular}
-    \caption[Dénombrements des derniers marqueurs avant le point de
-    recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
-        recombinaison.} \\
-      \rmfamily Nous avons compté le nombre de séquences dont le dernier marqueur
-      dans la région convertie est un marqueur AT ou GC. Selon l'hypothèse
-      \ac{gbgc}, ce nombre devrait être plus élevé aux positions GC qu'aux
-      positions AT. Contrairement à l'hypothèse, il y a plus de transformants dont
-      le dernier marqueur converti est AT que de transformants dont le dernier
-      marqueur converti est GC. Cet écart n'est pas statistiquement significatif
-      (test du \(\chi^2\) d'indépendance, probabilité critique~\(=0.49\)).
-      %
-    }
-    \label{tab:doublets}
   \end{table}
 
   \vfill
@@ -168,6 +168,20 @@ significatif (voir la table \ref{tab:restaur}).
   \begin{table}[htbp]
     \centering
     \rmfamily
+
+    \caption[Dénombrement des cas de restauration]{\textbf{Dénombrement des cas de
+        restauration} \\
+      \rmfamily Certains transformants montrent des restaurations ponctuelles de
+      l'allèle sauvage dans la région convertie. Ces restaurations peuvent être
+      des restaurations de l'allèle AT ou de l'allèle CG. Sur les 14 cas
+      observés, \num{10} sont des restaurations de l'allèle GC, \num{4} de
+      l'allèle AT. L'écart n'est pas
+      statistiquement significatif (test du \(\chi^2\) d'indépendance, probabilité
+      critique~\(=\) \num{0.11}).
+      %
+    }
+    \label{tab:restaur}
+
     \begin{tabular}{ccc}
       \toprule
       Allèle restauré & Donneur & Total                    \\
@@ -183,18 +197,6 @@ significatif (voir la table \ref{tab:restaur}).
                       &         & \cellcolor{LightGray} 4  \\
       \bottomrule
     \end{tabular}
-    \caption[Dénombrement des cas de restauration]{\textbf{Dénombrement des cas de
-        restauration} \\
-      \rmfamily Certains transformants montrent des restaurations ponctuelles de
-      l'allèle sauvage dans la région convertie. Ces restaurations peuvent être
-      des restaurations de l'allèle AT ou de l'allèle CG. Sur les 14 cas
-      observés, \num{10} sont des restaurations de l'allèle GC, \num{4} de
-      l'allèle AT. L'écart n'est pas
-      statistiquement significatif (test du \(\chi^2\) d'indépendance, probabilité
-      critique~\(=\) \num{0.11}).
-      %
-    }
-    \label{tab:restaur}
   \end{table}
   \vfill
   \thispagestyle{empty}
