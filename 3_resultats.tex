@@ -110,21 +110,17 @@ AT/GC sont détaillées en annexe \ref{sec:trac-de-conv}.
 \label{subsec:distribution-points}
 % ------------------------------------------------------------------------------
 
-% ------------------------------------------------------------------------------
-% figure de la distribution du dernier marqueur
-% ------------------------------------------------------------------------------
-
 Selon l'hypothèse \ac{gbgc}, la région convertie devrait être plus longue
 lorsque la construction donneuse induit des réparations vers GC que lorsqu'elle
 induit des réparations vers AT. La différence entre la longueur moyenne de
 région convertie par les donneurs GC et la longueur moyenne de région convertie
 par des donneurs AT n'est pas significative (test de Wilcoxon, probabilité
-critique~\(= 0.31\)) (voir figure \ref{img:distrircb}). De la même façon, la
+critique~\(=\) \num{0.31}) (voir figure \ref{img:distrircb}). De la même façon, la
 différence entre la longueur de région convertie par le donneur AT/GC et celle
 par le donneur GC/AT n'est pas significative (test de Wilcoxon, probabilité
-critique~\(= 0.22\)). Globalement, le type de construction donneuse n'explique
+critique~\(=\) \num{0.22}). Globalement, le type de construction donneuse n'explique
 pas la variabilité de la longueur de région convertie (test de Kruskal-Wallis,
-probabilité critique~\(=0.10\)). Le type de donneur n'a pas d'influence sur la
+probabilité critique~\(=\) \num{0.10}). Le type de donneur n'a pas d'influence sur la
 longueur de région convertie.
 
 Les constructions alternant AT et GC permettent de déterminer si le point de
@@ -146,23 +142,20 @@ significatif (voir table \ref{tab:doublets}).
 
 Certains transformants montrent des régions de conversions qui alternent entre
 l'allèle sauvage receveur et l'allèle donneur. Ces alternances ponctuelles
-affectent de 1 à 3 marqueurs consécutifs (voire figure \ref{img:convtract}).
-Nous avons confirmé qu'il s'agissait bien de restaurations de l'allèle sauvage
-de deux façons. 1) Expérimentalement, nous avons séquencé une sous-population de
+affectent de 1 à 3 marqueurs consécutifs (voir figure \ref{img:convtract}). Nous
+avons confirmé qu'il s'agissait bien de restaurations de l'allèle sauvage de
+deux façons. 1) Expérimentalement, nous avons séquencé une sous-population de
 clones issues d'un isolat séquencé en premier lieu. Tous montrent la même
-alternance au même site (voir figure en annexe \ref{fig:confirm-haplotype}).
-2) Analytiquement, le score de qualité moyen des sites montrant des
-restaurations de l'allèle sauvage permet de s'affranchir d'une possible erreur
-de séquençage : celle-ci se traduit généralement par un indice de qualité plus
-faible au site concerné. Le score de qualité moyen est de 41.40 aux sites
-restaurés, contre 47.67 aux sites non-restaurés. Pour tester si l'écart entre
-les score de qualités aux sites restaurés et aux sites non restaurés était
-significatif, nous avons comparé la proportion de sites  autant de marqueurs non-restaurés que de
-marqueurs restaurés et répété ces échantillonnages 100 fois. Dans $49\%$ des
-cas, l'écart n'est pas significatif avec un niveau de confiance de $5\%$.
-% DONE calculer score de qualité moyen aux néomutations.
-Les marqueurs correspondant à des restaurations de l'haplotype sauvage ne sont
-pas des erreurs de séquençage, et correspondent à un signal biologique.
+alternance au même site (voir figure~\ref{fig:confirm-haplotype} en
+annexe~\ref{subsec:confirm-haplotype}). 2) Analytiquement, le score de qualité
+moyen des sites montrant des restaurations de l'allèle sauvage permet de
+s'affranchir d'une possible erreur de séquençage : celle-ci se traduit
+généralement par un indice de qualité plus faible au site concerné. Le score de
+qualité moyen est de \num{49.36} aux sites restaurés, contre \num{52.79} aux
+sites non-restaurés. La différence entre les deux n'est pas significative (test
+de Wilcoxon, probabilité critique \(=\) \num{0.94}). Les marqueurs correspondant
+à des restaurations de l'haplotype sauvage ne sont donc pas des erreurs de
+séquençage, et correspondent à un signal biologique.
 
 Sur les 14 cas de restaurations de l'haplotype sauvage, 4 sont des restaurations
 de l'allèle AT, 10 sont des restaurations de l'allèle GC. Cet écart n'est pas
@@ -192,11 +185,13 @@ significatif (voir la table \ref{tab:restaur}).
     \end{tabular}
     \caption[Dénombrement des cas de restauration]{\textbf{Dénombrement des cas de
         restauration} \\
-      % TODO compléter légende tab:restaur
-      \rmfamily Nous n'avons conservé que les bases dont la qualité permettait de
-      s'affranchir d'une possible erreur de séquençage. L'écart n'est pas
+      \rmfamily Certains transformants montrent des restaurations ponctuelles de
+      l'allèle sauvage dans la région convertie. Ces restaurations peuvent être
+      des restaurations de l'allèle AT ou de l'allèle CG. Sur les 14 cas
+      observés, \num{10} sont des restaurations de l'allèle GC, \num{4} de
+      l'allèle AT. L'écart n'est pas
       statistiquement significatif (test du \(\chi^2\) d'indépendance, probabilité
-      critique~\(= 0.11\)).
+      critique~\(=\) \num{0.11}).
       %
     }
     \label{tab:restaur}
