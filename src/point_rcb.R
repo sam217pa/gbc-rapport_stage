@@ -6,12 +6,10 @@ library(extrafont)
 
 set_gcbiasr_theme()
 
-height = 5
-width = 5
+height = 4
+width = 6
 
 pdf('img/distr_rcb_pt.pdf', family = "Ubuntu", height = height, width = width, onefile = FALSE)
-
 plot(gcbiasr::breakpoints_distribution(conversion_tract), inverse = FALSE) +
    labs(y = "Nombre de\ntransformants")
-
 dev.off()

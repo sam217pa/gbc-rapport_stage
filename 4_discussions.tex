@@ -1,8 +1,43 @@
 \section{Discussions}
 \label{sec:discussions}
 
+\subsection{Des restaurations de l'haplotype sauvage inattendues}
+\label{subsec:discu-restaur}
+
+\afterpage{%
+  \null
+  \vfill
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width = \textwidth]{img/randomweak.png}
+    \caption{\label{fig:simul-count} }
+  \end{figure}
+  \vfill
+  \newpage
+}
 % TODO parler des erreurs de séquençage, qu'on y a répondu par des manips
 % parallèles.
+Certains marqueurs sont d'une qualité inférieure au reste des marqueurs sur la
+lecture, qui est la marque de pics secondaires sur les électrophérogrammes.
+% TODO figure pics secondaires
+Des pics secondaires apparaissent quand la population d'amplicon séquencée n'est
+pas homogène au site considéré. De façon surprenante, les deux pics présents à
+un marqueur donné correspondent toujours soit à la base sauvage, soit à la base
+synthétique introduite. Cette donnée peut être interprétée de deux façons. i)
+S'il s'agit de la marque d'un signal biologique, la colonie dont la zone de
+recombinaison a été séquencée montre une hétérogénéité au marqueur considéré.
+Autrement dit, une part de la population séquencée a converti la base, l'autre
+partie l'a conservée. ii) La présence de pics secondaires à une position de
+marqueur peut aussi indiquer la présence de contaminations entre les puits des
+plaques de séquençage, qui ont pu avoir lieu au cours du séquençage ou au cours
+des PCRs. Si ces pics secondaires sont la marques d'une hétérogénéité dans la
+colonie séquencée, les séquences affectées devraient être réparties
+aléatoirement dans la plaque séquencée. Nous avons montré par simulation
+qu'elles ne l'étaient pas (voir figure \ref{fig:simul-count}). Les séquences
+montrant des pics secondaires sont plus souvent voisines avec une autre séquence
+affectée que si elles étaient réparties aléatoirement.
+
+
 
 % TODO discuter de ces cas de restaurations. comment elles ont pu arriver ?
 % mécanismes, double crossing over ? Normalement ce qu'on voit chez la levure
@@ -11,10 +46,31 @@
 
 % TODO calculer la taille d'échantillon nécessaire pour observer un biais de
 % longueur ou d'introduction d'un SNP.
+Pour détecter une différence de l'ordre de \num{30} paires de bases entre
+longueurs de régions converties correspondant à l'introduction d'un marqueur
+supplémentaire, en supposant qu'elles sont normalement distribuées, avec l'écart
+type observé dans nos résultats (\num{227}), avec une puissance de \num{0.8} et
+un niveau de confiance de \num{0.05}, il faudrait une taille d'échantillon de
+\num{717} (test \textrm{t}) par groupe.
+
+Cette taille d'échantillon n'est pas envisageable en utilisant les techniques
+actuelles : le séquençage par la technique de Sanger implique un coût prohibitif
+pour une telle taille d'échantillon. Nous avons étudié différents procédés
+permettant de séquencer les régions converties à haut débit. Les séquençage à
+haut débit permettrait de réduire les coûts de séquençage. Il nécessite
+néanmoins de prendre en compte les facteurs suivants. i) La taille des lectures
+est de l'ordre de \(2 \times 300\) paires de bases par lecture, soit un total de
+\(600\)pb, inférieure à la taille du locus considéré. ii) Lors de la
+construction de la librairie de séquence, les amplicons sont mélangés les uns
+aux autres. Il faut pouvoir les discriminer les uns des autres facilement, de
+façon à individualiser les évènements de recombinaison. iii) La divergence très
+faible des amplicons peut introduire des artéfacts lors de la capture des
+clusters par la caméra de séquençage.
 
 % TODO parler des problèmes de second pic
 
 % TODO parler des dinucléotides, de radman et cie.
+% parler ici de la manip contrôle
 
 % TODO parler du fait que le biais est généralement faible. Donner l'exemple des
 % levures pour qui le biais est calculé.

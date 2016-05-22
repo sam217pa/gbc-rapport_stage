@@ -7,8 +7,6 @@
 \vfill
 
 % ------------------------------------------------------------
-% TODO placer la figure des constructions
-% ------------------------------------------------------------
 \input{schema/construct.tex}
 \caption[Constructions moléculaires]{\textbf{Constructions moléculaires et
     préparation de l'ADN recombinant} \\ \rmfamily Les gènes de synthèse sont
@@ -133,7 +131,13 @@ plasmides résiduels. Les cellules recombinantes ont été sélectionnées par
 solide additionné de kanamycine à \SI{50}{\ug\per\mL} et incubées \SI{24}{\hour}
 à \SI{30}{\celsius}. Les dénombrements ont été effectués via un compteur
 automatique Scan\textsuperscript{\textregistered}1200 (InterScience).
-
+Les fréquences de transformations \(F\) ont été calculées de la façon suivante :
+\begin{align}
+  \begin{split}
+    F &= \frac{\textrm{Nombre de transformants}}{\textrm{Nombre de cellules réceptrices totales}} \\
+    F &= \frac{\textrm{Nombres de cellules résistantes à la kanamycine}}{\textrm{Nombre de cellules totales}}
+  \end{split}
+\end{align}
 96 clones recombinants ont été isolés et incubés \SI{24}{\hour} à
 \SI{30}{\celsius} sur milieu LB solide additionné de kanamycine à
 \SI{50}{\umol\per\mL} . Une colonie isolée par clone a été mise en suspension
@@ -165,7 +169,7 @@ par la technique de Sanger\cite{sanger_dna_1977} (GATC Biotech).
   \newpage
 }
 
-\newpage
+% \newpage
 
 % ------------------------------------------------------------------------------
 \subsection{Alignements}

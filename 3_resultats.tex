@@ -3,7 +3,7 @@
 \vfill
 \input{schema/trace_de_conversion.tex}
 \caption[Zones de recombinaison détaillée]{\textbf{Zones de recombinaison entre un locus génomique
-    d'\emph{Acinetobacter baylyi} et un gène synthétique donneur d'allèles GC
+    d'\emph{Acinetobacter baylyi} et un gène synthétique donneur d'allèles CG
     et AT.}%
   \rmfamily
 
@@ -13,7 +13,7 @@
   région convertie : ils correspondent à l'haplotype du donneur. Ils sont
   rouges lorsque le site est dans la région conservée.
   Les séquences sont triées par longueur de région convertie.
-  Les alternances rouge / bleu marquent la transition de l'haplotype
+  Les alternances rouge~/~bleu marquent la transition de l'haplotype
   converti à l'haplotype sauvage : le point de recombinaison est localisé
   entre ces deux marqueurs.
 }%
@@ -26,121 +26,113 @@
 \afterpage{%
   \null
   \vfill
-  \begin{figure}
-    \centering
-    \includegraphics[ height = 10cm]{img/distr_rcb_pt.pdf}
-    \caption[Distribution de la position du dernier marqueur]{%
-      \label{fig:distrircb} \textbf{Distribution de la position du dernier
-        marqueur converti} \\ \rmfamily Ce graphique représente en ordonnées le
-      nombre de transformants dont le dernier marqueur converti est à la
-      position représentée en abscisse. Les panneaux du graphique représentent
-      les quatres constructions donneuses. La position du dernier marqueur
-      converti indique la position du point de recombinaison. Les transformants
-      qui ne montrent aucun marqueur converti sont indiqués par des $N$.
-      \\
-      La distribution du dernier marqueur converti est variable. La région entre
-      \num{580} et \num{780} paires de bases semble montrer un point froid de
-      recombinaison.
-      %
-    }
-    \rmfamily
-  \end{figure}
 
-  \begin{table}[h!]
+  \begin{table}
     \rmfamily
     \centering
-    \caption[Dénombrements des derniers marqueurs avant le point de
-    recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
-        recombinaison.} \\
-      \rmfamily Nous avons compté le nombre de séquences dont le dernier marqueur
-      dans la région convertie est un marqueur AT ou GC. Selon l'hypothèse
-      \ac{gbgc}, ce nombre devrait être plus élevé aux positions GC qu'aux
-      positions AT. Contrairement à l'hypothèse, il y a plus de transformants dont
-      le dernier marqueur converti est AT que de transformants dont le dernier
-      marqueur converti est GC. Cet écart n'est pas statistiquement significatif
-      (test du \(\chi^2\) d'indépendance, probabilité critique~\(=\)~\num{0.49}).
-      %
-    }
-    \label{tab:doublets}
 
-    \begin{tabular}{cccc}
+    \caption[Fréquences de transformation]{\textbf{Fréquences de transformation}}
+    \label{tab:transfo-freq}
+    \vspace{0.5cm}
+
+    \begin{tabular}{cc}
       \toprule
-      \thead{Dernier\\marqueur\\converti} &  Donneur & Total \\
+      \thead{\normalsize Construction \\ \normalsize Donneuse} & \thead{\normalsize Fréquences de \\ \normalsize transformation} \\
       \midrule
-      AT                                  &  AT/CG   & 55                       \\
-                                          &  CG/AT   & 37                       \\
-                                          &          & \cellcolor{LightGray} 92 \\
-      \midrule[0.1pt]
-      CG                                  &  AT/CG   & 33                       \\
-                                          &  CG/AT   & 50                       \\
-                                          &          & \cellcolor{LightGray} 83 \\
+      CG    & \num{6.53e-5} \\
+      AT    & \num{2.42e-5} \\
+      AT/CG & \num{4.97e-5} \\
+      CG/AT & \num{1.74e-4} \\
       \bottomrule
     \end{tabular}
   \end{table}
 
   \vfill
-  \thispagestyle{empty}
-  \addtocounter{page}{-1}
-  \newpage
+
+  \includegraphics[scale = 0.9]{img/distr_rcb_pt.pdf}
+  \caption[Distribution de la position du dernier marqueur]{%
+    \textbf{Distribution de la position du dernier
+      marqueur converti} \\ \rmfamily Ce graphique représente en ordonnées le
+    nombre de transformants dont le dernier marqueur converti est à la
+    position représentée en abscisse. Les panneaux du graphique représentent
+    les quatres constructions donneuses. La position du dernier marqueur
+    converti indique la position du point de recombinaison. Les transformants
+    qui ne montrent aucun marqueur converti sont indiqués par des $N$.%
+  }
+  \label{fig:distrircb}
+\end{figure}
+
+\vfill
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
 }
 % ==============================================================================
 \section{Résultats}
 \label{sec:resultats}
 % ==============================================================================
 
-
-% ------------------------------------------------------------------------------
-\subsection{Analyses visuelles des zones de recombinaison}
-\label{subsec:visu}
-% ------------------------------------------------------------------------------
-
 Nous avons transformé une supension d'\emph{Acinetobacter} par des constructions
 dont l'intégration dans le génome par recombinaison homologue entraîne la
 réparation des mésappariemments, un mécanisme qui est biaisé vers l'introduction
-des bases GC chez les eucaryotes. Pour chaque construction, nous avons
-représenté graphiquement les zones de recombinaison (voire figure
-\ref{fig:convtract}). L'origine du graphique correspond au début de la région
-convertie. Les 96 séquences obtenues sont triées par longueur de région
-convertie. La figure \ref{fig:convtract} représente le détail des zones de
-recombinaison obtenues en transformant avec une construction alternant CG et AT.
-Les zones de recombinaisons des clones transformés par les donneurs GC, AT et
-AT/GC sont détaillées en annexe \ref{sec:trac-de-conv}.
-% DONE référencer les figures en annexes.
+des bases CG chez les eucaryotes.
+
+Les fréquences de transformations obtenues sont représentées dans le tableau
+\ref{tab:transfo-freq} page \pageref{tab:transfo-freq}. Le type de construction
+donneuse n'a pas d'influence sur l'efficacité de la transformation. Les
+fréquences de l'ordre de \num{1e-5} ont permis d'obtenir un grand nombre de
+recombinants.
+
+En moyenne, \num{393} \(\pm\) \num{228} nucléotides ont été transférés et
+intégrés dans le génome.
+
+La figure \ref{fig:convtract} représente le détail des zones de recombinaison
+obtenues avec une construction donneuse alternant CG et AT. Les zones de
+recombinaisons des clones transformés par les donneurs CG, AT et AT/CG sont
+détaillées en annexe \ref{sec:trac-de-conv}.
+
+Nous nous sommes intéressés à deux paramètres permettant d'estimer les
+fréquences de conversion en faveur de GC chez \emph{A. baylyi} : la position du
+point de recombinaison, et la correction ponctuelle des mésappariemments.
 
 % ------------------------------------------------------------------------------
-\subsection{Analyses de la position des points de recombinaison}
-\label{subsec:distribution-points}
+\subsection{Comparaison de la longueur des régions converties}
+\label{subsec:longueur}
 % ------------------------------------------------------------------------------
 
 Selon l'hypothèse \ac{gbgc}, la région convertie devrait être plus longue
-lorsque la construction donneuse induit des réparations vers GC que lorsqu'elle
+lorsque la construction donneuse induit des réparations vers CG que lorsqu'elle
 induit des réparations vers AT. La différence entre la longueur moyenne de
-région convertie par les donneurs GC et la longueur moyenne de région convertie
-par des donneurs AT n'est pas significative (test de Wilcoxon, probabilité
-critique~\(=\) \num{0.31}) (voir figure \ref{fig:distrircb}). De la même façon, la
-différence entre la longueur de région convertie par le donneur AT/GC et celle
-par le donneur GC/AT n'est pas significative (test de Wilcoxon, probabilité
-critique~\(=\) \num{0.22}). Globalement, le type de construction donneuse n'explique
-pas la variabilité de la longueur de région convertie (test de Kruskal-Wallis,
-probabilité critique~\(=\) \num{0.10}). Le type de donneur n'a pas d'influence sur la
+région convertie par les donneurs respectivement CG et AT n'est pas
+significative (test de Wilcoxon, probabilité critique~\(=\) \num{0.31}) (voir
+figure \ref{fig:distrircb}). De la même façon, la différence entre la longueur
+de région convertie par le donneur AT/CG et celle par le donneur CG/AT n'est pas
+significative (test de Wilcoxon, probabilité critique~\(=\) \num{0.22}).
+Globalement, le type de construction donneuse n'explique pas la variabilité de
+la longueur de région convertie (test de Kruskal-Wallis, probabilité
+critique~\(=\) \num{0.10}). Le type de donneur n'a pas d'influence sur la
 longueur de région convertie.
 
-Les constructions alternant AT et GC permettent de déterminer si le point de
-recombinaison se situe plus souvent après un marqueur introduisant une
-conversion vers GC qu'après un marqueur introduisant une conversion vers AT
-(voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
-transfomants ; il est GC dans 83 transformants. Cet écart n'est pas
-significatif (voir table \ref{tab:doublets}).
+\subsection{Distribution du dernier marqueur converti}
+\label{subsec:distribution-points}
 
-% DONE graphique des points de bascule dans le rapport
+Les constructions alternant AT et CG permettent de déterminer si le point de
+recombinaison se situe plus souvent après un marqueur introduisant une
+conversion vers CG qu'après un marqueur introduisant une conversion vers AT
+(voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
+transfomants ; il est CG dans 83 transformants. Cet écart n'est pas significatif
+(test du \(\chi^2\) d'homogénéité, probabilité critique~\(=\)~\num{0.49}) (voir
+table \ref{tab:doublets}).
+
+Lorsque le premier marqueur donneur est AT, le dernier marqueur converti est
+plus souvent AT que GC. De la même façon, lorsque le premier marqueur donneur
+est GC, le dernier marqueur converti est plus souvent GC que AT.
 
 
 % ------------------------------------------------------------------------------
-\subsection{Analyses des restaurations de l'haplotype sauvage}
+\subsection{Restaurations de l'haplotype sauvage}
 \label{subsec:restaur}
 % ------------------------------------------------------------------------------
-
-% DONE mettre table de restauration des haplotypes sauvages.
 
 Certains transformants montrent des régions de conversions qui alternent entre
 l'allèle sauvage receveur et l'allèle donneur. Ces alternances ponctuelles
@@ -159,9 +151,16 @@ de Wilcoxon, probabilité critique \(=\) \num{0.94}). Les marqueurs correspondan
 à des restaurations de l'haplotype sauvage ne sont donc pas des erreurs de
 séquençage, et correspondent à un signal biologique.
 
-Sur les 14 cas de restaurations de l'haplotype sauvage, 4 sont des restaurations
-de l'allèle AT, 10 sont des restaurations de l'allèle GC. Cet écart n'est pas
-significatif (voir la table \ref{tab:restaur}).
+% Certains transformants montrent des restaurations ponctuelles de l'allèle
+% sauvage dans la région convertie. Ces restaurations peuvent être des
+% restaurations de l'allèle AT ou de l'allèle CG. Sur les 14 cas observés,
+% \num{10} sont des restaurations de l'allèle CG, \num{4} de l'allèle AT.
+Sur les 14 cas de restaurations de l'haplotype sauvage, \num{4} sont des
+restaurations de l'allèle AT, \num{10} sont des restaurations de l'allèle CG.
+Cet écart n'est pas significatif (voir la table \ref{tab:restaur}). L'écart
+n'est pas statistiquement significatif (test du \(\chi^2\) d'homogénéité,
+probabilité critique~\(=\)~\num{0.11}).
+
 
 \texttt{Si encore places après modifications, placer tableau suivant là. }
 
@@ -169,37 +168,59 @@ significatif (voir la table \ref{tab:restaur}).
 \afterpage{
   \null
   \vfill
+  \begin{table}[h!]
+    \rmfamily
+    \centering
+
+    \caption[Dénombrements des derniers marqueurs avant le point de
+    recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
+        recombinaison.}
+      % \rmfamily       %
+    }
+    \label{tab:doublets}
+
+    \begin{tabular}{@{}ccc@{}}
+      \toprule
+      & \multicolumn{2}{c}{Dernier marqueur converti} \\
+      \cmidrule(r){2-3}
+      \thead{\normalsize ADN synthétique \\ \normalsize donneur } & AT & CG \\
+      \midrule
+      AT/CG & 55 & 33 \\
+      CG/AT & 37 & 50 \\
+      \midrule[0.1pt]
+      Total & 92 & 83 \\
+      \bottomrule
+
+    \end{tabular}
+
+  \end{table}
+
+  \vfill
+
   \begin{table}[htbp]
     \centering
     \rmfamily
 
     \caption[Dénombrement des cas de restauration]{\textbf{Dénombrement des cas de
         restauration} \\
-      \rmfamily Certains transformants montrent des restaurations ponctuelles de
-      l'allèle sauvage dans la région convertie. Ces restaurations peuvent être
-      des restaurations de l'allèle AT ou de l'allèle CG. Sur les 14 cas
-      observés, \num{10} sont des restaurations de l'allèle GC, \num{4} de
-      l'allèle AT. L'écart n'est pas
-      statistiquement significatif (test du \(\chi^2\) d'indépendance, probabilité
-      critique~\(=\) \num{0.11}).
-      %
+      \rmfamily       %
     }
     \label{tab:restaur}
 
-    \begin{tabular}{ccc}
+    \begin{tabular}{@{}ccc@{}}
       \toprule
-      Allèle restauré & Donneur & Total                    \\
+      & \multicolumn{2}{c}{Nucléotide Restauré} \\
+      \cmidrule(r){2-3}
+      \thead{\normalsize ADN synthétique \\ \normalsize donneur } & AT & CG \\
       \midrule
-      CG              & AT      & 4                        \\
-                      & AT/CG   & 2                        \\
-                      & CG/AT   & 4                        \\
-                      &         & \cellcolor{LightGray} 10 \\
+      AT    & - & 4 \\
+      CG    & 0 & - \\
+      AT/CG & 3 & 2 \\
+      CG/AT & 1 & 4 \\
       \midrule[0.1pt]
-      AT              & CG      & 0                        \\
-                      & AT/CG   & 3                        \\
-                      & CG/AT   & 1                        \\
-                      &         & \cellcolor{LightGray} 4  \\
+      Total & 4 & 10 \\
       \bottomrule
+
     \end{tabular}
   \end{table}
   \vfill

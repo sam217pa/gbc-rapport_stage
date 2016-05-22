@@ -8,9 +8,9 @@ de 1 figure par page de gauche
 
 * DONE Prendr en compte les commentaires de franck [18/22]
 ** DONE spe I tiret
-** TODO sca I tiret
+** DONE sca I tiret
 ** DONE transformation et extractions plasmidiques à la place de amplification clonale dans E.coli
-** TODO splitter figure 1 en A et B
+** DONE splitter figure 1 en A et B
 ** DONE changer la phrase assimilées par acinetobacter
 ** DONE kanR pas en rouge.
 ** DONE figurés pour montrer homologie
@@ -19,7 +19,7 @@ de 1 figure par page de gauche
 ** DONE parler de simple brin dans la figure.
 ** DONE remplacer polarité par sens
 ** DONE parler de stratégie plutôt que de trois constructions.
-** TODO intro : pourquoi acineto ?
+** DONE intro : pourquoi acineto ?
 ** DONE corriger noms des fournisseurs
 ** DONE changer le titre de la figure 2
 ** DONE enzyme de restriction en italique
@@ -28,7 +28,7 @@ de 1 figure par page de gauche
 ** DONE plasmides résiduels, pas trace
 ** DONE locus d'intérêt = zone de recombinaison
 ** DONE séquençage = GATC.
-** TODO éventuellement placer des numéros de séquence dans les figures ?
+** DONE éventuellement placer des numéros de séquence dans les figures ?
 * Analyses
 
 [2016-05-14 Sat 19:18] Le taux de GC ne suit pas une loi normale. Pour comparer

@@ -18,10 +18,10 @@
     \node[gs_don_col] at (10, +29.5) {\texttt{--C-T---C-T---}};
     \node[gs_don_col] at (15, +29.5) {\texttt{-A---G-A---G--}};
 
-    \node[legende text, gs_don_col] at (0,  28.5) {Séquence de synthèse \\ GC};
+    \node[legende text, gs_don_col] at (0,  28.5) {Séquence de synthèse \\ CG};
     \node[legende text, gs_don_col] at (5,  28.5) {Séquence de synthèse \\ AT};
-    \node[legende text, gs_don_col] at (10, 28.5) {Séquence de synthèse \\ GC/AT};
-    \node[legende text, gs_don_col] at (15, 28.5) {Séquence de synthèse \\ AT/GC};
+    \node[legende text, gs_don_col] at (10, 28.5) {Séquence de synthèse \\ CG/AT};
+    \node[legende text, gs_don_col] at (15, 28.5) {Séquence de synthèse \\ AT/CG};
 
     \foreach \x in {0,5,...,15}
     {
@@ -103,33 +103,33 @@
 	    \draw[am3_col]       (\x + 1.3, 10) -- ++(0.2, 0);
     }
 
-    \node[legende text] at (0, 13.5) {pGC-KanAncre};
+    \node[legende text] at (0, 13.5) {pCG-KanAncre};
     \node[legende text] at (5, 13.5) {pAT-KanAncre};
-    \node[legende text] at (10, 13.5) {pGC/AT-KanAncre};
-    \node[legende text] at (15, 13.5) {pAT/GC-KanAncre};
+    \node[legende text] at (10, 13.5) {pCG/AT-KanAncre};
+    \node[legende text] at (15, 13.5) {pAT/CG-KanAncre};
 
-    \node[legende text] at (0 , 22.5) {pGC};
+    \node[legende text] at (0 , 22.5) {pCG};
     \node[legende text] at (5 , 22.5) {pAT};
-    \node[legende text] at (10, 22.5) {pGC/AT};
-    \node[legende text] at (15, 22.5) {pAT/GC};
+    \node[legende text] at (10, 22.5) {pCG/AT};
+    \node[legende text] at (15, 22.5) {pAT/CG};
 
     \foreach \y in {10, 14 } {
-      \node[gs_don_col, above, font=\tiny] at (-1, \y) {GC};
+      \node[gs_don_col, above, font=\tiny] at (-1, \y) {CG};
     }
     \foreach \y in {10, 14 } {
       \node[gs_don_col, above, font=\tiny] at (4, \y) {AT};
     }
     \foreach \y in {10, 14 } {
-      \node[gs_don_col, above, font=\tiny] at (9, \y) {GC/AT};
+      \node[gs_don_col, above, font=\tiny] at (9, \y) {CG/AT};
     }
     \foreach \y in {10, 14 } {
-      \node[gs_don_col, above, font=\tiny] at (14, \y) {AT/GC};
+      \node[gs_don_col, above, font=\tiny] at (14, \y) {AT/CG};
     }
 
-    \node[legende text] at (0 , 9) {Donneur GC};
+    \node[legende text] at (0 , 9) {Donneur CG};
     \node[legende text] at (5 , 9) {Donneur AT};
-    \node[legende text] at (10, 9) {Donneur GC/AT};
-    \node[legende text] at (15, 9) {Donneur AT/GC};
+    \node[legende text] at (10, 9) {Donneur CG/AT};
+    \node[legende text] at (15, 9) {Donneur AT/CG};
 
   \end{tikzpicture}
 \end{center}
