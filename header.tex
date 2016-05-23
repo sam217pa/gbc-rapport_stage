@@ -52,15 +52,12 @@
 %% images
 %%
 \usepackage{graphicx}
-% \usepackage{tabularx}
-\usepackage[]{makecell}
+\usepackage{makecell}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{rotating}
-
-% \renewcommand\theheadfont{\bfseries}
 
 %%
 %% maths
@@ -86,6 +83,7 @@
   locale = FR
 }
 
+\usepackage[]{nicefrac}
 
 %%
 %% references
@@ -95,17 +93,14 @@
 \usepackage[super, comma]{natbib}
 \bibliographystyle{asm}
 \usepackage[]{multicol}
-\usepackage[para, perpage, symbol*]{footmisc}
-\renewcommand\footnotelayout{\Large}
 
-% \usepackage[]{cleveref}
-%   \crefname{enumi}{position}{positions}
 %%
 %% acronymes
 %%
-\usepackage[]{acro}
+\usepackage[pages = all]{acro}
 % probably a good idea for the nomenclature entries:
 \acsetup{first-style=short}
+\acsetup{extra-style=comma}
 \input{acro.tex}
 
 %%
@@ -114,14 +109,11 @@
 \setcounter{tocdepth}{3}
 %% pas de titre
 \deftocheading{toc}{\section*{Sommaire}}%
+\usepackage[]{minitoc}
 
 %%
 %% typographie
 %%
-\providecommand\newthought[1]{%
-   \addvspace{0.5\baselineskip plus 0.3ex minus 0.1ex}%
-   \noindent\textrm{\bsc{#1}} % small caps text out
-}
 \usepackage[]{lipsum}
 \usepackage[]{setspace}
 %% line space
@@ -132,9 +124,13 @@
   draft = true,
   captions=tableheading
 }
-\renewcommand*{\multfootsep}{,\nobreakspace}
+% \renewcommand*{\multfootsep}{,\nobreakspace}
+\renewcommand*{\thefootnote}{\alph{footnote}}
+\usepackage{perpage}
+\MakePerPage{footnote}
+\usepackage[perpage, norule]{footmisc}
+\renewcommand\footnotelayout{\Large}
 
-\usepackage[]{nicefrac}
 
 %%
 %% title
@@ -176,29 +172,12 @@
 \usepackage{dpfloat}
 
 \makeatletter
-% \newcommand\@addfig{\relax}
-% \newcommand\addfig[1]{\global\long\def\@addfig{#1}}
-% \newcommand\@putfig{\@addfig\addfig{\relax}}
-% \newcommand\blankpage{%
-% \null
-% \vfill
-% \@putfig%
-% \vfill
-% \thispagestyle{empty}% BEWARE, if you want the header and footer, you should put
-%                      % the correct style here
-% \clearpage%
-% \addtocounter{page}{-1}% BEWARE, if you want the left pages to be numbered,
-%                        % don't put this line, this is intended to have picture
-%                        % page with the same number as the facing text page
-% \afterpage{\blankpage}}
 
 \newcommand\blankpage{%
     \null
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
-
-% \makeatother
 
 %% permet d'utiliser caption en dehors des floats
 \makeatletter
@@ -210,8 +189,6 @@
 %%
 
 \usepackage[]{tikz}
-
-
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows.meta}
 

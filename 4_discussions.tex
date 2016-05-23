@@ -119,17 +119,18 @@ TODO terminer analyses des dinucléotides.
 
 TODO mal dit ``Si ce genre de mécanisme'' est à l'œuvre chez \emph{A. baylyi},
 les marqueurs AT et les marqueurs GC de nos constructions ne sont pas
-rigoureusement dans le même contexte nucléotidique. Pour palier à cet éventuel
-biais, il faudrait transformer à nouveau un clone ayant converti tous les
-marqueurs par la séquence sauvage : chaque évènement de conversion serait alors
-rigoureusement dans le même contexte.
+rigoureusement dans le même contexte nucléotidique (voir
+figure~\ref{fig:construct}). Pour palier à cet éventuel biais, il faudrait
+transformer à nouveau un clone ayant converti tous les marqueurs par la séquence
+sauvage : chaque évènement de conversion serait alors rigoureusement dans le
+même contexte.
 
 % ------------------------------------------------------------------------------
 \subsection{Des restaurations de l'haplotype sauvage inattendues}
 \label{subsub:discu-restaur}
 % ------------------------------------------------------------------------------
 
-% TODO discuter de ces cas de restaurations. comment elles ont pu arriver ?
+% DONE discuter de ces cas de restaurations. comment elles ont pu arriver ?
 % mécanismes, double crossing over ? Normalement ce qu'on voit chez la levure
 % c'est un mécanisme global sur l'ensemble de la trace de conversion, pas
 % localement. Lesecque et al excluent le BER comme possible mécanisme de bgc.
@@ -147,16 +148,16 @@ toutes les 30 paires de bases ?
 
 Dans le contexte de la conversion génique biaisée vers GC, est-ce que ces cas de
 restaurations pourraient expliquer un biais ? Chez les eucaryotes, la correction
-des mésappariemments dans les cellules en mitose est effectuée par la voie du
-\ac{ber} (Base Excision Repair). Cette voie excise spécifiquement une base
-mésappariée en détectant les malformations qu'elle occasionne dans la structure
-de la double-hélice, puis la remplace par la base complémentaire à celle du brin
-opposé\cite{krokan_base_2013}. Cette voie a été considérée comme l'un des
-moteurs possibles du \ac{gbgc} chez les mammifères\cite{duret_biased_2009}, mais
-elle a été rejetée chez la levure\cite{lesecque_gc-biased_2013}. Chez cette
-dernière, le \ac{gbgc} est associé aux régions converties les plus longues et
-dans lesquelles tous les allèles sont convertis depuis le même haplotype
-donneur.
+des mésappariemments dans les cellules en mitose est effectuée en partie par la
+voie du \ac{ber} (Base Excision Repair). Cette voie excise spécifiquement une
+base mésappariée en détectant les malformations qu'elle occasionne dans la
+structure de la double-hélice, puis la remplace par la base complémentaire à
+celle du brin opposé\cite{krokan_base_2013}. Cette voie a été considérée comme
+l'un des moteurs possibles du \ac{gbgc} chez les
+mammifères\cite{duret_biased_2009}, mais elle a été rejetée chez la
+levure\cite{lesecque_gc-biased_2013}. Chez cette dernière, le \ac{gbgc} est
+associé aux régions converties les plus longues et dans lesquelles tous les
+allèles sont convertis depuis le même haplotype donneur.
 
 Est-ce que le \ac{ber}, s'il est actif chez les procaryotes, pourrait conduire à
 de la conversion biaisée vers GC ? L'étude des régions converties chez des
@@ -173,13 +174,16 @@ conversion génique conserve l'allèle sauvage ou 3) ils ont été d'abord conve
 par l'allèle donneur, puis restaurés. Dans tous les cas, la base séquencée
 correspond à l'allèle sauvage du marqueur.
 
+\subsection{Quelle est la fréquence de conversion en faveur de GC ?}
+\label{subsec:discu-freq}
+
 % ------------------------------------------------------------------------------
 \subsection{Comment augmenter la puissance du test ?}
 \label{subsub:discu-puissance}
 % ------------------------------------------------------------------------------
 
-% TODO calculer la taille d'échantillon nécessaire pour observer un biais de
-% longueur ou d'introduction d'un SNP.
+% DONE calculer la taille d'échantillon nécessaire pour observer un biais de
+% longueur ou d'introduction d'un SNP. voir [schema/longueur_traces.R]
 Pour détecter une différence de l'ordre de \num{30} paires de bases entre
 longueurs de régions converties correspondant à l'introduction d'un marqueur
 supplémentaire, en supposant qu'elles sont normalement distribuées, avec l'écart

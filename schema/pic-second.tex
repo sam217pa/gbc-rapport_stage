@@ -57,9 +57,12 @@
     node[right, Black] {\(\bar{n} = \frac{0}{8} = 0\)}
     ;
 
-    \node[right] at (12.5, 8) {\(\bar{X} = 4\)};
-    \node[right] at (12.5, 1) {\(\bar{N} = \sum_{i = 1}^{96}\frac{\bar{n_i}}{96}\)};
-
+    \node[right] at (12.5, 8) {\(X = 4\)};
+    \node[right] at (12.5, 1) {
+      % \begin{minipage}[htbp]{1.0\linewidth}
+        \(\bar{N} = \frac{1}{96}\sum n_i\)
+      % \end{minipage}%
+    };
     \draw [->] (18.5, 4.5) -- ++(5, 0) node[midway, above] {\(\times 10000\)}
     node[right] {
       \includegraphics[width = 0.5\textwidth]{img/randomweak.png}
