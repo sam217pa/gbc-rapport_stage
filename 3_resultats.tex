@@ -1,4 +1,4 @@
-
+\blankpage
 \null
 \vfill
 \input{schema/trace_de_conversion.tex}
@@ -21,7 +21,8 @@
 \label{fig:convtract}
 \thispagestyle{empty}
 \addtocounter{page}{-1}
-\newpage
+% \afterpage{\blankpage}
+% \newpage
 
 \afterpage{%
   \null
@@ -83,86 +84,22 @@ donneuse n'a pas d'influence sur l'efficacité de la transformation. Les
 fréquences de l'ordre de \num{1e-5} ont permis d'obtenir un grand nombre de
 recombinants.
 
-En moyenne, \num{393} \(\pm\) \num{228} nucléotides ont été transférés et
-intégrés dans le génome.
-
 La figure \ref{fig:convtract} représente le détail des zones de recombinaison
 obtenues avec une construction donneuse alternant CG et AT. Les zones de
 recombinaisons des clones transformés par les donneurs CG, AT et AT/CG sont
-détaillées en annexe \ref{sec:trac-de-conv}.
+détaillées en annexe \ref{subsec:trac-de-conv}. En moyenne, \num{393} \(\pm\)
+\num{228} nucléotides ont été transférés et intégrés dans le génome. La position
+du dernier marqueur converti indique que le point de recombinaison (voir
+figure~\ref{fig:recomb} et~\ref{fig:convtract}) se situe entre les 30 bases le
+séparant du premier marqueur conservé. Nous avons donc estimé la position du
+point de recombinaison par celle du dernier marqueur converti, dont la
+distribution est représentée dans la figure~\ref{fig:distrircb}. De façon
+surprenante, la distribution du point de recombinaison est très variable entre
+les transformants.
 
 Nous nous sommes intéressés à deux paramètres permettant d'estimer les
 fréquences de conversion en faveur de GC chez \emph{A. baylyi} : la position du
 point de recombinaison, et la correction ponctuelle des mésappariemments.
-
-% ------------------------------------------------------------------------------
-\subsection{Comparaison de la longueur des régions converties}
-\label{subsec:longueur}
-% ------------------------------------------------------------------------------
-
-Selon l'hypothèse \ac{gbgc}, la région convertie devrait être plus longue
-lorsque la construction donneuse induit des réparations vers CG que lorsqu'elle
-induit des réparations vers AT. La différence entre la longueur moyenne de
-région convertie par les donneurs respectivement CG et AT n'est pas
-significative (test de Wilcoxon, probabilité critique~\(=\) \num{0.31}) (voir
-figure \ref{fig:distrircb}). De la même façon, la différence entre la longueur
-de région convertie par le donneur AT/CG et celle par le donneur CG/AT n'est pas
-significative (test de Wilcoxon, probabilité critique~\(=\) \num{0.22}).
-Globalement, le type de construction donneuse n'explique pas la variabilité de
-la longueur de région convertie (test de Kruskal-Wallis, probabilité
-critique~\(=\) \num{0.10}). Le type de donneur n'a pas d'influence sur la
-longueur de région convertie.
-
-\subsection{Distribution du dernier marqueur converti}
-\label{subsec:distribution-points}
-
-Les constructions alternant AT et CG permettent de déterminer si le point de
-recombinaison se situe plus souvent après un marqueur introduisant une
-conversion vers CG qu'après un marqueur introduisant une conversion vers AT
-(voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
-transfomants ; il est CG dans 83 transformants. Cet écart n'est pas significatif
-(test du \(\chi^2\) d'homogénéité, probabilité critique~\(=\)~\num{0.49}) (voir
-table \ref{tab:doublets}).
-
-Lorsque le premier marqueur donneur est AT, le dernier marqueur converti est
-plus souvent AT que GC. De la même façon, lorsque le premier marqueur donneur
-est GC, le dernier marqueur converti est plus souvent GC que AT.
-
-
-% ------------------------------------------------------------------------------
-\subsection{Restaurations de l'haplotype sauvage}
-\label{subsec:restaur}
-% ------------------------------------------------------------------------------
-
-Certains transformants montrent des régions de conversions qui alternent entre
-l'allèle sauvage receveur et l'allèle donneur. Ces alternances ponctuelles
-affectent de 1 à 3 marqueurs consécutifs (voir figure \ref{fig:convtract}). Nous
-avons confirmé qu'il s'agissait bien de restaurations de l'allèle sauvage de
-deux façons. 1) Expérimentalement, nous avons séquencé une sous-population de
-clones issues d'un isolat séquencé en premier lieu. Tous montrent la même
-alternance au même site (voir figure~\ref{fig:confirm-haplotype} en
-annexe~\ref{subsec:confirm-haplotype}). 2) Analytiquement, le score de qualité
-moyen des sites montrant des restaurations de l'allèle sauvage permet de
-s'affranchir d'une possible erreur de séquençage : celle-ci se traduit
-généralement par un indice de qualité plus faible au site concerné. Le score de
-qualité moyen est de \num{49.36} aux sites restaurés, contre \num{52.79} aux
-sites non-restaurés. La différence entre les deux n'est pas significative (test
-de Wilcoxon, probabilité critique \(=\) \num{0.94}). Les marqueurs correspondant
-à des restaurations de l'haplotype sauvage ne sont donc pas des erreurs de
-séquençage, et correspondent à un signal biologique.
-
-% Certains transformants montrent des restaurations ponctuelles de l'allèle
-% sauvage dans la région convertie. Ces restaurations peuvent être des
-% restaurations de l'allèle AT ou de l'allèle CG. Sur les 14 cas observés,
-% \num{10} sont des restaurations de l'allèle CG, \num{4} de l'allèle AT.
-Sur les 14 cas de restaurations de l'haplotype sauvage, \num{4} sont des
-restaurations de l'allèle AT, \num{10} sont des restaurations de l'allèle CG.
-Cet écart n'est pas significatif (voir la table \ref{tab:restaur}). L'écart
-n'est pas statistiquement significatif (test du \(\chi^2\) d'homogénéité,
-probabilité critique~\(=\)~\num{0.11}).
-
-
-\texttt{Si encore places après modifications, placer tableau suivant là. }
 
 % tables de comptage des cas de restaurations
 \afterpage{
@@ -175,7 +112,6 @@ probabilité critique~\(=\)~\num{0.11}).
     \caption[Dénombrements des derniers marqueurs avant le point de
     recombinaison]{\textbf{Dénombrements des derniers marqueurs avant le point de
         recombinaison.}
-      % \rmfamily       %
     }
     \label{tab:doublets}
 
@@ -197,7 +133,7 @@ probabilité critique~\(=\)~\num{0.11}).
 
   \vfill
 
-  \begin{table}[htbp]
+  \begin{table}[h!]
     \centering
     \rmfamily
 
@@ -226,4 +162,89 @@ probabilité critique~\(=\)~\num{0.11}).
   \vfill
   \thispagestyle{empty}
   \addtocounter{page}{-1}
+  \clearpage
+  \newpage
 }
+
+% ------------------------------------------------------------------------------
+\subsection{Comparaison de la longueur des régions converties}
+\label{subsec:longueur}
+% ------------------------------------------------------------------------------
+
+Selon l'hypothèse \ac{gbgc}, la région convertie devrait être plus longue
+lorsque la construction donneuse induit des réparations vers CG que lorsqu'elle
+induit des réparations vers AT. La différence entre la longueur moyenne de
+région convertie par les donneurs respectivement CG et AT n'est pas
+significative (test de Wilcoxon, probabilité critique~\(=\) \num{0.31}) (voir
+figure \ref{fig:distrircb}). De la même façon, la différence entre la longueur
+de région convertie par le donneur AT/CG et celle par le donneur CG/AT n'est pas
+significative (test de Wilcoxon, probabilité critique~\(=\) \num{0.22}).
+Globalement, le type de construction donneuse n'explique pas la variabilité de
+la longueur de région convertie (test de Kruskal-Wallis, probabilité
+critique~\(=\) \num{0.10}). Le type de donneur n'a pas d'influence sur la
+longueur de région convertie.
+
+\subsection{Distribution du dernier marqueur converti}
+\label{subsec:distribution-points}
+
+Les constructions alternant AT et CG permettent de déterminer si le point de
+recombinaison se situe plus souvent après un marqueur introduisant une
+conversion vers CG qu'après un marqueur introduisant une conversion vers AT
+(voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
+transformants ; il est CG dans 83 transformants. Cet écart n'est pas significatif
+(test du \(\chi^2\) d'homogénéité, probabilité critique~\(=\)~\num{0.49}) (voir
+table \ref{tab:doublets}).
+
+Il semblerait que lorsque le premier marqueur donneur est AT, le dernier
+marqueur converti est plus souvent AT que GC. De la même façon, lorsque le
+premier marqueur donneur est GC, le dernier marqueur converti est plus souvent
+GC que AT.
+
+
+% ------------------------------------------------------------------------------
+\subsection{Restaurations de l'haplotype sauvage}
+\label{subsec:restaur}
+% ------------------------------------------------------------------------------
+
+Certains transformants montrent des régions de conversions qui alternent entre
+l'allèle sauvage receveur et l'allèle donneur. Ces alternances ponctuelles
+affectent de 1 à 3 marqueurs consécutifs (voir figure \ref{fig:convtract} et
+figure~\ref{fig:trace-4} en annexe~\ref{subsec:trac-de-conv}
+page \pageref{fig:trace-4}). Nous avons confirmé qu'il s'agissait bien de
+restaurations de l'allèle sauvage de deux façons. 1) Expérimentalement, nous
+avons séquencé une sous-population de 30 clones issus d'un isolat séquencé en
+premier lieu. Tous montrent la même alternance au même site (voir
+figure~\ref{fig:confirm-haplotype} en annexe~\ref{subsec:confirm-haplotype}). 2)
+Analytiquement, le score de qualité moyen des sites montrant des restaurations
+de l'allèle sauvage permet de s'affranchir d'une possible erreur de séquençage :
+celle-ci se traduit généralement par un indice de qualité plus faible au site
+concerné. Le score de qualité moyen est de \num{49.36} aux sites restaurés,
+contre \num{52.79} aux sites non-restaurés. La différence entre les deux n'est
+pas significative (test de Wilcoxon, probabilité critique \(=\) \num{0.94}). Les
+marqueurs correspondant à des restaurations de l'haplotype sauvage ne sont donc
+pas des erreurs de séquençage, et correspondent à un signal biologique.
+
+Sur les 14 cas de restaurations de l'haplotype sauvage, \num{4} sont des
+restaurations de l'allèle AT, \num{10} sont des restaurations de l'allèle CG.
+Cet écart n'est pas significatif (voir la table \ref{tab:restaur}). L'écart
+n'est pas statistiquement significatif (test du \(\chi^2\) d'homogénéité,
+probabilité critique~\(=\)~\num{0.11}).
+
+% TODO laurent pourquoi pas une partie estimation des fréquences de conversion ?
+
+% ------------------------------------------------------------------------------
+\subsection{Estimation des fréquences de conversion en faveur de GC}
+\label{subsec:result-freq}
+% ------------------------------------------------------------------------------
+
+Nous avons estimé les fréquences de conversion en faveur de GC par la différence
+entre le taux de GC des marqueurs des clones recombinants et celui du receveur.
+En l'absence d'un biais, il est estimé à 0 sur l'ensemble des transformants
+séquencés.
+
+Nous avons échantillonné 80 séquences par type de construction donneuse,
+sélectionné uniquement les positions des marqueurs, mesuré la différence entre
+le taux de GC du receveur et le taux de GC du clone recombinant et moyenné cette
+différence sur l'ensemble des clones. En repétant cette mesure \num{1e4} fois, la
+différence moyenne entre le taux de GC des recombinants et le taux de GC des
+receveur est de \num{1.13}\si{\percent}.

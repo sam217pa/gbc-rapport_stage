@@ -1,0 +1,88 @@
+\begin{center}
+
+  \begin{figure}
+
+    \centering
+    \tikzset{legende fleche/.style={Gray, dotted, thick, opacity = 0.6}}
+    \rmfamily
+    \scriptsize
+
+    \begin{tikzpicture}[scale = 0.5]
+      \node[above] at (0, 0) {\includegraphics[scale = 0.5]{img/pic_second.png}};
+      % \draw[opacity = 0.2, line width = 1pt, Gray] (-15,0) grid (15, 15);
+      % \draw[opacity = 0.2, line width = 0.005pt, step = 0.5, Gray] (-15,0) grid (15, +15);
+
+      \draw[legende fleche] [->] (-6, 0)        node[ above] {Score de qualité} -- ++(4.5, 0) -- ++(1, 1);
+      \draw[legende fleche, Black] [->] (-6, 7) node[ above] {Base G} -- ++(4.5, 0) -- ++(1, -1);
+      \draw[legende fleche, Red3] [->] (-6, 11) node[ above] {Base T} -- ++(4.5, 0) -- ++(1, -1);
+
+    \end{tikzpicture}
+
+    \caption[Marqueur montrant des traces de contaminations]{%
+      \textbf{Exemple de marqueur montrant des traces de
+        contaminations} \\ \rmfamily Cet électrophérogramme montre les bases autour du
+      marqueur à la position 200. Dans une région de qualité moyenne élevée (bases en
+      5' et en 3'), le marqueur présente une trace de contamination par une autre
+      base. La base déterminée est la base T mais une base G est présente dans la
+      population d'amplicon séquencée.
+      \label{fig:pic-second}
+    }
+  \end{figure}
+
+  \begin{figure}[h!]
+
+    \centering
+
+    \tikzset{legende fleche/.style={Gray, thick}}
+    \begin{tikzpicture}[scale = 0.3]
+      \scriptsize
+      \foreach \x in {1,2,...,12} {
+        \foreach \y in {1,2,...,8} {
+        \draw (\x, \y) circle (0.3cm) ;
+      }}
+    \draw[fill = Red] (8, 5) circle (0.3cm);
+    \draw[fill = Red] (7, 6) circle (0.3cm);
+    \draw[fill = Red] (7, 4) circle (0.3cm);
+    \draw[fill = Red] (6, 5) circle (0.3cm);
+
+    \draw[Gray, densely dotted] (5.5, 3.5) rectangle (8.5, 6.5);
+    \draw[Gray, densely dotted] (9.5, 0.6) rectangle (12.4, 3.5);
+    \draw[Gray] (0.5, 0.5) rectangle (12.5, 8.5);
+
+    \draw[legende fleche] [<-] (7, 5) -- ++(1, 0.5) -- ++(5, 0)
+    node[right, Black] {\(\bar{n} = \frac{4}{8} = \frac{1}{2}\)}
+    ;
+
+    \draw[legende fleche] [<-] (11, 2) -- ++(1, 2.0) -- ++(1, 0)
+    node[right, Black] {\(\bar{n} = \frac{0}{8} = 0\)}
+    ;
+
+    \node[right] at (12.5, 8) {\(\bar{X} = 4\)};
+    \node[right] at (12.5, 1) {\(\bar{N} = \sum_{i = 1}^{96}\frac{\bar{n_i}}{96}\)};
+
+    \draw [->] (18.5, 4.5) -- ++(5, 0) node[midway, above] {\(\times 10000\)}
+    node[right] {
+      \includegraphics[width = 0.5\textwidth]{img/randomweak.png}
+    };
+    \end{tikzpicture}
+
+
+    \caption[Des contaminations dues au hasard ?]{%
+      \label{fig:simul-count}\textbf{Des contaminations dues au hasard ? } \\
+      \rmfamily Par plaque de 96 puits, nous avons déterminé \(X\) le nombre de
+      puits dont la séquence montre des traces de pics secondaires (voir
+      figure~\ref{fig:pic-second}) et mesuré \(\bar{n}\) la moyenne du nombre de
+      puits voisins contaminés. \(\bar{N}\) est la moyenne des 96 \(\bar{n}\)
+      obtenus par plaque. Nous avons simulé \num{1e4} plaques avec \(X\) puits
+      contaminés répartis aléatoirement, mesuré \(\bar{N}\) et comparé la valeur
+      expérimentale de \(\bar{N}\) (trait vertical rouge) avec la distribution
+      des \num{1e4} \(\bar{N}\) (en gris) Seules \(78 / 10000\) plaques simulées
+      montrent un \(\bar{N}\) supérieur à la valeur expérimentale : la
+      répartition des séquences contaminées dans les plaques ne peut pas être
+      attribuée au hasard.
+      %
+    }
+    % TODO légender figure pics secondaire simul
+  \end{figure}
+
+\end{center}

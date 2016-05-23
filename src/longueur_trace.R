@@ -54,14 +54,31 @@ power.t.test(#length(length_tract$length),
 mean(length_tract$length)
 sd(length_tract$length)
 
-plot_length <-
-    length_tract %>%
-                           labels = c("CG", "AT", "AT/CG", "CG/AT"))) %>%
-                           labels = c("CG", "AT", "AT/CG", "CG/AT"))) %>%
-    ggplot(aes(x = mutant, y = length)) +
-    geom_point(alpha = 0.2) +
-    geom_boxplot(width = 0.2, outlier.colour = "red") +
-    coord_flip() +
-    labs(x = "", y = "Longueur des régions converties")
+## # C'est un graphique que j'ai complètement abandonné, Franck a eu du mal à le
+## # comprendre : c'est pas bon signe.
+## plot_length <-
+##     length_tract %>%
+##     mutate(
+##         mutant = factor(mutant, labels = c("CG", "AT", "AT/CG", "CG/AT"))
+##     ) %>%
+##     ## labels = c("CG", "AT", "AT/CG", "CG/AT"))) %>%
+##     ggplot(aes(x = mutant, y = length)) +
+##     geom_point(alpha = 0.2) +
+##     geom_boxplot(width = 0.2, outlier.colour = "red") +
+##     coord_flip() +
+##     labs(x = "", y = "Longueur des régions converties")
 
-ggsave("img/conv_length.pdf", plot_length)
+## ggsave("img/conv_length.pdf", plot_length)
+
+# degré de corrélation entre le nombre de points de bascule à une position
+# donnée par type de donneur
+breakpoints_distribution(conversion_tract) %>%
+    ungroup() %>%
+    mutate(switchp = cut(switchp, 23)) %>%
+    group_by(switchp, mutant) %>%
+    summarise(count = sum(distri)) %>%
+    ungroup() %>%
+    mutate(switchp = as.numeric(switchp)) %>%
+    tidyr::spread(mutant, count) %>%
+    select(-switchp) %>%
+    GGally::ggcorr(label = TRUE)
