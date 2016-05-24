@@ -49,71 +49,73 @@
 Chez les procaryotes, le taux de guanine et cytosine (\ac{gc}) varie de
 \SI{16.5}{\percent} à \SI{75}{\percent} dans les génomes séquencés à ce jour.
 Est-ce que ces différences de composition en base des génomes résultent de
-pression de sélection ou est-ce qu'elles résultent de processus non-adaptatif ?
+pressions de sélection ou est-ce qu'elles résultent de processus non-adaptatif ?
 Autrement dit, est-ce le taux de GC joue un rôle fonctionnel dans la survie de
 l'individu, ou est-ce qu'il est déterminé par des variations des patrons de
-mutations ou de réparation de l'ADN ?
-% Au cours des quinzes dernières années, il
-% a été démontré que la recombinaison homologue tend à augmenter localement le
-% taux de GC dans les régions fortement recombinantes des génomes
-% eucaryotes\cite{duret_biased_2009, lesecque_gc-biased_2013,
-%   williams_non-crossover_2015}.
-Ce mécanisme est essentiel pour la cellule : il
-permet de réparer les lésions de l'ADN. Au cours de la recombinaison, les brins
-associés au sein d'un hétéroduplex peuvent présenter des mésappariemments. Leur
-correction entraîne de la \emph{conversion génique}\cite{chen_gene_2007} : c'est
-une transmission à sens unique de l'information portée par un brin vers l'autre.
-Ce mécanisme est biaisé vers l'introduction préférentielle des bases C et G chez
-les mammifères et probablement chez un grand nombre
-d'eucaryotes\cite{pessia_evidence_2012}. C'est un processus non adaptatif : il
-impacte les régions codantes et non-codantes. Il peut s'opposer à l'action de la
-sélection en augmentant la probabilité de fixation des allèles
-G~et~C\cite{ratnakumar_detecting_2010, galtier_gc-biased_2009}.
+mutations ou de réparation de l'ADN ? L'un des mécanismes essentiels de
+réparation de l'ADN est la recombinaison homologue, impliquée dans la réparation
+des cassures doubles brins. Au cours de la réparation de l'ADN par recombinaison
+homologue, deux molécules différentes d'ADN monocaténaires sont appariées au
+sein d'un hétéroduplex. Ces deux brins appariés peuvent présenter des
+mésappariemments. Leur correction entraîne de la \emph{conversion
+  génique}\cite{chen_gene_2007}, c'est-à-dire une transmission à sens unique de
+l'information portée par un brin vers l'autre. Chez les mammifères et
+probablement chez un grand nombre d'eucaryotes, la correction des
+mésappariemments est biaisée vers l'introduction des bases
+G~et~C\cite{pessia_evidence_2012}. Le biais de conversion génique vers GC
+(\ac{gbgc}\footnote{gBGC pour GC-Biased Gene Conversion}) tend à augmenter
+localement le taux de GC des régions fortement
+recombinantes\cite{duret_biased_2009,lesecque_gc-biased_2013,williams_non-crossover_2015}.
+C'est un processus similaire à la sélection puisq'il augmente la probabilité de
+fixation des allèles G et C au fil des générations. Il est cependant
+non-adaptatif car il agit indépendamment de l'éventuel effet des allèles sur la
+fitness de l'individu.
 
 En 2010, deux études simultanées\cite{hildebrand_evidence_2010,
-  hershberg_evidence_2010} démontrent que : 1) le patron de \emph{mutation} est
-universellement biaisé vers A et T chez les procaryotes, et 2) les bases G et C
+  hershberg_evidence_2010} ont démontré chez les procarytes que les bases G et C
 ont une probabilité de fixation plus élevée, probablement sous l'effet d'un
 processus à l'action semblable à celle de la sélection naturelle. Hildebrand
-\emph{et al.} avancent que le \ac{gc} est en soi un trait soumis à la sélection,
-et rejettent l'hypothèse d'un biais de conversion génique biaisé vers GC chez
-les procaryotes. Cependant, les analyses récentes de Lassalle \emph{et al.}
-\cite{lassalle_gc-content_2015} et de Yahara \emph{et
+\emph{et al.} ont avancé que le \ac{gc} est en soi un trait soumis à la
+sélection, et ont rejetté l'hypothèse d'un biais de conversion génique biaisé
+vers GC chez les procaryotes. Cependant, les analyses récentes de Lassalle
+\emph{et al.} \cite{lassalle_gc-content_2015} et de Yahara \emph{et
   al.}\cite{yahara_landscape_2016} ont montré que les zones recombinantes des
 génomes procaryotes ont un taux de GC plus élévé que les régions
-non-recombinantes, une observation qui correspond précisément aux prédictions du
-biais de conversion vers GC (\ac{gbgc}). Elles montrent également que la
-fixation préférentielle des allèles GC va à l'encontre de la fixation des
-allèles optimaux des codons, une signature caractéristique de l'action d'un
-processus non adaptatif tel que le \ac{gbgc}. Ces observations sont compatibles
-avec l'hypothèse d'une conversion génique biaisée vers GC chez les procaryotes.
+non-recombinantes. Elles également ont montré que la fixation préférentielle des
+allèles GC va à l'encontre de la fixation des allèles optimaux des codons. Ces
+observations correspondent précisément aux prédictions du modèle gBGC. Ces
+résultats sont importants car ils suggèrent que le gBGC est un processus
+universel affectant tous les organismes sexués ou parasexués. Cependant, ces
+observations sont basées sur des corrélations et ne permettent pas de démontrer
+formellement que le gBGC est à l'œuvre chez les procaryotes.
 
-L'objectif de ce travail était d'obtenir une estimation expérimentale des
-fréquences de conversion vers GC chez la bactérie naturellement transformable
-\emph{Acinetobacter baylyi ADP1}\footnote{\emph{A.baylyi} était appelée
-  \emph{A.calcoaceticus} avant 1995, mais la taxonomie du genre a fait l'objet
-  d'une révision\cite{euzeby_list_1997}}. En effet, cette bactérie développe un
-stade de compétence pendant la phase exponentielle de croissance, et intègre de
-l'ADN exogène sous forme simple brin\cite{chen_dna_2004} par un mécanisme
-contrôlé génétiquement. Cet ADN peut être intégré dans le génome par
-recombinaison homologue. Nous avons utilisé ces propriétés pour forcer la
-recombinaison homologue à un locus neutre, en introduisant artificiellement des
-mésappariemments entre la séquence donneuse --- nos constructions --- et la
-séquence receveuse --- le génome (voir figure \ref{fig:recomb}). La réparation
-de ces mésappariemments donne lieu à la conversion génique d'un brin par
-l'autre. On distingue donc la région convertie, dont le génotype correspond à
-celui de l'haplotype donneur, de la région conservée, dont le génotype
-correspond à celui de l'haplotype receveur. Elles sont séparées par le point de
-recombinaison (voir figure \ref{fig:construct}). Les mésappariemments présents
-sur la séquence donneuse permettent 1) de localiser la position du point de
-recombinaison et 2) de déterminer la sens de la conversion. La réparation des
-mésappariemments introduits nous renseigne sur les fréquences de conversion en
-faveur de GC chez \emph{A.baylyi}.
+L'objectif de ce travail était de mettre en place un protocole expérimental
+permettant de quantifier les fréquences de conversion vers GC chez les
+bactéries. Nous avons choisi comme modèle la bactérie \emph{Acinetobacter baylyi
+  ADP1}\footnote{\emph{A.baylyi} était appelée \emph{A.calcoaceticus} avant
+  1995, mais la taxonomie du genre a fait l'objet d'une
+  révision\cite{euzeby_list_1997}} pour deux raisons. 1) Le genre
+\emph{Acinetobacter} montre une corrélation entre taux de GC et taux de
+recombinaison\cite{lassalle_gc-content_2015} qui suggère que ce genre pourrait
+être soumis au \ac{gbgc}. 2) Cette bactérie est naturellement transformable :
+elle développe un stade de compétence pendant la phase exponentielle de
+croissance au cours duquel elle intègre de l'ADN exogène
+monocaténaire par un mécanisme contrôlé génétiquement\cite{chen_dna_2004}. Cet
+ADN peut être intégré dans le génome par recombinaison homologue. Nous avons
+utilisé ces propriétés pour forcer la recombinaison homologue à un locus neutre,
+en introduisant artificiellement des mésappariemments entre la séquence donneuse
+--- nos constructions --- et la séquence receveuse --- le génome (voir figure
+\ref{fig:recomb}). La réparation de ces mésappariemments donne lieu à la
+conversion génique d'un brin par l'autre. On distingue donc la région convertie,
+dont le génotype correspond à celui de l'haplotype donneur, de la région
+conservée, dont le génotype correspond à celui de l'haplotype receveur. Elles
+sont séparées par le point de recombinaison (voir figure \ref{fig:construct}).
+Les mésappariemments présents sur la séquence donneuse permettent 1) de
+localiser la position du point de recombinaison et 2) de déterminer la sens de
+la conversion. La réparation des mésappariemments introduits nous renseigne sur
+les fréquences de conversion en faveur de GC chez \emph{A.baylyi}.
 
 \todo[inline]{insérer débuts de conclusions ici}
 
 \newpage
-% DONE restructurer le premier paragraphe pour que ça soit un peu mieux amené.
 % TODO compléter en fonction des résultats.
-% DONE dire pourquoi acinetobacter
-% DONE dire pourquoi trente snp.
