@@ -13,20 +13,25 @@
     % \draw[opacity = 0.2, line width = 0.01pt, Gray] (-2.5,8) grid (17.5, 30);
     % \draw[opacity = 0.2, line width = 0.005pt, step = 0.5, Gray] (-2.5,0) grid (17.5, 30);
 
-    \node[gs_don_col] at (0,  +29.5) {\texttt{--C--G--C--G-}};
-    \node[gs_don_col] at (5,  +29.5) {\texttt{-A--T--A--T---}};
-    \node[gs_don_col] at (10, +29.5) {\texttt{--C-T---C-T---}};
-    \node[gs_don_col] at (15, +29.5) {\texttt{-A---G-A---G--}};
+% ca_\textsf{[N]_{30}}_gt
+% cC_\textsf{[N]_{30}}_gG
+% Aa_\textsf{[N]_{30}}_Tt
+% cC_\textsf{[N]_{30}}_Tt
+% Aa_\textsf{[N]_{30}}_gG
+    \node[gs_don_col] at (0,  +29.5) {\texttt{cC.\tiny$[N]_{30}$\normalsize.gG}};
+    \node[gs_don_col] at (5,  +29.5) {\texttt{Aa.\tiny$[N]_{30}$\normalsize.Tt}};
+    \node[gs_don_col] at (10, +29.5) {\texttt{cC.\tiny$[N]_{30}$\normalsize.Tt}};
+    \node[gs_don_col] at (15, +29.5) {\texttt{Aa.\tiny$[N]_{30}$\normalsize.gG}};
 
-    \node[legende text, gs_don_col] at (0,  28.5) {Séquence de synthèse \\ CG};
-    \node[legende text, gs_don_col] at (5,  28.5) {Séquence de synthèse \\ AT};
-    \node[legende text, gs_don_col] at (10, 28.5) {Séquence de synthèse \\ CG/AT};
-    \node[legende text, gs_don_col] at (15, 28.5) {Séquence de synthèse \\ AT/CG};
+    \node[legende text, gs_don_col] at (0,  28.5) {Séquence de synthèse \\ dCG};
+    \node[legende text, gs_don_col] at (5,  28.5) {Séquence de synthèse \\ dAT};
+    \node[legende text, gs_don_col] at (10, 28.5) {Séquence de synthèse \\ dCG/AT};
+    \node[legende text, gs_don_col] at (15, 28.5) {Séquence de synthèse \\ dAT/CG};
 
     \foreach \x in {0,5,...,15}
     {
       \node[gs_rec_col, font=\tiny] at (\x, 30.5) {Séquence sauvage :};
-      \node[gs_rec_col] at (\x, 30) {\texttt{-CA-CA-CA-CA--}};
+      \node[gs_rec_col] at (\x, 30) {\texttt{ca.\tiny$[N]_{30}$\normalsize.gt}};
 
       \draw[transition] [->] (\x, 27.5) -- ++(0, -1)
       node[transition text] {PCR}
@@ -46,7 +51,7 @@
       \draw[am3_col] (\x + 0.5, 23) -- ++(0.2, 0);
 
       \draw[transition] [->] (\x, 21) -- ++(0, -1)
-      node[transition text] {Linéarisation \\ par \emph{Spe}I}
+      node[transition text, text width = 1.5cm] {Linéarisa-tion \emph{Spe}I}
       node[transition text, right, align = left, text width = 2cm] {Insertion de KanR et de l'ancre }
       ;
 

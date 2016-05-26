@@ -42,3 +42,24 @@ wilcox.test(x = conversion_tract$qual[
             y = conversion_tract$qual[
                 is.na(conversion_tract$isrestor)
             ])
+
+conversion_tract %>%
+    ## 131 correspond à une erreur dans la référence,
+    ## 99 correspond à des artéfacts d'alignement ou de base calling
+    group_by(name) %>%
+    filter(cons == "N",
+           qual > 39,
+           ## expp < max(expp) - 50 & expp > min(expp) + 50,
+           refp != 131, refp != 99) %T>%
+    {
+        print(
+            qplot(refp, fill = expb, data = .) +
+            legend_position()
+        )
+    } %>%
+    rowwise() %>%
+    mutate(polar = ifelse(expb %in% c("A", "T"), "AT", "GC") ) %>%
+    group_by(polar, inconv) %>%
+    summarise(count = n())
+
+chisq.test(c(14, 6))

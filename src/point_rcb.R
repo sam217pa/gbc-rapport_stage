@@ -13,3 +13,8 @@ pdf('img/distr_rcb_pt.pdf', family = "Ubuntu", height = height, width = width, o
 plot(gcbiasr::breakpoints_distribution(conversion_tract), inverse = FALSE) +
    labs(y = "Nombre de\ntransformants")
 dev.off()
+
+## conversion_tract %>%
+##     mutate(switchp = cut(switchp, 10)) %>%
+##     ggplot(aes(switchp)) +
+##     geom_bar(stat = "count")

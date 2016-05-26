@@ -82,3 +82,30 @@ breakpoints_distribution(conversion_tract) %>%
     tidyr::spread(mutant, count) %>%
     select(-switchp) %>%
     GGally::ggcorr(label = TRUE)
+
+conversion_tract %>%
+    keep_clean_only() %>%
+    filter(!is.na(sens), inconv, mutant %in% c("ws", "sw"), qual > 40) %>%
+    group_by(expb) %>%
+    summarise(count = n()) %>%
+    ungroup() %>%
+    mutate(#snpb = ifelse(snpb %in% c("A", "T"), "W", "S"),
+           expb = ifelse(expb %in% c("A", "T"), "W", "S")) %>%
+    group_by( expb) %>%
+    summarise(sum = sum(count))
+
+conversion_tract %>%
+    keep_clean_only() %>%
+    ## filter(name %in% has_23_marker(.)) %>%
+    filter(name %in% has_23_marker(.),
+           !is.na(sens),
+           inconv,
+           mutant %in% c("ws", "sw"),
+           qual > 40) %>%
+    group_by(snpb) %>%
+    summarise(count = n()) %>%
+    ungroup() %>%
+    mutate(#snpb = ifelse(snpb %in% c("A", "T"), "W", "S"),
+           snpb = ifelse(snpb %in% c("A", "T"), "W", "S")) %>%
+    group_by(snpb) %>%
+    summarise(sum = sum(count))

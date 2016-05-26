@@ -1,101 +1,213 @@
-\blankpage
+% \blankpage
+% \null
+% \vfill
+% \input{schema/trace_de_conversion.tex}
+% \caption[Zones de recombinaison détaillée]{\textbf{Zones de recombinaison entre
+%     un locus génomique d'\emph{Acinetobacter baylyi} et un gène synthétique
+%     donneur d'allèles CG et AT.} \\ %
+%   \rmfamily Chaque ligne horizontale représente une séquence. Les points
+%   représentent les positions des marqueurs sur les séquences. L'intensité et la
+%   taille des points représentent le score de qualité de séquençage du site. Les
+%   points sont bleus lorsque le site est dans la région convertie : ils
+%   correspondent à l'haplotype du donneur. Ils sont rouges lorsque le site
+%   correspond à l'haplotype du donneur. La première alternance rouge~/~bleu en
+%   partant de l'extrémité 5' marque la transition de l'haplotype converti à
+%   l'haplotype receveur : le point de recombinaison est localisé entre ces deux
+%   marqueurs. Certaines séquences sont des cas de conversion complexes, avec une
+%   ou plusieurs alternances donneur~/~receveur (rouge~/~bleu). Ce sont des cas de
+%   conversion accompagnés de restaurations de l'haplotype du receveur. Les
+%   séquences ont été triées par longueur de région convertie.}%
+% \vfill
+% \label{fig:convtract}
+% \thispagestyle{empty}
+% \addtocounter{page}{-1}
+% % \afterpage{\blankpage}
+% % \newpage
+\
+
+%% fréquences de transformation et distirbutino des points de bascule
 \null
 \vfill
-\input{schema/trace_de_conversion.tex}
-\caption[Zones de recombinaison détaillée]{\textbf{Zones de recombinaison entre un locus génomique
-    d'\emph{Acinetobacter baylyi} et un gène synthétique donneur d'allèles CG
-    et AT.}%
+\begin{table}[h!]
   \rmfamily
+  \centering
 
-  Chaque ligne horizontale représente une séquence. Les points représentent
-  les positions des marqueurs sur les séquences. L'intensité et le diamètre
-  des points représentent le score de qualité du site. Les points sont bleus lorsque le site est dans la
-  région convertie : ils correspondent à l'haplotype du donneur. Ils sont
-  rouges lorsque le site est dans la région conservée.
-  Les séquences sont triées par longueur de région convertie.
-  Les alternances rouge~/~bleu marquent la transition de l'haplotype
-  converti à l'haplotype sauvage : le point de recombinaison est localisé
-  entre ces deux marqueurs.
-}%
+  \caption[Fréquences de transformation]{\textbf{Fréquences de transformation}}
+  \label{tab:transfo-freq}
+  \vspace{0.5cm}
+
+  \begin{tabular}{cc}
+    \toprule
+    \thead{\normalsize Construction \\ \normalsize Donneuse} & \thead{\normalsize Fréquences de \\ \normalsize transformation} \\
+    \midrule
+    CG    & \num{6.53e-5} \\
+    AT    & \num{2.42e-5} \\
+    AT/CG & \num{4.97e-5} \\
+    CG/AT & \num{1.74e-4} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \vfill
-\label{fig:convtract}
-\thispagestyle{empty}
-\addtocounter{page}{-1}
-% \afterpage{\blankpage}
-% \newpage
 
-\afterpage{%
-  \null
-  \vfill
-
-  \begin{table}
-    \rmfamily
-    \centering
-
-    \caption[Fréquences de transformation]{\textbf{Fréquences de transformation}}
-    \label{tab:transfo-freq}
-    \vspace{0.5cm}
-
-    \begin{tabular}{cc}
-      \toprule
-      \thead{\normalsize Construction \\ \normalsize Donneuse} & \thead{\normalsize Fréquences de \\ \normalsize transformation} \\
-      \midrule
-      CG    & \num{6.53e-5} \\
-      AT    & \num{2.42e-5} \\
-      AT/CG & \num{4.97e-5} \\
-      CG/AT & \num{1.74e-4} \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-
-  \vfill
-
-  \includegraphics[scale = 0.9]{img/distr_rcb_pt.pdf}
-  \caption[Distribution de la position du dernier marqueur]{%
-    \textbf{Distribution de la position du dernier
-      marqueur converti} \\ \rmfamily Ce graphique représente en ordonnées le
-    nombre de transformants dont le dernier marqueur converti est à la
-    position représentée en abscisse. Les panneaux du graphique représentent
-    les quatres constructions donneuses. La position du dernier marqueur
-    converti indique la position du point de recombinaison. Les transformants
-    qui ne montrent aucun marqueur converti sont indiqués par des $N$.%
-  }
-  \label{fig:distrircb}
-\end{figure}
+% TODO placer figures pics secondaires là.
+\input{schema/pic-second.tex}
 
 \vfill
 \thispagestyle{empty}
 \addtocounter{page}{-1}
+\clearpage
 \newpage
-}
+
+
 % ==============================================================================
 \section{Résultats}
 \label{sec:resultats}
 % ==============================================================================
 
-Nous avons transformé une supension d'\emph{Acinetobacter} par des constructions
-dont l'intégration dans le génome par recombinaison homologue entraîne la
-réparation des mésappariemments, un mécanisme qui est biaisé vers l'introduction
-des bases CG chez les eucaryotes.
+\afterpage{%
+  \null
+  \vfill
 
-Les fréquences de transformations obtenues sont représentées dans le tableau
-\ref{tab:transfo-freq} ci-contre. Le type de construction
-donneuse n'a pas d'influence sur l'efficacité de la transformation. Les
-fréquences de l'ordre de \num{1e-5} ont permis d'obtenir un grand nombre de
-recombinants.
+
+  \input{schema/trace_de_conversion.tex}
+  \caption[Zones de recombinaison détaillée]{\textbf{Zones de recombinaison entre
+      un locus génomique d'\emph{Acinetobacter baylyi} et un gène synthétique
+      donneur d'allèles CG et AT.} \\ %
+    \rmfamily Chaque ligne horizontale représente une séquence. Les points
+    représentent les positions des marqueurs sur les séquences. L'intensité et la
+    taille des points représentent le score de qualité de séquençage du site. Les
+    points sont bleus lorsque le site est dans la région convertie : ils
+    correspondent à l'haplotype du donneur. Ils sont rouges lorsque le site
+    correspond à l'haplotype du donneur. La première alternance rouge~/~bleu en
+    partant de l'extrémité 5' marque la transition de l'haplotype converti à
+    l'haplotype receveur : le point de recombinaison est localisé entre ces deux
+    marqueurs. Certaines séquences sont des cas de conversion complexes, avec une
+    ou plusieurs alternances donneur~/~receveur (rouge~/~bleu). Ce sont des cas de
+    conversion accompagnés de restaurations de l'haplotype du receveur. Les
+    séquences ont été triées par longueur de région convertie.}%
+  \label{fig:convtract}
+  \vfill
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \clearpage
+  \newpage
+}
+
+\subsection{Validation de la démarche expérimentale}
+\label{sub:result-proto}
+
+Nous avons transformé une suspension d'\emph{Acinetobacter} par des constructions
+dont l'intégration dans le génome par recombinaison homologue entraîne la
+réparation des mésappariemments.
+
+Les fréquences de transformations obtenues, représentées dans le tableau
+\ref{tab:transfo-freq} ci-contre, sont de l'ordre de \num{1e-5} et ont permis
+d'obtenir un grand nombre de recombinants, avec une moyenne de \num{9.2e+02}
+transformants par boîte étalée, soit près de \num{3000} clones par
+transformation. Ce résultat indique que le protocole expérimental est
+suffisamment au point pour permetter d'obtenir le nombre de recombinants
+souhaité. Pour chaque gène de synthèse donneur, \num{96} clones ont été
+séquencés, soit un total de \num{384} recombinants.
+
+\subsection{Validation de la qualité des séquences}
+\label{sub:result-qualite}
+
+2 séquences trop courtes pour être alignées ont été rejetées. 9 autres séquences
+présentaient une qualité médianne significativement inférieure à celle des
+autres séquences et ont également été rejetées. Au total, \num{8561} positions
+variantes entre le donneur et le receveur ont été analysées. Globalement, la
+qualité des \num{873} séquences suit un profil attendu : les bases en début et
+fin de lecture sont d'une qualité inférieure à la qualité médianne de \num{51}.
+
+Cependant, \num{9.8}\% des marqueurs sont d'une qualité de séquençage inférieure
+à la qualité de la région environnante. C'est la marque de pics secondaires sur
+les électrophérogrammes (voir figure~\ref{fig:pic-second}). Des pics secondaires
+apparaissent quand la population d'amplicon séquencée n'est pas homogène au site
+considéré. Or les deux pics présents à un marqueur donné correspondent toujours
+soit à la base sauvage, soit à la base synthétique introduite. Cette donnée peut
+être interprétée de deux façons.
+
+1) Cette hétérogénéité pourrait résulter d'un signal biologique authentique : si
+les mésappariemments de l'hétéroduplex ne sont pas réparés, la division de la
+cellule mère conduirait à une colonie hétérogène au site considéré et donc à la
+ségrégation simultanée des deux allèles. Pour y répondre, nous avons séquencé à
+nouveau 31 isolats issus d'un clone séquencé en premier lieu et qui montrait des
+pics secondaires. Aucun des sous-clones séquencé ne montrent l'allèle
+correspondant au pic secondaire (voir figure~\ref{fig:confirm-haplotype}). De
+plus, nous avons adapté le protocole expérimental de façon à limiter
+l'apparition de ces artéfacts. Nous avons supposé que des réminiscences de
+construction donneuse dans la suspension étalée aurait pu conduire à plusieurs
+évènements de transformation consécutifs et donc à ces profils hétérogènes. Les
+suspensions ont donc été traitées par de la DNAse, de façon à dégrader les
+plasmides résiduels. Enfin, pour s'affranchir de l'analyse de colonies
+hétérogènes, nous avons isolé chacun des transformants, et analysé un clone
+unique et purifié du transformant initial. La persistance de ces pics
+secondaires après adaptation du protocole suggère qu'ils ne reflètent pas le
+signal biologique envisagé.
+
+2) S'il s'agit alors d'un artéfact méthodologique, la population d'amplicon
+séquencée est hétérogène à la suite de contaminations entre les puits des
+plaques, qui ont pu avoir lieu au cours du séquençage ou au cours des PCRs. Dans
+ce cas, la répartition dans la plaque des puits dont la séquence montre des
+traces de contamination ne devrait pas être déterminée seulement par le hasard.
+Nous avons montré par simulation qu'elles ne l'étaient pas (voir
+figure~\ref{fig:simul-count}). Les séquences montrant des pics secondaires sont
+plus souvent voisines avec une autre séquence affectée que si elles étaient
+réparties aléatoirement. En conséquence, nous avons décidé de n'étudier que les
+marqueurs dont la qualité est supérieure à 40 : cela correspond à la probabilité
+\num{1e-4} d'étudier une base déterminée à tort, et discrimine clairement les
+bases litigieuses des autres. Nous avons donc obtenu un ensemble de \num{6818}
+marqueurs de conversion, soit \SI{79.6}{\percent} de l'ensemble des marqueurs
+obtenus.
+
+% TODO mettre en page pour que les figures se retrouvent en face du texte.
+
+\subsection{Description des régions recombinantes}
+\label{subsec:result-descript}
+
+\afterpage{%
+  \null
+  \vfill
+
+  \begin{figure}
+    \includegraphics[scale = 0.9]{img/distr_rcb_pt.pdf}
+    \caption[Distribution de la position du dernier marqueur]{%
+      \textbf{Distribution de la position du dernier marqueur converti} \\
+      \rmfamily Ce graphique représente en ordonnées le nombre de transformants
+      dont le dernier marqueur converti est à la position représentée en
+      abscisse. Les panneaux du graphique représentent les quatres constructions
+      donneuses. La position du dernier marqueur converti indique la position du
+      point de recombinaison. Les transformants qui ne montrent aucun marqueur
+      converti sont indiqués par des $N$.%
+    }
+    \label{fig:distrircb}
+  \end{figure}
+
+  \vfill
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \clearpage
+  \newpage
+}
 
 La figure \ref{fig:convtract} représente le détail des zones de recombinaison
 obtenues avec une construction donneuse alternant CG et AT. Les zones de
 recombinaisons des clones transformés par les donneurs CG, AT et AT/CG sont
-détaillées en annexe \ref{subsec:trac-de-conv}. En moyenne, \num{393} \(\pm\)
-\num{228} nucléotides ont été transférés et intégrés dans le génome. La position
-du dernier marqueur converti indique que le point de recombinaison (voir
-figure~\ref{fig:recomb} et~\ref{fig:convtract}) se situe entre les 30 bases le
-séparant du premier marqueur conservé. Nous avons donc estimé la position du
-point de recombinaison par celle du dernier marqueur converti, dont la
-distribution est représentée dans la figure~\ref{fig:distrircb}. De façon
-surprenante, la distribution du point de recombinaison est très variable entre
-les transformants.
+détaillées en annexe \ref{subsec:trac-de-conv}. En moyenne, à notre locus cible,
+\num{393} \(\pm\) \num{228} nucléotides ont été transférés et intégrés dans le
+génome. La position du dernier marqueur converti indique que le point de
+recombinaison (voir figure~\ref{fig:recomb} et~\ref{fig:convtract}) se situe
+entre les 30 bases le séparant du premier marqueur conservé. Nous avons donc
+estimé la position du point de recombinaison par celle du dernier marqueur
+converti, dont la distribution est représentée dans la
+figure~\ref{fig:distrircb}. Les points de recombinaison se répartissent de façon
+assez uniforme tout le long de la séquence. La majorité des recombinants
+montrent des cas de conversion simple, avec une seule alternance entre
+l'haplotype du donneur et celui du receveur. Cependant, 12 recombinants montrent
+des cas de conversion complexes, avec au moins deux alternances entre
+l'haplotype donneur et receveur. Ces alternances sont des restaurations de
+l'haplotype receveur dans l'hétéroduplex.
 
 Nous nous sommes intéressés à deux paramètres permettant d'estimer les
 fréquences de conversion en faveur de GC chez \emph{A. baylyi} : la position du
@@ -115,17 +227,18 @@ point de recombinaison, et la correction ponctuelle des mésappariemments.
     }
     \label{tab:doublets}
 
-    \begin{tabular}{@{}ccc@{}}
-      \toprule
-      & \multicolumn{2}{c}{Dernier marqueur converti} \\
-      \cmidrule(r){2-3}
-      \thead{\normalsize ADN synthétique \\ \normalsize donneur } & AT & CG \\
-      \midrule
-      AT/CG & 55 & 33 \\
-      CG/AT & 37 & 50 \\
-      \midrule[0.1pt]
-      Total & 92 & 83 \\
-      \bottomrule
+    % \begin{tabular}{@{}ccc@{}}
+    %   \toprule
+    %   & \multicolumn{2}{c}{Dernier marqueur converti} \\
+    %   \cmidrule(r){2-3}
+    %   \thead{\normalsize ADN synthétique \\ \normalsize donneur } & AT & CG \\
+    %   \midrule
+    %   AT/CG & 55 & 33 \\
+    %   CG/AT & 37 & 50 \\
+    %   \midrule[0.1pt]
+    %   Total & 92 & 83 \\
+    %   \bottomrule
+
 
     \end{tabular}
 
@@ -187,19 +300,19 @@ longueur de région convertie.
 \subsection{Distribution du dernier marqueur converti}
 \label{subsec:distribution-points}
 
-Les constructions alternant AT et CG permettent de déterminer si le point de
-recombinaison se situe plus souvent après un marqueur introduisant une
-conversion vers CG qu'après un marqueur introduisant une conversion vers AT
-(voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
-transformants ; il est CG dans 83 transformants. Cet écart n'est pas significatif
-(test du \(\chi^2\) d'homogénéité, probabilité critique~\(=\)~\num{0.49}) (voir
-table \ref{tab:doublets}).
+% Les constructions alternant AT et CG permettent de déterminer si le point de
+% recombinaison se situe plus souvent après un marqueur introduisant une
+% conversion vers CG qu'après un marqueur introduisant une conversion vers AT
+% (voir table \ref{tab:doublets}). Le dernier marqueur converti est AT dans 92
+% transformants ; il est CG dans 83 transformants. Cet écart n'est pas significatif
+% (test du \(\chi^2\) d'homogénéité, probabilité critique~\(=\)~\num{0.49}) (voir
+% table \ref{tab:doublets}).
 
-Il semblerait que lorsque le premier marqueur donneur est AT, le dernier
-marqueur converti est plus souvent AT que GC. De la même façon, lorsque le
-premier marqueur donneur est GC, le dernier marqueur converti est plus souvent
-GC que AT.
-
+Les constructions alternant AT et CG permettent de déterminer si davantage de
+bases GC ont été introduites que de bases AT. Sur l'ensemble des marqueurs des
+recombinants transformés par pAT/CG et pCG/AT, \num{720} bases C ou G ont été
+introduites contre \num{677} bases A ou T. Cet écart n'est pas significatif
+(test du $\chi^2$, probabilité critique~$=$~\num{0.25}).
 
 % ------------------------------------------------------------------------------
 \subsection{Restaurations de l'haplotype sauvage}
@@ -224,27 +337,39 @@ pas significative (test de Wilcoxon, probabilité critique \(=\) \num{0.94}). Le
 marqueurs correspondant à des restaurations de l'haplotype sauvage ne sont donc
 pas des erreurs de séquençage, et correspondent à un signal biologique.
 
-Sur les 14 cas de restaurations de l'haplotype sauvage, \num{4} sont des
-restaurations de l'allèle AT, \num{10} sont des restaurations de l'allèle CG.
-Cet écart n'est pas significatif (voir la table \ref{tab:restaur}). L'écart
-n'est pas statistiquement significatif (test du \(\chi^2\) d'homogénéité,
-probabilité critique~\(=\)~\num{0.11}).
+% ------------------------------------------------------------------------------
+\subsection{Mutations \emph{de novo}}
+\label{subsec:result-neomutat}
+% ------------------------------------------------------------------------------
 
-% TODO laurent pourquoi pas une partie estimation des fréquences de conversion ?
+Nous avons détecté \num{20} cas de mutations \emph{de novo}. Elles ne sont pas
+associés aux sites variants et sont d'une qualité moyenne supérieure à \num{41}.
+Parmi ces \num{20} cas, \num{14} introduisent une base G ou C et 6 introduisent
+une base A ou T. L'écart n'est pas statistiquement significatif (test du
+$\chi^2$, probabilité critique \(=\) \num{0.07}). Les \num{14} cas de mutations
+vers G ou C sont tous dans la région convertie, alors que les \num{6} cas de
+mutations vers A ou T sont tous dans la région conservée.
 
 % ------------------------------------------------------------------------------
 \subsection{Estimation des fréquences de conversion en faveur de GC}
 \label{subsec:result-freq}
 % ------------------------------------------------------------------------------
 
-Nous avons estimé les fréquences de conversion en faveur de GC par la différence
-entre le taux de GC des marqueurs des clones recombinants et celui du receveur.
-En l'absence d'un biais, il est estimé à 0 sur l'ensemble des transformants
-séquencés.
+Dans le but de comparer la quantité de bases A et T qui ont été converties en G
+et C ($N_{AT \rightarrow GC}$) à celle des bases G et C qui ont été converties
+en A et T ($N_{GC \rightarrow AT}$), nous avons échantillonné aléatoirement,
+par construction donneuse, 80 clones pour lesquels on dispose des 23 marqueurs.
+Cet échantillonnage permet de compenser les éventuelles différences de longueur
+moyenne de région convertie entre les constructions donneuses.
 
-Nous avons échantillonné 80 séquences par type de construction donneuse,
-sélectionné uniquement les positions des marqueurs, mesuré la différence entre
-le taux de GC du receveur et le taux de GC du clone recombinant et moyenné cette
-différence sur l'ensemble des clones. En repétant cette mesure \num{1e4} fois, la
-différence moyenne entre le taux de GC des recombinants et le taux de GC des
-receveur est de \num{1.13}\si{\percent}.
+$N_{AT \rightarrow GC}$ est significativement supérieure à $N_{GC \rightarrow
+  AT}$ (test du $\chi^2$, probabilité critique \(=\) \num{0.029} au premier
+tirage). Pour compenser un effet dû à la nature des transformants échantillonnés
+pendant ce tirage, nous avons répété la mesure \num{1e4} fois. Dans
+\SI{99.98}{\percent} des cas, $N_{AT \rightarrow GC}$ est supérieure à $N_{GC
+  \rightarrow AT}$. Le test est significatif au seuil de \num{0.05} dans
+\SI{44.01}{\percent} des cas. Ce résultat indique que sur l'ensemble des
+transformants séquencés, un nombre plus élevé de bases AT ont été converties en
+GC que l'inverse, et que l'écart est significatif dans \SI{44.01}{\percent} des
+cas.
+\newpage

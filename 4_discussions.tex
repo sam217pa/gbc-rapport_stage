@@ -1,10 +1,20 @@
-\blankpage
+% \blankpage
 \null
 \vfill
 
 % contient le schéma de la base secondaire et la figure obtenue par la
 % simulation.
-\input{schema/pic-second.tex}
+
+\begin{figure}[htbp]
+  \centering
+
+
+  \includegraphics[width = \textwidth]{img/gc_content.pdf}
+
+  \caption[Taux de GC]{Taux de GC \\
+    TODO légender}
+  \label{fig:gctaux}
+\end{figure}
 
 \vfill
 \thispagestyle{empty}
@@ -20,115 +30,75 @@ un locus choisi de façon à introduire la correction des mésappariemments, un
 processus qui est biaisé vers l'introduction des bases C et G chez certains
 eucaryotes.
 
-\subsubsection{Des erreurs de séquençage sans conséquences ?}
-\label{sub:discu-conta}
+\subsection{Distribution des points de recombinaison}
 
-% TODO parler des erreurs de séquençage, qu'on y a répondu par des manips
-% parallèles.
-Certains marqueurs sont d'une qualité inférieure au reste des marqueurs sur la
-lecture. C'est la marque de pics secondaires sur les électrophérogrammes (voir
-figure~\ref{fig:pic-second}). Des pics secondaires apparaissent quand la
-population d'amplicon séquencée n'est pas homogène au site considéré. De façon
-surprenante, les deux pics présents à un marqueur donné correspondent toujours
-soit à la base sauvage, soit à la base synthétique introduite. Cette donnée peut
-être interprétée de deux façons.
-
-1) S'il s'agit de la marque d'un signal biologique, la colonie dont la zone de
-recombinaison a été séquencée montre une hétérogénéité au marqueur considéré.
-Autrement dit, une part de la population séquencée a converti la base, l'autre
-partie l'a conservée. Nous avons séquencé à nouveau 31 isolats issus d'un clone
-séquencé en premier lieu qui montrait des pics secondaires. Aucun des
-sous-clones ne montrent l'allèle correspondant au pic secondaire (voir
-figure~\ref{fig:confirm-haplotype}).
-
-2) S'il s'agit d'un erreur de séquençage, la population d'amplicon séquencée est
-hétérogène à cause de contaminations entre les puits des plaques, qui ont pu
-avoir lieu au cours du séquençage ou au cours des PCRs. Dans ce cas, la
-répartition dans la plaque des puits dont la séquence montre des traces de
-contamination ne devrait pas être déterminée que par le hasard. Nous avons
-montré par simulation qu'elles ne l'étaient pas (voir
-figure~\ref{fig:simul-count}). Les séquences montrant des pics secondaires sont
-plus souvent voisines avec une autre séquence affectée que si elles étaient
-réparties aléatoirement. En conséquence, nous avons filtré de façon très
-stringente les sites de faible qualité.
-
-\subsection{Une distribution des points de recombinaison surprenante}
-
-\afterpage{
-  \null
-  \vfill
-
-  \begin{figure}[htbp]
-    \centering
-
-
-    \includegraphics[width = \textwidth]{img/gc_content.pdf}
-
-    \caption[Taux de GC]{Taux de GC \\
-    TODO légender}
-    \label{fig:gctaux}
-  \end{figure}
-
-
-  \vfill
-  \thispagestyle{empty}
-  \addtocounter{page}{-1}
-  \clearpage
-  \newpage
-
-}
 L'hypothèse \ac{gbgc} prédit que la région convertie devrait être plus longue
 lorsque la conversion introduit des bases GC que lorsqu'elle introduit des bases
-AT. Nous n'avons pas détecté de différences significatives. En fait, la
-distribution du point de recombinaison est assez uniforme, contrairement
-à ce qui est décrit par Yáñez-Cuna \emph{et al.}\cite{yanez-cuna_biased_2015}.
-Chez un modèle de \emph{Rhizobium etli}, la distribution de la longueur des
-régions converties est bimodale, avec un pic à respectivement 120 et 600 bp.
-Comment peut-on expliquer ces variations ?
+AT. Nous n'avons pas détecté de différences significatives entre les deux
+constructions donneuses pCG/AT et pAT/CG. Cependant, quelle que soit la
+construction donneuse, la distribution du point de recombinaison suit
+globalement le même patron, avec une zone de plus faible intensité entre
+\num{600} et \num{800} pb et une autre autour de \num{350} pb. En fait, la
+distribution du point de recombinaison est assez différente de celle décrite par
+Yáñez-Cuna \emph{et al.}\cite{yanez-cuna_biased_2015} chez un modèle de
+\emph{Rhizobium etli}. Ils observent que les recombinants changent d'haplotype
+pour la majorité dans les \num{200} premières paires de bases, et seuls
+\SI{10}{\percent} des clones ont une région convertie de plus de \num{800}pb.
+Les différences entre leurs résultats et les nôtres peuvent potentiellement
+s'expliquer par les différences de modèles et de locus. Nous avons en effet
+supposé que la composition en base du locus avait un impact sur l'efficacité
+locale de la recombinaison.
 
 \subsubsection{Une influence du taux de GC local ?}
 
-La figure~\ref{fig:distrircb} montre un point froid de recombinaison dans la
-région entre 600 et 800 bp, environ 200 paires de bases après l'origine de
-l'hétéroduplex. Nous avons supposé que le taux de GC local diminuait localement
-l'efficacité de la recombinaison : un taux de GC plus faible diminue le nombre
-de liaisons hydrogène entre les brins et pourrait donc diminuer les probabilités
-d'appariemment avec un brin d'ADN exogène. En effet, lors de la recherche par la
-protéine RecA d'une matrice homologue permettant de réparer la lésion, la
-reconnaissance est pûrement basée sur l'appariemment Watson-Crick entre les
-brins\cite{lee_base_2015}. Nous avons donc représenté le taux de GC moyen par
-fenêtre de 50bp au long de la séquence sauvage (voir figure~\ref{fig:gctaux}b).
+\afterpage{\blankpage}
 
-Le point froid de recombinaison (fig.\ref{fig:gctaux}a) semble bien correspondre
-à un taux de GC local plus faible (fig.\ref{fig:gctaux}b). Un taux de GC plus
-faible pourrait donc conduire au rejet du brin homologue, et diminuer les
-fréquences de recombinaison localement. C'est une observation qui va à
-l'encontre de la théorie du \ac{gbgc} : si un taux d'AT élevé implique une
-faible fréquence de recombinaison, il diminue les probabilités d'introduire des
-bases GC par conversion génique. À l'inverse, les zones riches en GC feraient
-plus souvent l'objet de conversion, ce qui conduirait à l'effacement progressif
-du pic local de GC : c'est le paradoxe des points chauds de
-recombinaison\cite{coop_live_2007}.
+La figure~\ref{fig:gctaux}a montre un point froid de recombinaison dans la
+région entre \num{600} et \num{800} bp, environ \num{200} paires de bases après
+l'origine de l'hétéroduplex. La figure~\ref{fig:gctaux}b montre l'évolution du
+taux de GC par fenêtre de \num{50}pb. Le point froid de recombinaison à
+\num{600}pb semble correspondre avec un taux de GC plus faible localement. Nous
+avons donc supposé que l'efficacité de la recombinaison, qui dépend pour partie
+de la probabilité de rejet du brin exogène et de la probabilité d'extension de
+l'hétéroduplex, pourrait être influencée par le taux de GC local. Un taux de GC
+plus faible diminue le nombre de liaisons hydrogène entre les brins et pourrait
+donc diminuer les probabilités d'appariemment avec un brin d'ADN exogène. En
+effet, lors de la recherche par la protéine RecA d'une matrice homologue
+permettant de réparer la lésion, la reconnaissance est pûrement basée sur
+l'appariemment Watson-Crick entre les brins\cite{lee_base_2015}.
+
+En fait, la zone pauvre en GC à \num{600}pb correspond au taux de GC moyen du
+génome d'\emph{A. baylyi} de \SI{40.3}{\percent}, mais le locus étudié a un taux
+de GC moyen de \SI{46.8}{\percent}. Or ce locus est connu au laboratoire pour
+permettre de bonnes efficacités de transformations. Si on suppose qu'un taux de
+GC plus élevé entraîne une efficacité de recombinaison plus élevée, le taux de
+GC à ce locus supérieur à celui du génome pourrait ainsi expliquer ces
+efficacités de transformations. Cette supposition pourrait également expliquer
+les corrélations observées par Lassalle \emph{et
+  al.}\cite{lassalle_gc-content_2015} entre taux de GC et taux de recombinaison.
+
+\subsubsection{Une influence des bases adjacentes ?}
 
 Lieb \emph{et al.}\cite{lieb_recombination_1985} ont montré chez \emph{E. coli}
 que les enzymes du \ac{vsp} (Very Short Patch repair) répairaient un
 mésappariemment dans un sens spécifique en fonction des bases au voisinage
-immédiat du mésappariemment.
+immédiat du mésappariemment. Cette activité de réparation est spécifiquement
+liée au produit du gène \emph{vsr}\cite{hennecke_vsr_1991,lieb_specific_1983}.
+\emph{A. baylyi} possède également certaines des enzymes impliquées dans les
+voies du \ac{vsp}\cite{kanehisa_kegg_2016}.
 
-TODO terminer analyses des dinucléotides.
-
-TODO mal dit ``Si ce genre de mécanisme'' est à l'œuvre chez \emph{A. baylyi},
-les marqueurs AT et les marqueurs GC de nos constructions ne sont pas
-rigoureusement dans le même contexte nucléotidique (voir
-figure~\ref{fig:construct}). Pour palier à cet éventuel biais, il faudrait
-transformer à nouveau un clone ayant converti tous les marqueurs par la séquence
-sauvage : chaque évènement de conversion serait alors rigoureusement dans le
-même contexte.
+Si ce genre de mécanisme est à l'œuvre chez \emph{A. baylyi}, les marqueurs AT
+et les marqueurs GC de nos constructions ne sont pas rigoureusement dans le même
+contexte nucléotidique (voir figure~\ref{fig:construct}). Pour palier à cet
+éventuel biais, il faudrait transformer à nouveau un clone ayant converti tous
+les marqueurs par la séquence sauvage : chaque évènement de conversion serait
+alors rigoureusement dans le même contexte.
 
 % ------------------------------------------------------------------------------
-\subsection{Des restaurations de l'haplotype sauvage inattendues}
+\subsection{Restaurations de l'haplotype sauvage}
 \label{subsub:discu-restaur}
 % ------------------------------------------------------------------------------
+\afterpage{\blankpage}
 
 % DONE discuter de ces cas de restaurations. comment elles ont pu arriver ?
 % mécanismes, double crossing over ? Normalement ce qu'on voit chez la levure
@@ -140,11 +110,12 @@ pas des mutations spontanées : bien que la recombinaison soit un processus
 mutagène en soi\cite{rodgers_error-prone_2016,hicks_increased_2010}, les
 restaurations sont retrouvées spécifiquement aux positions des marqueurs, et
 correspondent précisément à l'allèle sauvage. Une mutation spontanée pourrait
-introduire aléatoirement l'une des quatre bases. S'il s'agit de l'action de la
-machinerie de correction des mésappariemments, ces cas sont inattendus :
-pourquoi la machinerie de correction des mésappariemments restaurerait
-spécifiquement ces marqueurs dans une région qui présente un mésappariemment
-toutes les 30 paires de bases ?
+introduire aléatoirement l'une des quatre bases. Chez les eucaryotes, des cas
+complexes de conversion ont déjà été
+décrits\cite{martini_genome-wide_2011,yeadon_recombination_2001}. Chez la
+levure, ces cas complexes ont été interprétés comme des basculements multiples
+entre le choix des matrices permettant la réparation des
+cassures\cite{hoffmann_trans_2005}.
 
 Dans le contexte de la conversion génique biaisée vers GC, est-ce que ces cas de
 restaurations pourraient expliquer un biais ? Chez les eucaryotes, la correction
@@ -154,7 +125,7 @@ base mésappariée en détectant les malformations qu'elle occasionne dans la
 structure de la double-hélice, puis la remplace par la base complémentaire à
 celle du brin opposé\cite{krokan_base_2013}. Cette voie a été considérée comme
 l'un des moteurs possibles du \ac{gbgc} chez les
-mammifères\cite{duret_biased_2009}, mais elle a été rejetée chez la
+mammifères\cite{duret_biased_2009}, mais a été rejetée chez la
 levure\cite{lesecque_gc-biased_2013}. Chez cette dernière, le \ac{gbgc} est
 associé aux régions converties les plus longues et dans lesquelles tous les
 allèles sont convertis depuis le même haplotype donneur.
@@ -162,24 +133,50 @@ allèles sont convertis depuis le même haplotype donneur.
 Est-ce que le \ac{ber}, s'il est actif chez les procaryotes, pourrait conduire à
 de la conversion biaisée vers GC ? L'étude des régions converties chez des
 mutants d'\emph{A. baylyi} délétés pour les fonctions clés de la correction des
-mésappariemments ($\Delta$MutS, $\Delta$MutH, $\Delta$MutL) devrait permettre de
-répondre à cette question.
+mésappariemments par le \ac{ber} devrait permettre de répondre à cette question.
 
 Ces cas de restaurations de l'haplotype sauvage ajoutent une incertitude sur la
 nature des premiers marqueurs conservés (en rouge sur la
 figure~\ref{fig:convtract}). En effet, ces marqueurs peuvent être la résultante
-de trois choses : 1) ils ne font pas partie de l'hétéroduplex, et ne sont pas
-soumis à de la conversion, 2) ils font partie de l'hétéroduplex, mais la
-conversion génique conserve l'allèle sauvage ou 3) ils ont été d'abord convertis
-par l'allèle donneur, puis restaurés. Dans tous les cas, la base séquencée
-correspond à l'allèle sauvage du marqueur.
+de deux choses : 1) ils ne font pas partie de l'hétéroduplex, et ne sont pas
+soumis à de la conversion ou 2) ils font partie de l'hétéroduplex, mais l'allèle
+sauvage est restauré. Dans tous les cas, la base séquencée correspond à l'allèle
+sauvage du marqueur. Ces cas peuvent perturber la mesure de la longueur de
+région convertie.
 
-\subsection{Quelle est la fréquence de conversion en faveur de GC ?}
-\label{subsec:discu-freq}
+% ------------------------------------------------------------------------------
+\subsection{Mutations \emph{de novo} et recombinaison homologue}
+\label{subsec:discu-neomut}
+% ------------------------------------------------------------------------------
+\afterpage{\blankpage}
+
+Nous avons observé 20 cas de mutations spontanées, qui sont dans
+\SI{70}{\percent} des cas localisés dans la région convertie, et introduisent
+des bases G et C. Ils peuvent être induits par deux phénomènes.
+
+1) Ces mutations spontanées peuvent traduire des mutations survenues
+\emph{ex-vivo}, au cours de la construction et/ou de l'amplification des
+plasmides donneurs chez \emph{E. coli} (voir figure~\ref{fig:construct}).
+
+2) Elles peuvent également traduire des mutations survenues \emph{in-vivo}, au
+cours de l'intégration de l'ADN dans la cellule ou de la réparation par
+recombinaison homologue du brin lésé. En effet, la recombinaison homologue a été
+démontrée à plusieurs reprises comme
+mutagène\cite{hicks_increased_2010,arbeithuber_crossovers_2015,malkova_mutations_2012},
+les polymérases impliquées tendent à introduire plus d'erreurs que les
+polymérases classiques\cite{pomerantz_dna_2013}. Cependant, à notre
+connaissance, il n'a jamais été démontré que la mutation favorisait
+l'introduction des bases C et G au cours de la recombinaison homologue. Au
+contraire, la mutation est universellement biaisée vers l'introduction des bases
+A et T, chez les eucaryotes\cite{lynch_rate_2010} comme chez les
+procaryotes\cite{hildebrand_evidence_2010,hershberg_evidence_2010}. Est-ce que
+le biais de conversion génique vers GC pourrait être influencé par un processus
+mutationnel spécifique à la recombinaison homologue ?
+
 
 % ------------------------------------------------------------------------------
 \subsection{Comment augmenter la puissance du test ?}
-\label{subsub:discu-puissance}
+\label{subsec:discu-puissance}
 % ------------------------------------------------------------------------------
 
 % DONE calculer la taille d'échantillon nécessaire pour observer un biais de
@@ -190,6 +187,16 @@ supplémentaire, en supposant qu'elles sont normalement distribuées, avec l'éc
 type observé dans nos résultats (\num{227}), avec une puissance de \num{0.8} et
 un niveau de confiance de \num{0.05}, il faudrait une taille d'échantillon de
 \num{717} (test \textrm{t}) par groupe.
+
+Pour détecter une différence significative entre le nombre de marqueurs où
+l'allèle sauvage respectivement AT ou GC est restauré, en supposant que l'effet
+observé soit moyennement fort ($\omega = $\num{0.5}), avec un niveau de
+confiance de \num{0.05} et une puissance de \num{0.8}, il faudrait observer
+\num{31} marqueurs. En présumant que les cas de restauration se produisent de
+façon indépendante entre chaque clones, étant donné que nous avons observé des
+cas de restaurations \SI{4}{\percent} des recombinants, il faudrait séquencer
+\num{775} clones au total. Si l'effet est plus faible ($\omega = $\num{0.3}), il
+faudrait observer \num{87} marqueurs, donc séquencer \num{2175} clones.
 
 Cette taille d'échantillon n'est pas envisageable en utilisant les techniques
 actuelles : le séquençage par la technique de Sanger implique un coût prohibitif
@@ -205,11 +212,5 @@ façon à individualiser les évènements de recombinaison. 3) La divergence tr�
 faible des amplicons peut introduire des artéfacts lors de la capture des
 clusters par la caméra de séquençage.
 
-
-% TODO parler du fait que le biais est généralement faible. Donner l'exemple des
-% levures pour qui le biais est calculé.
-
-% TODO lassalle et al : H.pylori transforme beaucuop, et ne montre pas de
-% corrélation.
 
 \afterpage{\blankpage}
