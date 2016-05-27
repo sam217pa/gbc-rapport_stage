@@ -102,10 +102,10 @@ conversion_tract %>%
            inconv,
            mutant %in% c("ws", "sw"),
            qual > 40) %>%
-    group_by(snpb) %>%
+    group_by(expb) %>%
     summarise(count = n()) %>%
     ungroup() %>%
-    mutate(#snpb = ifelse(snpb %in% c("A", "T"), "W", "S"),
-           snpb = ifelse(snpb %in% c("A", "T"), "W", "S")) %>%
-    group_by(snpb) %>%
+    mutate(#expb = ifelse(expb %in% c("A", "T"), "W", "S"),
+           expb = ifelse(expb %in% c("A", "T"), "W", "S")) %>%
+    group_by(expb) %>%
     summarise(sum = sum(count))

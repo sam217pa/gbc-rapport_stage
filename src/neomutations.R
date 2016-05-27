@@ -63,3 +63,30 @@ conversion_tract %>%
     summarise(count = n())
 
 chisq.test(c(14, 6))
+
+is_w_s <- function(base) ifelse(base %in% c("A", "T"), "W", "S")
+
+contingency_table <-
+    conversion_tract %>%
+    keep_clean_only() %>%
+    filter(!is.na(sens)) %>%
+    # faire varier là.
+    filter(qual > 40) %>%
+    rowwise() %>%
+    mutate(refb = is_w_s(refb), expb = is_w_s(expb),
+           refexpb = paste0(refb, expb)) %>%
+    group_by(mutant, refexpb) %>%
+    summarise(count = n()) %>%
+    tidyr::spread(mutant, value = count)
+contingency_matrix <- data.matrix(contingency_table[,2:5])
+rownames(contingency_matrix) <- contingency_table$refexpb
+contingency_matrix[is.na(contingency_matrix)] <- 0
+contingency_matrix
+(x = apply(contingency_matrix, 1, sum))
+#' Tableau final :
+#'
+#' |               | AT | GC |
+#' |---------------+----+----|
+#' | Convertis     |    |    |
+#' | Non convertis |    |    |
+chisq.test(matrix(c(x[3], x[4], x[2], x[1]), ncol = 2))

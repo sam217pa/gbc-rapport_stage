@@ -113,12 +113,13 @@ séquencés, soit un total de \num{384} recombinants.
 \subsection{Validation de la qualité des séquences}
 \label{sub:result-qualite}
 
-2 séquences trop courtes pour être alignées ont été rejetées. 9 autres séquences
-présentaient une qualité médianne significativement inférieure à celle des
-autres séquences et ont également été rejetées. Au total, \num{8561} positions
-variantes entre le donneur et le receveur ont été analysées. Globalement, la
-qualité des \num{873} séquences suit un profil attendu : les bases en début et
-fin de lecture sont d'une qualité inférieure à la qualité médianne de \num{51}.
+Deux séquences trop courtes pour être alignées ont été exclues de l'analyse.
+Neuf autres séquences présentaient une qualité médianne significativement
+inférieure à celle des autres séquences et ont également été exclues. Au total,
+\num{8561} positions variantes entre le donneur et le receveur ont été
+analysées. Globalement, la qualité des \num{873} séquences suit un profil
+attendu : les bases en début et fin de lecture sont d'une qualité inférieure à
+la qualité médianne de \num{51}.
 
 Cependant, \num{9.8}\% des marqueurs sont d'une qualité de séquençage inférieure
 à la qualité de la région environnante. C'est la marque de pics secondaires sur
@@ -325,7 +326,7 @@ affectent de 1 à 3 marqueurs consécutifs (voir figure \ref{fig:convtract} et
 figure~\ref{fig:trace-4} en annexe~\ref{subsec:trac-de-conv}
 page \pageref{fig:trace-4}). Nous avons confirmé qu'il s'agissait bien de
 restaurations de l'allèle sauvage de deux façons. 1) Expérimentalement, nous
-avons séquencé une sous-population de 30 clones issus d'un isolat séquencé en
+avons séquencé une sous-population de \num{31} clones issus d'un isolat séquencé en
 premier lieu. Tous montrent la même alternance au même site (voir
 figure~\ref{fig:confirm-haplotype} en annexe~\ref{subsec:confirm-haplotype}). 2)
 Analytiquement, le score de qualité moyen des sites montrant des restaurations
@@ -354,6 +355,28 @@ mutations vers A ou T sont tous dans la région conservée.
 \subsection{Estimation des fréquences de conversion en faveur de GC}
 \label{subsec:result-freq}
 % ------------------------------------------------------------------------------
+
+\begin{table}[h!]
+  % TODO placer tableau au bon endroit.
+  % TODO légender tableau
+  \centering
+  \rmfamily
+  \caption[Vivamus id enim.]{Fusce commodo. Lorem ipsum dolor sit amet, consectetuer adipiscing
+    elit. Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
+    purus, et dictum nunc justo sit amet elit. Nunc porta vulputate tellus. }
+  \label{tab:comptages}
+
+  \begin{tabular}{ccccc|c}
+    \toprule
+                            & dGC  & dAT  & dAT/GC & dGC/AT & \textbf{Total} \\
+    \midrule
+    $N_{GC}$                & -    & 1782 & 819    & 834    & 3435           \\
+    $N_{GC \rightarrow AT}$ & -    & 1032 & 330    & 412    & 1774           \\
+    $N_{AT}$                & 1673 & -    & 890    & 820    & 3383           \\
+    $N_{AT \rightarrow GC}$ & 1060 & -    & 375    & 404    & 1839           \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 Dans le but de comparer la quantité de bases A et T qui ont été converties en G
 et C ($N_{AT \rightarrow GC}$) à celle des bases G et C qui ont été converties
