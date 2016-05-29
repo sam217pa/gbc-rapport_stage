@@ -13,20 +13,25 @@
     % \draw[opacity = 0.2, line width = 0.01pt, Gray] (-2.5,8) grid (17.5, 30);
     % \draw[opacity = 0.2, line width = 0.005pt, step = 0.5, Gray] (-2.5,0) grid (17.5, 30);
 
-% ca_\textsf{[N]_{30}}_gt
-% cC_\textsf{[N]_{30}}_gG
-% Aa_\textsf{[N]_{30}}_Tt
-% cC_\textsf{[N]_{30}}_Tt
-% Aa_\textsf{[N]_{30}}_gG
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (+1, 29.25) rectangle ++(+0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (-1, 29.25) rectangle ++(+0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (+4, 29.25) rectangle ++(-0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (+6, 29.25) rectangle ++(-0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (+9, 29.25) rectangle ++(+0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (11, 29.25) rectangle ++(-0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (14, 29.25) rectangle ++(-0.3, 1);
+    \fill[color = Gray, fill=Gray, opacity = 0.4] (16, 29.25) rectangle ++(+0.3, 1);
+
     \node[gs_don_col] at (0,  +29.5) {\texttt{cC.\tiny$[N]_{30}$\normalsize.gG}};
     \node[gs_don_col] at (5,  +29.5) {\texttt{Aa.\tiny$[N]_{30}$\normalsize.Tt}};
     \node[gs_don_col] at (10, +29.5) {\texttt{cC.\tiny$[N]_{30}$\normalsize.Tt}};
     \node[gs_don_col] at (15, +29.5) {\texttt{Aa.\tiny$[N]_{30}$\normalsize.gG}};
 
-    \node[legende text, gs_don_col] at (0,  28.5) {Séquence de synthèse \\ dCG};
+    \node[legende text, gs_don_col] at (0,  28.5) {Séquence de synthèse \\ dGC};
     \node[legende text, gs_don_col] at (5,  28.5) {Séquence de synthèse \\ dAT};
-    \node[legende text, gs_don_col] at (10, 28.5) {Séquence de synthèse \\ dCG/AT};
-    \node[legende text, gs_don_col] at (15, 28.5) {Séquence de synthèse \\ dAT/CG};
+    \node[legende text, gs_don_col] at (10, 28.5) {Séquence de synthèse \\ dGC/AT};
+    \node[legende text, gs_don_col] at (15, 28.5) {Séquence de synthèse \\ dAT/GC};
+
 
     \foreach \x in {0,5,...,15}
     {
@@ -108,33 +113,33 @@
 	    \draw[am3_col]       (\x + 1.3, 10) -- ++(0.2, 0);
     }
 
-    \node[legende text] at (0, 13.5) {pCG-KanAncre};
+    \node[legende text] at (0, 13.5) {pGC-KanAncre};
     \node[legende text] at (5, 13.5) {pAT-KanAncre};
-    \node[legende text] at (10, 13.5) {pCG/AT-KanAncre};
-    \node[legende text] at (15, 13.5) {pAT/CG-KanAncre};
+    \node[legende text] at (10, 13.5) {pGC/AT-KanAncre};
+    \node[legende text] at (15, 13.5) {pAT/GC-KanAncre};
 
-    \node[legende text] at (0 , 22.5) {pCG};
+    \node[legende text] at (0 , 22.5) {pGC};
     \node[legende text] at (5 , 22.5) {pAT};
-    \node[legende text] at (10, 22.5) {pCG/AT};
-    \node[legende text] at (15, 22.5) {pAT/CG};
+    \node[legende text] at (10, 22.5) {pGC/AT};
+    \node[legende text] at (15, 22.5) {pAT/GC};
 
     \foreach \y in {10, 14 } {
-      \node[gs_don_col, above, font=\tiny] at (-1, \y) {CG};
+      \node[gs_don_col, above, font=\tiny] at (-1, \y) {GC};
     }
     \foreach \y in {10, 14 } {
       \node[gs_don_col, above, font=\tiny] at (4, \y) {AT};
     }
     \foreach \y in {10, 14 } {
-      \node[gs_don_col, above, font=\tiny] at (9, \y) {CG/AT};
+      \node[gs_don_col, above, font=\tiny] at (9, \y) {GC/AT};
     }
     \foreach \y in {10, 14 } {
-      \node[gs_don_col, above, font=\tiny] at (14, \y) {AT/CG};
+      \node[gs_don_col, above, font=\tiny] at (14, \y) {AT/GC};
     }
 
-    \node[legende text] at (0 , 9) {Donneur CG};
+    \node[legende text] at (0 , 9) {Donneur GC};
     \node[legende text] at (5 , 9) {Donneur AT};
-    \node[legende text] at (10, 9) {Donneur CG/AT};
-    \node[legende text] at (15, 9) {Donneur AT/CG};
+    \node[legende text] at (10, 9) {Donneur GC/AT};
+    \node[legende text] at (15, 9) {Donneur AT/GC};
 
   \end{tikzpicture}
 \end{center}

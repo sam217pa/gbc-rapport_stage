@@ -5,7 +5,7 @@
 \begin{multicols}{2}
 \setstretch{1.0}
 \rmfamily
-\footnotesize
+\tiny
 \bibliography{references}
 \end{multicols}
 \newpage
@@ -44,9 +44,29 @@
 % ==============================================================================
 
 La figure \ref{fig:trace-4} page \ref{fig:trace-4} montre l'alignement de toutes
-les positions de marqueurs lorsque le donneur est CG, AT, CG/AT et AT/CG.
+les positions de marqueurs lorsque le donneur est GC, AT, GC/AT et AT/GC.
 L'interprétation des figures est détaillée dans la figure \ref{fig:convtract} en
 page \pageref{fig:convtract}.
+
+\subsection{Confirmations des restaurations des haplotypes sauvages}
+\label{subsec:confirm-haplotype}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.6\textwidth]{img/confirmation_altern.pdf}
+  \caption[Confirmation des restaurations]{\label{fig:confirm-haplotype}
+    \textbf{Confirmation d'une restauration d'haplotype sauvage} \\
+    \rmfamily Pour s'affranchir d'une possible erreur de séquençage sur les
+    sites montrant des restaurations de l'haplotype sauvage dans la région
+    convertie, nous avons sequencé la zone de recombinaison de 31 clones issus
+    du clone séquencé en premier lieu. Nous avons également séquencé à nouveau
+    la colonie ``mère'', de façon à comparer les sous-populations avec la
+    population mère séquencée ; c'est le clone séquencé \num{32}.
+    Les 31 clones séquencés montrent tous la même alternance au même marqueur
+    que le clone 32. Nous avons ainsi confirmé que cette restauration de
+    l'haplotype sauvage était bien due à une correction des mésappariemments
+    dans la population mère. }
+\end{figure}
 
 \afterpage{%
   \clearpage
@@ -65,27 +85,9 @@ page \pageref{fig:convtract}.
   \clearpage
   \KOMAoptions{paper=A4, paper=portrait, pagesize}
   \recalctypearea
+  \include{resume}
 }
 
-\subsection{Confirmations des restaurations des haplotypes sauvages}
-\label{subsec:confirm-haplotype}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width = 0.6\textwidth]{img/confirmation_altern.pdf}
-  \caption[Confirmation des restaurations]{\label{fig:confirm-haplotype}
-    \textbf{Confirmation d'une restauration d'haplotype sauvage} \\
-    \rmfamily Pour s'affranchir d'une possible erreur de séquençage sur les
-    sites montrant des restaurations de l'haplotype sauvage dans la région
-    convertie, nous avons sequencé la zone de recombinaison de 31 clones issus
-    du clone séquencé en premier lieu. Nous avons également séquencé à nouveau
-    la colonie ``mère'', de façon à comparer les sous-populations avec la
-    population mère séquencée ; c'est le clone séquencé \num{32}.
-    Les 31 clones séquencés montrent tous la même alternance au même marqueur
-    que le clone 32. Nous avons ainsi confirmé que cette restauration de
-    l'haplotype sauvage était bien due à une correction des mésappariemments
-    dans la population mère. }
-\end{figure}
 
 % ==============================================================================
 

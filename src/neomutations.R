@@ -71,7 +71,7 @@ contingency_table <-
     keep_clean_only() %>%
     filter(!is.na(sens)) %>%
     # faire varier là.
-    filter(qual > 40) %>%
+    ## filter(qual > 40) %>%
     rowwise() %>%
     mutate(refb = is_w_s(refb), expb = is_w_s(expb),
            refexpb = paste0(refb, expb)) %>%
@@ -84,9 +84,8 @@ contingency_matrix[is.na(contingency_matrix)] <- 0
 contingency_matrix
 (x = apply(contingency_matrix, 1, sum))
 #' Tableau final :
-#'
-#' |               | AT | GC |
-#' |---------------+----+----|
-#' | Convertis     |    |    |
-#' | Non convertis |    |    |
+#' |               |   AT |   GC |
+#' |---------------+------+------|
+#' | Convertis     | 1661 | 1839 |
+#' | Non convertis | 1774 | 1544 |
 chisq.test(matrix(c(x[3], x[4], x[2], x[1]), ncol = 2))

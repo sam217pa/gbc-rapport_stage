@@ -59,9 +59,9 @@ sd(length_tract$length)
 ## plot_length <-
 ##     length_tract %>%
 ##     mutate(
-##         mutant = factor(mutant, labels = c("CG", "AT", "AT/CG", "CG/AT"))
+##         mutant = factor(mutant, labels = c("GC", "AT", "AT/GC", "GC/AT"))
 ##     ) %>%
-##     ## labels = c("CG", "AT", "AT/CG", "CG/AT"))) %>%
+##     ## labels = c("GC", "AT", "AT/GC", "GC/AT"))) %>%
 ##     ggplot(aes(x = mutant, y = length)) +
 ##     geom_point(alpha = 0.2) +
 ##     geom_boxplot(width = 0.2, outlier.colour = "red") +
