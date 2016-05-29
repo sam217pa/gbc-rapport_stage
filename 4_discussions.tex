@@ -33,13 +33,11 @@
 \label{sec:discussions}
 
 Nous avons séquencé un grand nombre de clones d'\emph{A. baylyi} recombinants à
-un locus choisi de façon à introduire la correction des mésappariemments et à
-comparer la fréquence des évènements de conversion conduisant à l'introduction
-de bases G ou C par rapport à ceux introduisant des bases A ou T.
+un locus choisi de façon à introduire la correction des mésappariemments et
+pouvoir comparer la fréquence des évènements de conversion conduisant à
+l'introduction de bases G ou C par rapport à ceux introduisant des bases A ou T.
 
 \subsection{Distribution des points de recombinaison}
-
-\afterpage{\blankpage}
 
 Le changement entre l'haplotype donneur et l'haplotype receveur se produit entre
 le dernier marqueur converti et le premier marqueur conservé. Cette information
@@ -79,10 +77,10 @@ génome d'\emph{A.~baylyi} de \SI{40.3}{\percent}, mais le locus étudié a un t
 de GC moyen de \SI{46.8}{\percent}. Or ce locus est connu au laboratoire pour
 permettre de bonnes efficacités de transformations. Si on suppose qu'un taux de
 GC plus élevé entraîne une efficacité de recombinaison plus élevée, le taux de
-GC à ce locus supérieur à celui du génome pourrait ainsi expliquer ces
-efficacités de transformations. Cette supposition pourrait également expliquer
-les corrélations observées par Lassalle \emph{et
-  al.}\cite{lassalle_gc-content_2015} entre taux de GC et taux de recombinaison.
+GC à ce locus supérieur à celui du génome pourrait expliquer ces efficacités de
+transformations. Cette supposition pourrait également expliquer les corrélations
+observées par Lassalle \emph{et al.}\cite{lassalle_gc-content_2015} entre taux
+de GC et taux de recombinaison.
 
 \subsection{Des preuves de l'existence d'une conversion génique biaisée vers GC
   chez \textit{A.~baylyi}}
@@ -92,7 +90,7 @@ ou C est significativement supérieure à celle d'une base G ou C d'être conver
 en A ou T. Cette observation correspond précisément aux prédictions du modèle
 \ac{gbgc}. Quel pourrait être le mécanisme responsable de ce biais ?
 
-\afterpage{\blankpage}
+% \afterpage{\blankpage}
 
 % DONE discuter de ces cas de restaurations. comment elles ont pu arriver ?
 % mécanismes, double crossing over ? Normalement ce qu'on voit chez la levure
@@ -154,13 +152,15 @@ biais, il faudrait transformer à nouveau un clone ayant converti tous les
 marqueurs par la séquence sauvage : chaque évènement de conversion serait alors
 rigoureusement dans le même contexte.
 
+% \afterpage{\blankpage}
+
 Est-ce que le \ac{ber}, s'il est actif chez \emph{A.~baylyi}, pourrait conduire
 à de la conversion biaisée vers GC ? Nous avons trouvé un excès de restauration
 des bases G et C par rapport aux cas de restauration des bases A et T,
 respectivement de 10 contre 4 cas. Cet écart n'est pas significatif. Si le
 rapport réel entre le nombre de cas de restaurations de l'allèle GC et le nombre
 de cas de restaurations de l'allèle AT est le même, il faudrait doubler la
-taille d'échantillon pour que le test soit significatif au seuil de \num{5e-2}.
+taille d'échantillon pour que le test soit significatif au seuil de \num{0.05}.
 Néanmoins, le résultat obtenu avec \num{6818} marqueurs est robuste à
 l'exclusion des marqueurs restaurés (probabilité critique \(=\) \num{3e-2}). Ces
 cas de restaurations de l'allèle sauvage au sein de la région convertie ne sont
@@ -181,7 +181,7 @@ de la région convertie. Cette extension est déterminée essentiellement par la
 portée de la résection induite par le \ac{mmr} (Mis-Match Repair). En effet,
 lorsqu'une base mal appariée est détectée, elle est suivie par la résection
 d'une région de longueur variable et la resynthèse de la zone résectée en
-utilisant le brin intact pour matrice\cite{spies_mismatch_2015}. La portée de la
+utilisant le brin intact pour matrice\cite{spies_mismatch_2015}. L'étendue de la
 résection détermine donc le nombre de marqueurs correspondant à l'haplotype du
 donneur qui sont intégrés. L'étude des régions converties chez des mutants
 d'\emph{A.~baylyi} délétés pour différentes fonctions clés de la correction des
@@ -193,7 +193,7 @@ sur-transmission des bases G et C. Ce résultat conforte l'extension du modèle
 \ac{gbgc} aux procaryotes amorcée par Lassalle \textit{et
   al.}\cite{lassalle_gc-content_2015}.
 
-% % ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 \subsection{Conséquences évolutives de la conversion biaisée vers GC}
 \label{subsec:discu-conséquences}
 % ------------------------------------------------------------------------------
@@ -222,5 +222,3 @@ La conversion génique biaisée vers GC est l'un des candidats pour expliquer la
 mystérieuse force évolutive qui permet aux procaryotes de maintenir de tels taux
 de GC alors même que la mutation est universellement biaisée vers
 AT\cite{hildebrand_evidence_2010,hershberg_evidence_2010}.
-
-\afterpage{\blankpage}

@@ -10,6 +10,8 @@ length_tract <-
     summarise(length = max(refp) - unique(switchp)) %>%
     ungroup()
 
+length_tract
+
 #' la distribution de la longueur n'est clairement pas normale.
 ggplot2::qplot(length_tract$length)
 shapiro.test(length_tract$length)

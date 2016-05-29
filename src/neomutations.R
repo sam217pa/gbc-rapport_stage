@@ -69,9 +69,10 @@ is_w_s <- function(base) ifelse(base %in% c("A", "T"), "W", "S")
 contingency_table <-
     conversion_tract %>%
     keep_clean_only() %>%
-    filter(!is.na(sens)) %>%
+    filter(is.na(isrestor), !is.na(sens)) %>%
+    ## filter(isrestor)
     # faire varier là.
-    ## filter(qual > 40) %>%
+    filter(qual > 40) %>%
     rowwise() %>%
     mutate(refb = is_w_s(refb), expb = is_w_s(expb),
            refexpb = paste0(refb, expb)) %>%
@@ -89,3 +90,5 @@ contingency_matrix
 #' | Convertis     | 1661 | 1839 |
 #' | Non convertis | 1774 | 1544 |
 chisq.test(matrix(c(x[3], x[4], x[2], x[1]), ncol = 2))
+
+filter(conversion_tract %>% keep_clean_only(), is.na(isrestor), !is.na(sens), qual > 40)

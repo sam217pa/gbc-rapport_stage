@@ -1,7 +1,7 @@
 \rmfamily
 \pagenumbering{roman}
 \includepdf{img/titlepage.pdf}
-\blankpage
+% \blankpage
 % \clearpage
 % \subsubsection*{Crédits photographiques}
 % Photographie de l'image de couverture reproduite avec permissions depuis
@@ -9,6 +9,8 @@
 % \url{https://commons.wikimedia.org/wiki/File:Dark_side_of_the_moon.jpg}
 
 \subsection*{Remerciements}
+
+% \afterpage{\blankpage}
 
 En premier lieu, je tiens à remercier messieurs Yvan Moënne-Loccoz et Manolo
 Gouy, responsables respectifs de mes deux terrains de stage, qui rendent nos
@@ -38,42 +40,54 @@ très agréable à force de croissants, miels et thés en tout genre.
 
 Viennent après ceux qui rendent ma vie à moi beaucoup plus simple : ma Lu, qui
 me supporte depuis bientôt trois ans et \emph{a fortiori} depuis janvier ; ma
-grand-mère, à qui je dois beaucoup ; ma mère, qui me supporte depuis vingt trois
-ans et sans qui je ne serais pas grand-chose ; mon père, que j'espère rendre
-fier de là haut, tu m'as appris à ``ne pas me satisfaire de ne pas comprendre le
-monde'', pour citer Dawkins.
+grand-mère, à laquelle je dois beaucoup ; ma mère, qui me supporte depuis vingt
+trois ans et sans qui je ne serais pas grand-chose ; mon père, que j'espère
+rendre fier de là haut, tu m'as appris à ``ne pas me satisfaire de ne pas
+comprendre le monde'', pour citer Dawkins.
 
 Viennent enfin ceux qui ont rendu ma vie beaucoup plus dure : Vincent, que je
 remercierai dans un style qu'il comprendra certainement et qui, alors que tout
 le prédisposait à être impliqué dans ce projet à 100\%, n'a montré qu'un dédain
 souverain et un manque d'investissement à la limite de la bienséance, manifeste
-flagrant du peu d'intérêt qu'il porte à la Science ; Franck, pour ses conseils
+flagrant du peu d'intérêt qu'il porte à la science\footnote{Tout ceci n'est
+  qu'un clin d'œil à la rhétorique de Vincent ou l'art de l'antiphrase, et n'est
+  bien entendu pas vrai. Pas d'alarmes inutiles ! } ; Franck, pour ses conseils
 et ses coups de main à la paillasse, ses relectures avisées, ses critiques
 détaillées, perfectionnistes mais toujours constructives, et surtout sa
 persévérance à mes côtés lorsque tout le poussait à rester chez lui pour se
-soigner ; et enfin Laurent, qui devra attendre encore un peu.
-% TODO remercier laurent
+soigner ; et enfin Laurent. Richard Dawkins dans ``Il Était une Fois Nos
+Ancêtres'' disait à propos de John Maynard Smith :
+
+\begin{quote}
+  Il [...] écoute ce que les jeunes chercheurs ont à dire, les inspire, ravive
+  les enthousiasmes qui pourraient vaciller, et les renvoit à leur laboratoire
+  ou aux incertitudes de leur spécialité, revigorés, et impatients d'essayer les
+  nouvelles idées qu'il a généreusement partagées avec eux.
+\end{quote}
+
+Comme encadrant, je n'ai pas eu J.M. Smith, mais avec vous Laurent, c'était ma
+foi tout comme ; j'ai pris un grand plaisir à venir chauffer mes neurones à
+votre bois.
+
+J'espère avoir été à la hauteur de l'intérêt que vous avez porté tous les trois
+à mon stage !
 
 
 \newpage
-
-\blankpage
 
 \setstretch{1.0}
-\tableofcontents
-% \vfill
-% \addtocontents{toc}{\protect\vfill}
-\newpage
-% \afterpage{\blankpage}
-\blankpage
-
 
 \printacronyms[include-classes=abbrev,name=Abbréviations]
-
-\setstretch{1.5}
-
 \listoffigures
 \listoftables
+
+\newpage
+\null
+\vfill
+
+\tableofcontents
+\addtocontents{toc}{\protect\vfill}
+\vfill
 
 \blankpage
 \blankpage
@@ -83,3 +97,5 @@ soigner ; et enfin Laurent, qui devra attendre encore un peu.
 \setcounter{page}{1}
 
 \sffamily
+
+\setstretch{1.5}

@@ -32,25 +32,46 @@
 \label{subsec:annexe-pcr}
 % ------------------------------------------------------------------------------
 
+\begin{center}
+  \rmfamily
+  \setstretch{1.0}
+  \begin{tabular}{rcc}
+    \toprule
+                                   & Volume pour \SI{50}{\uL} (\si{\uL}) & Concentration finale             \\
+    \midrule
+    \ce{H_2O}                      & qsp \SI{50}{\uL}                    &                                  \\
+    5X Phusion Green Buffer        & \num{10}                            & 1X                               \\
+    \SI{10}{\mmol\per\liter} dNTPs & \num{1}                             & \SI{200}{\umol\per\liter} chacun \\
+    Amorce sens                    & \num{2.5}                           & \SI{0.5}{\umol\per\liter}        \\
+    Amorce antisens                & \num{2.5}                           & \SI{0.5}{\umol\per\liter}        \\
+    ADN matrice                    & X \si{\uL}                          &                                  \\
+    Phusion DNA Polymerase         & 0.5                                 & \SI{0.02}{U\per\uL}              \\
+    \bottomrule
+  \end{tabular}
+  \\
+  Programmation du thermocycleur :\\
+  \includegraphics[width = 0.5\textwidth]{img/pcr_protocole.png}
+\end{center}
+
 \subsection{Carte des constructions donneuses}
 \label{subsec:cartes-plasmides}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width = 0.4\textwidth]{img/plasmid_map.png}
-
+  \caption[Carte des constructions donneuses]{Carte des constructions donneuses}
+  \label{fig:plasmid-map}
 \end{figure}
 
 
 % ==============================================================================
 
-\newpage
 \subsection{Confirmations des restaurations des haplotypes sauvages}
 \label{subsec:confirm-haplotype}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width = 0.6\textwidth]{img/confirmation_altern.pdf}
+  \includegraphics[width = 0.5\textwidth]{img/confirmation_altern.pdf}
   \caption[Confirmation des restaurations]{\label{fig:confirm-haplotype}
     \textbf{Confirmation d'une restauration d'haplotype sauvage} \\
     \rmfamily Pour s'affranchir d'une possible erreur de séquençage sur les
@@ -66,7 +87,7 @@
     des mésappariemments dans la population mère. }
 \end{figure}
 
-\subsection{Traces de conversions}
+\subsection{Régions de recombinaisons}
 \label{subsec:trac-de-conv}
 % ==============================================================================
 
@@ -80,22 +101,25 @@ page \pageref{fig:convtract}.
   \KOMAoptions{ pagesize, paper=landscape}
   \recalctypearea
   \begin{figure}
+    \centering
     \includegraphics[height = \textheight, width = \textwidth]{img/trace_4.pdf}
     \caption%
     [Régions converties]%
-    {\label{fig:trace-4} \rmfamily Pellentesque dapibus suscipit ligula. Donec
-      posuere augue in quam. Aliquam feugiat tellus ut neque. Nulla facilisis,
-      risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc
-      justo sit amet elit. }
-    \centering
+    {\textbf{Régions converties pour les quatre types de construction donneuse}
+      \\%
+      \rmfamily Les figures \textsf{a}, \textsf{b}, \textsf{c}, \textsf{d}
+      représentent les régions recombinantes des transformants obtenus avec les
+      constructions donneuses respectivement dGC, dAT, dGC/AT et dAT/CG.  }%
+    \label{fig:trace-4}
   \end{figure}
   \clearpage
   \KOMAoptions{paper=A4, paper=portrait, pagesize}
   \recalctypearea
-  \include{resume}
+  \newpage
+  \blankpage
+  \newpage
+  \input{resume.tex}
 }
 
 
 % ==============================================================================
-
-% TODO insérer protocoles des PCRs
