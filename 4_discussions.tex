@@ -12,8 +12,13 @@
 
     \includegraphics[width = \textwidth]{img/gc_content.pdf}
 
-    \caption[Taux de GC]{Taux de GC \\
-      TODO légender}
+    \caption[Taux de GC et Taux de Recombinaison]{\textbf{Comparaison du taux de
+        GC moyen par fenêtre de 50 bp avec la distribution du dernier marqueur converti} \\
+      \rmfamily La figure \textsf{a} représente la distribution des derniers
+      marqueurs convertis, indicateurs de la position du point de recombinaison.
+      La figure \textsf{b} représente l'évolution du taux de GC par fenêtre de
+      50 pb au long de la séquence.
+    }
     \label{fig:gctaux}
   \end{figure}
 
@@ -47,7 +52,7 @@ comprise entre \num{100} et \num{1000}~bp et correspond ainsi à celle observée
 pour les évènements non-crossover chez l'Homme
 \cite{williams_non-crossover_2015}. La distribution du point de recombinaison
 est assez différente de celle décrite par Yáñez-Cuna \emph{et
-  al.}\cite{yanez-cuna_biased_2015} chez un modèle de \emph{Rhizobium etli}. Ils
+  al.}\cite{yanez-cuna_biased_2015} chez la bactérie \emph{Rhizobium etli}. Ils
 observent que les recombinants changent d'haplotype pour la majorité dans les
 \num{200} premières paires de bases, et seuls \SI{10}{\percent} des clones ont
 une région convertie de plus de \num{800} pb. Les différences entre leurs
@@ -85,15 +90,8 @@ les corrélations observées par Lassalle \emph{et
 Nous avons montré que la probabilité pour une base A ou T d'être convertie en G
 ou C est significativement supérieure à celle d'une base G ou C d'être convertie
 en A ou T. Cette observation correspond précisément aux prédictions du modèle
-\ac{gbgc}. Or nous n'avons pas détecté de différences significatives de
-longueurs de régions converties entre les clones transformés par des donneurs
-différents. Quel pourrait-alors être le mécanisme responsable de ce biais ?
+\ac{gbgc}. Quel pourrait être le mécanisme responsable de ce biais ?
 
-% % ------------------------------------------------------------------------------
-% \subsubsection{Les restaurations ponctuelles de l'haplotype sauvage sont-elles
-%   responsables du biais ?}
-% \label{subsub:discu-restaur}
-% % ------------------------------------------------------------------------------
 \afterpage{\blankpage}
 
 % DONE discuter de ces cas de restaurations. comment elles ont pu arriver ?
@@ -141,7 +139,7 @@ allèles sont convertis depuis le même haplotype donneur.
 
 Le BER existe également chez les procaryotes. Lieb \emph{et
   al.}\cite{lieb_recombination_1985} ont montré chez \emph{E. coli} que les
-enzymes du \ac{vsp} (Very Short Patch repair) répairaient un mésappariemment
+enzymes du \ac{vsp} (Very Short Patch repair) réparaient un mésappariemment
 dans un sens spécifique en fonction des bases au voisinage immédiat du
 mésappariemment. Ce dernier point a également été démontré pour les enzymes du
 \ac{ber} chez les eucaryotes\cite{brown_different_1988}. Cette activité de
@@ -156,21 +154,18 @@ biais, il faudrait transformer à nouveau un clone ayant converti tous les
 marqueurs par la séquence sauvage : chaque évènement de conversion serait alors
 rigoureusement dans le même contexte.
 
-Est-ce que le \ac{ber}, s'il est actif chez \emph{A.~baylyi}, pourrait
-conduire à de la conversion biaisée vers GC ? Nous avons trouvé un excès de
-restauration des bases G et C par rapport aux cas de restauration des bases A et
-T, respectivement de 10 contre 4 cas. Cet écart n'est pas significatif. Si le
+Est-ce que le \ac{ber}, s'il est actif chez \emph{A.~baylyi}, pourrait conduire
+à de la conversion biaisée vers GC ? Nous avons trouvé un excès de restauration
+des bases G et C par rapport aux cas de restauration des bases A et T,
+respectivement de 10 contre 4 cas. Cet écart n'est pas significatif. Si le
 rapport réel entre le nombre de cas de restaurations de l'allèle GC et le nombre
 de cas de restaurations de l'allèle AT est le même, il faudrait doubler la
 taille d'échantillon pour que le test soit significatif au seuil de \num{5e-2}.
-L'étude des régions converties chez des mutants d'\emph{A. baylyi} délétés pour
-les fonctions clés de la correction des mésappariemments par le \ac{ber} devrait
-permettre de répondre formellement à la question de la contribution du BER au
-biais de conversion. Néanmoins, le résultat obtenu avec \num{6818} marqueurs est
-robuste à l'exclusion des marqueurs restaurés (probabilité critique \(=\)
-\num{3e-2}). Ces cas de restaurations de l'allèle sauvage au sein de la région
-convertie ne sont donc probablement pas le principal moteur du biais mesuré,
-bien qu'ils puissent y contribuer faiblement.
+Néanmoins, le résultat obtenu avec \num{6818} marqueurs est robuste à
+l'exclusion des marqueurs restaurés (probabilité critique \(=\) \num{3e-2}). Ces
+cas de restaurations de l'allèle sauvage au sein de la région convertie ne sont
+donc probablement pas le principal moteur du biais mesuré, bien qu'ils puissent
+y contribuer faiblement.
 
 Le \ac{ber} pourrait cependant contribuer de façon plus subtile à diminuer la
 probabilité de transmission des bases A et T. En effet, les premiers marqueurs
@@ -178,16 +173,24 @@ conservés peuvent être la résultante de deux choses : 1) ils ne font pas part
 de l'hétéroduplex, et ne sont pas soumis à de la conversion ou 2) ils font
 partie de l'hétéroduplex, mais l'allèle sauvage est restauré. Il n'est donc pas
 exclu que l'hétéroduplex s'étende au delà du dernier marqueur converti et que le
-\ac{ber} restaure l'allèle sauvage précisément sur ces marqueurs. Cependant,
-telle qu'est conçue l'approche expérimentale, il est impossible de déterminer
-précisément le degré d'extension de l'hétéroduplex, et donc la contribution
-relative du \ac{ber} au nombre de marqueurs AT ou GC convertis.
+\ac{ber} ou la machinerie de correction des mésappariemments restaure l'allèle
+sauvage précisément sur ces marqueurs.
 
 Le principal contributeur au biais mesuré semble donc être le degré d'extension
-de la région convertie. Bien que les comparaisons de longueur de région
-converties ne soient significatives, une analyse globale montre bien une
+de la région convertie. Cette extension est déterminée essentiellement par la
+portée de la résection induite par le \ac{mmr} (Mis-Match Repair). En effet,
+lorsqu'une base mal appariée est détectée, elle est suivie par la résection
+d'une région de longueur variable et la resynthèse de la zone résectée en
+utilisant le brin intact pour matrice\cite{spies_mismatch_2015}. La portée de la
+résection détermine donc le nombre de marqueurs correspondant à l'haplotype du
+donneur qui sont intégrés. L'étude des régions converties chez des mutants
+d'\emph{A.~baylyi} délétés pour différentes fonctions clés de la correction des
+mésappariemments devrait permettre de répondre formellement à la question de
+leur contribution au biais de conversion.
+
+Une analyse globale des fréquences de conversion montre bien une
 sur-transmission des bases G et C. Ce résultat conforte l'extension du modèle
-\ac{gbgc} aux procaryotes amorcée par \textit{Lassalle et
+\ac{gbgc} aux procaryotes amorcée par Lassalle \textit{et
   al.}\cite{lassalle_gc-content_2015}.
 
 % % ------------------------------------------------------------------------------
@@ -197,7 +200,7 @@ sur-transmission des bases G et C. Ce résultat conforte l'extension du modèle
 
 L'écart entre la probabilité pour une base AT d'être convertie en GC
 (\SI{54}{\percent}) et la probabilité pour une base GC d'être convertie en AT
-(\SI{51}{\percent}) est faible. Un faible biais peut néanmoins avoir des
+(\SI{52}{\percent}) est faible. Un faible biais peut néanmoins avoir des
 conséquences importantes. Chez la levure, un mésappariemment GC/AT a
 \SI{50.62}{\percent} de chances d'être converti en GC, contre
 \SI{49.38}{\percent} d'être converti en
@@ -208,12 +211,12 @@ locus donné dépend uniquement de la fréquence à laquelle le locus est impliq
 dans un évènement de recombinaison, de la force du biais de conversion et de la
 taille de la
 population\cite{nagylaki_evolution_1983,lassalle_gc-content_2015,duret_biased_2009,duret_impact_2008}.
-Ceci implique que même lorsque le biais est faible et la structure de population
-très clonale, dès lors que la taille de population est grande, l'allèle G ou C a
-une probabilité plus forte de se fixer. L'une des observations que ce modèle
-explique bien est le taux de GC très bas des bactéries endosymbiotiques, pour
-lesquelles le taux de recombinaison est effectivement
-nul\cite{moran_genomics_2008}.
+Ceci implique que même lorsque le biais est faible et la probabilité qu'un locus
+donné soit impliqué dans un évènement de recombinaison faible, dès lors que la
+taille de population est grande, l'allèle G ou C a une probabilité plus forte de
+se fixer. L'une des observations que ce modèle explique bien est le taux de GC
+très bas des bactéries endosymbiotiques, pour lesquelles le taux de
+recombinaison est effectivement nul\cite{moran_genomics_2008}.
 
 La conversion génique biaisée vers GC est l'un des candidats pour expliquer la
 mystérieuse force évolutive qui permet aux procaryotes de maintenir de tels taux

@@ -51,7 +51,6 @@
 
 \vfill
 
-% TODO placer figures pics secondaires là.
 \input{schema/pic-second.tex}
 
 \vfill
@@ -117,13 +116,13 @@ recombinants.
 Deux séquences trop courtes pour être alignées ont été exclues de l'analyse.
 Neuf autres séquences présentaient une qualité médianne significativement
 inférieure à celle des autres séquences et ont également été exclues. Au total,
-\num{8561} marqueurs entre le donneur et le receveur ont été
-analysées. Globalement, la qualité des \num{873} séquences suit un profil
-attendu : la qualité médianne est de \num{51} tout au long de la séquence, à
-l'exclusion des bases situées aux extrémités 5' et 3'.
+\num{8561} marqueurs correspondant à des positions variantes entre le donneur et
+le receveur ont été analysées. Globalement, la qualité des \num{373} séquences
+suit un profil attendu : la qualité médianne est de \num{51} tout au long de la
+séquence, à l'exclusion des bases situées aux extrémités 5' et 3'.
 
 Cependant, \num{9.8}\% des marqueurs sont d'une qualité de séquençage inférieure
-à la qualité de la région environnante. L'examenc des électrophérogrammes a
+à la qualité de la région environnante. L'examen des électrophérogrammes a
 révélé la présence de pics secondaires (voir figure~\ref{fig:pic-second}). Des
 pics secondaires apparaissent quand la population d'amplicon séquencée n'est pas
 homogène au site considéré. Or les deux pics présents à un marqueur donné
@@ -215,8 +214,8 @@ obtenues avec une construction donneuse alternant GC et AT. Les zones de
 recombinaisons des clones transformés par les donneurs GC, AT et AT/GC sont
 détaillées en annexe \ref{subsec:trac-de-conv}. En moyenne, à notre locus cible,
 \num{393} \(\pm\) \num{228} nucléotides ont été transférés et intégrés dans le
-génome. La position du dernier marqueur converti indique que le point de
-recombinaison (voir figure~\ref{fig:recomb} et~\ref{fig:convtract}) se situe
+génome. La position du dernier marqueur converti indique le point de
+recombinaison (voir figure~\ref{fig:recomb} et~\ref{fig:convtract}) qui se situe
 entre les 30 bases le séparant du premier marqueur conservé. Nous avons donc
 estimé la position du point de recombinaison par celle du dernier marqueur
 converti, dont la distribution est représentée dans la
@@ -262,8 +261,6 @@ longueur de région convertie.
   \vfill
 
   \begin{table}[h!]
-    % TODO placer tableau au bon endroit.
-    % TODO légender tableau
     \centering
     \rmfamily
     \caption[Dénombrement des cas de conversion]{\textbf{Dénombrement des cas de conversion}}
@@ -277,8 +274,8 @@ longueur de région convertie.
           \midrule
           $N_{GC \rightarrow GC}$ & -    & 750  & 489    & 422    & 1661           \\
           $N_{GC \rightarrow AT}$ & -    & 1032 & 330    & 412    & 1774           \\
-          $N_{AT \rightarrow AT}$ & 1060 & -    & 375    & 404    & 1839           \\
-          $N_{AT \rightarrow GC}$ & 613  & -    & 515    & 416    & 1544           \\
+          $N_{AT \rightarrow AT}$ & 613  & -    & 515    & 416    & 1544           \\
+          $N_{AT \rightarrow GC}$ & 1060 & -    & 375    & 404    & 1839           \\
           \bottomrule
         \end{tabular}
       }
@@ -287,8 +284,8 @@ longueur de région convertie.
           \toprule
                                   & AT   & GC   \\
           \midrule
-          Marqueurs non convertis & 1661 & 1839 \\
-          Marqueurs convertis     & 1774 & 1544 \\
+          Marqueurs non convertis & 1661 & 1544 \\
+          Marqueurs convertis     & 1774 & 1839 \\
           \bottomrule
         \end{tabular}
 
@@ -347,7 +344,7 @@ indique un excès de restauration des bases G et C.
 Sur l'ensemble des \num{6818} marqueurs, nous avons comparé le nombre de
 marqueurs AT qui ont été convertis en GC ($N_{AT \rightarrow GC}$) avec le
 nombre de marqueurs GC qui ont été convertis en AT ($N_{GC \rightarrow AT}$)
-(voir table~\ref{tab:contingence}). Nous avons trouvé que la proportion de
+(voir le tableau~\ref{tab:contingence}). Nous avons trouvé que la proportion de
 marqueurs AT convertis en GC (\SI{0.54}{\percent}) est significativement
 supérieure à la proportion de marqueurs GC convertis en AT (\SI{.52}{\percent})
 (test du $\chi^2$, probabilité critique~\(=\)~\num{0.03}). Ce résultat est
